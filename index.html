@@ -4,458 +4,579 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Folio - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/just-validate@latest/dist/just-validate.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
 
 </head>
 <body>
-    <header id="navbar">
-        <div class="logo">Code Folio</div>
+<!-- Modern Top Navbar -->
+<header class="floating-navbar">
+    <div class="nav-container">
+        <a href="#" class="brand-logo">Code Folio</a>
         <nav>
-            <ul id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#clients-testimonials">Clients</a></li>
-                <li><a href="#our-team">Team</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-item">Home</a></li>
+                <li><a href="#about" class="nav-item">About</a></li>
+                <li><a href="#services" class="nav-item">Services</a></li>
+                <li><a href="#portfolio" class="nav-item">Portfolio</a></li>
+                <li><a href="#clients-testimonials" class="nav-item">Clients</a></li>
+                <li><a href="#our-team" class="nav-item">Team</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
+
+
+
+
+
     
-    <section id="home">
-        <div class="container">
-            <div class="text-content">
-                <h1>Revolutionizing Digital Experiences</h1>
-                <p>Crafting scalable, innovative, and high-impact digital solutions for your business.</p>
-                <div class="cta-buttons">
-                    <a href="#services" class="btn primary">Discover More</a>
-                    <a href="#contact" class="btn secondary">Get in Touch</a>
+   <!-- Home Section -->
+<section id="home">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Text Content -->
+            <div class="col-lg-6">
+                <div class="text-content">
+                    <h1>Revolutionizing Digital Experiences</h1>
+                    <p>Crafting scalable, innovative, and high-impact digital solutions for your business.</p>
+                    <div class="cta-buttons1">
+                        <a href="#services" class="btn-custom1 btn-primary-custom1">Discover More</a>
+                        <a href="#contact" class="btn-custom1 btn-secondary-custom1">Get in Touch</a>
+                    </div>
                 </div>
             </div>
-            <div class="visual-content">
+
+            <!-- Visual Content -->
+            <div class="col-lg-6 d-flex justify-content-center">
                 <div class="glass-card">
                     <img src="assets/hero-image.jpg" alt="Innovation">
                 </div>
             </div>
         </div>
-        <a href="#about" class="scroll-down">&#x25BC;</a>
-    </section>
+    </div>
+</section>
+<!-- About Section -->
+<section id="about">
+    <div class="about-header">
+        <h2>About Us</h2>
+        <p class="about-intro">
+            At <strong>Simple Consultant Group</strong>, we are passionate about transforming ideas into powerful digital experiences.
+            Our expertise spans web & app development, cutting-edge innovation, and seamless client collaboration.
+            With a focus on creativity and efficiency, we build digital solutions that are sleek, scalable, and future-ready.
+        </p>
+    </div>
+
+    <div class="about-container">
+        <!-- Web Development -->
+        <div class="about-box">
+            <img src="assets/web-dev.svg" alt="Web Development">
+            <h3>Web & App Development</h3>
+            <p>We craft modern, responsive, and feature-rich websites and applications, ensuring optimal performance across all devices.</p>
+        </div>
+
+        <!-- Innovation -->
+        <div class="about-box">
+            <img src="assets/innovation.svg" alt="Innovation">
+            <h3>Innovative Solutions</h3>
+            <p>We leverage the latest technologies, from AI-driven automation to blockchain security, to deliver cutting-edge solutions.</p>
+        </div>
+
+        <!-- Collaboration -->
+        <div class="about-box">
+            <img src="assets/collaboration.svg" alt="Collaboration">
+            <h3>Client Collaboration</h3>
+            <p>Our approach is client-focused, ensuring that every project is tailored to meet business goals with transparency and efficiency.</p>
+        </div>
+
+        <!-- Performance & Security -->
+        <div class="about-box">
+            <img src="assets/security.svg" alt="Security & Performance">
+            <h3>Security & Performance</h3>
+            <p>We implement best security practices and high-performance standards to keep your digital presence fast and secure.</p>
+        </div>
+    </div>
+</section>
     
-    
-    
-    
-    <section id="about">        
-        <div class="about-header">
-            <h2>About Us</h2>
-            <p class="about-intro">
-                At **Simple Consultant Group**, we are passionate about transforming ideas into powerful digital experiences.
-                Our expertise spans web & app development, cutting-edge innovation, and seamless client collaboration.
-                With a focus on creativity and efficiency, we build digital solutions that are sleek, scalable, and future-ready.
+<!-- Services Section -->
+<section id="services" class="services-section py-5">
+    <div class="container text-center">
+        <div class="service-header">
+            <h2 class="section-title">Our Premium Services</h2>
+            <p class="section-description">
+                Unlock the full potential of your business with our cutting-edge solutions.
             </p>
         </div>
-    
-        <div class="about-container">
-            <!-- Web Development -->
-            <div class="about-box">
-                <img src="assets/web-dev.svg" alt="Web Development">
-                <h3>Web & App Development</h3>
-                <p>We craft modern, responsive, and feature-rich websites and applications, ensuring optimal performance across all devices.</p>
+
+        <div class="row g-4 mt-5">
+            <!-- Service Card 1 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="service-card" style="--color:#ff4d4d;">
+                    <div class="icon-container">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>High-performance, scalable, and secure websites tailored for your business.</p>
+                    <ul class="service-details">
+                        <li><i class="fas fa-bolt"></i> Blazing Fast Performance</li>
+                        <li><i class="fas fa-lock"></i> Advanced Security Measures</li>
+                        <li><i class="fas fa-mobile-alt"></i> Responsive & Optimized</li>
+                    </ul>
+                    <a href="#contact" class="btn-custom">Learn More</a>
+                </div>
             </div>
-    
-            <!-- Innovation -->
-            <div class="about-box">
-                <img src="assets/innovation.svg" alt="Innovation">
-                <h3>Innovative Solutions</h3>
-                <p>We leverage the latest technologies, from AI-driven automation to blockchain security, to deliver cutting-edge solutions.</p>
+
+            <!-- Service Card 2 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="service-card" style="--color:#007bff;">
+                    <div class="icon-container">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>App Development</h3>
+                    <p>Feature-rich mobile applications with seamless user experience.</p>
+                    <ul class="service-details">
+                        <li><i class="fas fa-rocket"></i> Optimized for Speed</li>
+                        <li><i class="fas fa-link"></i> API & Database Integration</li>
+                        <li><i class="fas fa-cogs"></i> Custom Features</li>
+                    </ul>
+                    <a href="#contact" class="btn-custom">Learn More</a>
+                </div>
             </div>
-    
-            <!-- Collaboration -->
-            <div class="about-box">
-                <img src="assets/collaboration.svg" alt="Collaboration">
-                <h3>Client Collaboration</h3>
-                <p>Our approach is client-focused, ensuring that every project is tailored to meet business goals with transparency and efficiency.</p>
+
+            <!-- Service Card 3 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="service-card" style="--color:#28a745;">
+                    <div class="icon-container">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Creating engaging user experiences with stunning visuals.</p>
+                    <ul class="service-details">
+                        <li><i class="fas fa-palette"></i> Aesthetic & Modern</li>
+                        <li><i class="fas fa-user-check"></i> User-Friendly Interfaces</li>
+                        <li><i class="fas fa-mouse-pointer"></i> Interactive Prototypes</li>
+                    </ul>
+                    <a href="#contact" class="btn-custom">Learn More</a>
+                </div>
             </div>
-    
-            <!-- Performance & Security -->
-            <div class="about-box">
-                <img src="assets/security.svg" alt="Security & Performance">
-                <h3>Security & Performance</h3>
-                <p>We implement best security practices and high-performance standards to keep your digital presence fast and secure.</p>
+
+            <!-- Service Card 4 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="service-card" style="--color:#ff9900;">
+                    <div class="icon-container">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>SEO & Marketing</h3>
+                    <p>Boost your brand visibility with data-driven marketing strategies.</p>
+                    <ul class="service-details">
+                        <li><i class="fas fa-search"></i> Advanced SEO Tactics</li>
+                        <li><i class="fas fa-chart-bar"></i> Data-Driven Insights</li>
+                        <li><i class="fas fa-bullhorn"></i> Effective Campaigns</li>
+                    </ul>
+                    <a href="#contact" class="btn-custom">Learn More</a>
+                </div>
             </div>
         </div>
-    
-        <a href="#services" class="scroll-down">&#x25BC;</a> <!-- Down Arrow -->
-    </section>
-    
-    
-    
-    <section id="services" class="fade-in">
+    </div>
+</section>
+<section id="portfolio" class="py-5 bg-dark text-light">
+    <div class="container text-center">
+        <h2 class="section-title">Our Work</h2>
+        <p class="section-intro">Discover our top-notch projects, crafted with precision and creativity.</p>
 
-        <h2>Our Services</h2>
-        <p class="section-intro">
-            We provide cutting-edge solutions to drive your business forward. Our expert team ensures quality, innovation, and scalability.
+        <!-- Portfolio Categories (Navbar-Style) -->
+        <div class="portfolio-navbar">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="web">Web Development</button>
+            <button class="category-btn" data-category="mobile">Mobile Apps</button>
+            <button class="category-btn" data-category="seo">SEO & Marketing</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="row portfolio-grid">
+            <!-- Project 1 -->
+            <div class="col-lg-3 col-md-6 mb-4 project-card" data-category="web" data-project='{
+                "title": "TechCorp Redesign",
+                "image": "./assets/hero-image.jpg",
+                "description": "Revamped TechCorp’s website, improving UX and boosting conversions by 40%.",
+                "technologies": ["HTML", "CSS", "JavaScript", "React"],
+                "tags": ["UI/UX", "Corporate Website", "Optimization"],
+                "demo": "https://example.com/project-one"
+            }'>
+                <div class="card">
+                    <img src="./assets/hero-image.jpg" class="card-img-top" alt="TechCorp Redesign">
+                    <div class="card-body">
+                        <h3 class="card-title">TechCorp Redesign</h3>
+                        <p class="card-text">Boosted conversions by <strong>40%</strong> with a UI/UX overhaul.</p>
+                        <button class="btn btn-outline-info view-project">View Project</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 project-card" data-category="web" data-project='{
+                "title": "TechCorp Redesign",
+                "image": "./assets/hero-image.jpg",
+                "description": "Revamped TechCorp’s website, improving UX and boosting conversions by 40%.",
+                "technologies": ["HTML", "CSS", "JavaScript", "React"],
+                "tags": ["UI/UX", "Corporate Website", "Optimization"],
+                "demo": "https://example.com/project-one"
+            }'>
+                <div class="card">
+                    <img src="./assets/hero-image.jpg" class="card-img-top" alt="TechCorp Redesign">
+                    <div class="card-body">
+                        <h3 class="card-title">TechCorp Redesign</h3>
+                        <p class="card-text">Boosted conversions by <strong>40%</strong> with a UI/UX overhaul.</p>
+                        <button class="btn btn-outline-info view-project">View Project</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 project-card" data-category="mobile" data-project='{
+                "title": "TechCorp Redesign",
+                "image": "./assets/hero-image.jpg",
+                "description": "Revamped TechCorp’s website, improving UX and boosting conversions by 40%.",
+                "technologies": ["HTML", "CSS", "JavaScript", "React"],
+                "tags": ["UI/UX", "Corporate Website", "Optimization"],
+                "demo": "https://example.com/project-one"
+            }'>
+                <div class="card">
+                    <img src="./assets/hero-image.jpg" class="card-img-top" alt="TechCorp Redesign">
+                    <div class="card-body">
+                        <h3 class="card-title">TechCorp Redesign</h3>
+                        <p class="card-text">Boosted conversions by <strong>40%</strong> with a UI/UX overhaul.</p>
+                        <button class="btn btn-outline-info view-project">View Project</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 project-card" data-category="seo" data-project='{
+                "title": "TechCorp Redesign",
+                "image": "./assets/hero-image.jpg",
+                "description": "Revamped TechCorp’s website, improving UX and boosting conversions by 40%.",
+                "technologies": ["HTML", "CSS", "JavaScript", "React"],
+                "tags": ["UI/UX", "Corporate Website", "Optimization"],
+                "demo": "https://example.com/project-one"
+            }'>
+                <div class="card">
+                    <img src="./assets/hero-image.jpg" class="card-img-top" alt="TechCorp Redesign">
+                    <div class="card-body">
+                        <h3 class="card-title">TechCorp Redesign</h3>
+                        <p class="card-text">Boosted conversions by <strong>40%</strong> with a UI/UX overhaul.</p>
+                        <button class="btn btn-outline-info view-project">View Project</button>
+                    </div>
+                </div>
+            </div>
+            <!-- More Projects Here -->
+        </div>
+    </div>
+</section>
+<!-- Redesigned Project Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"><i class="fas fa-folder-open"></i> Project Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <div class="row">
+                    <!-- Image Section -->
+                    <div class="col-md-5">
+                        <div class="modal-image-container">
+                            <img id="modalImage" class="img-fluid rounded shadow" alt="Project Image">
+                        </div>
+                    </div>
+
+                    <!-- Project Details -->
+                    <div class="col-md-7">
+                        <div class="modal-details">
+                            <h4 id="modalTitleText" class="fw-bold"></h4>
+                            <p id="modalDescription" class="text-muted"></p>
+
+                            <!-- Tools & Technologies -->
+                            <div class="modal-section">
+                                <h6><i class="fas fa-tools"></i> Tools & Technologies</h6>
+                                <ul id="modalTechnologies" class="badge-list"></ul>
+                            </div>
+
+                            <!-- Tags -->
+                            <div class="modal-section">
+                                <h6><i class="fas fa-tags"></i> Tags</h6>
+                                <div id="modalTags" class="tag-list"></div>
+                            </div>
+
+                            <!-- View Project Button -->
+                            <div class="text-end mt-3">
+                                <a id="modalDemo" href="#" class="btn btn-primary shadow-sm" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
+<section id="clients-testimonials">
+    <div class="clients-testimonials-container">
+        <h2>Our Trusted Clients</h2>
+
+        <!-- Swiper Container -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Client 1 -->
+                <div class="swiper-slide client-card">
+                    <img src="./assets/israr.jpg" alt="Client 1">
+                    <h3 class="client-name">John Doe</h3>
+                    <h4 class="client-designation">CEO of TechCorp</h4>
+                    <p>"Code Folio transformed our website and boosted our sales. A true game-changer!"</p>
+                    <span class="industry tech"><i class="fas fa-laptop-code"></i> Technology</span>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <!-- Client 2 -->
+                <div class="swiper-slide client-card">
+                    <img src="./assets/ashraf-removebg-preview.png" alt="Client 2">
+                    <h3 class="client-name">Sarah Smith</h3>
+                    <h4 class="client-designation">Founder of Startup X</h4>
+                    <p>"The best development team we've worked with. High quality and on-time delivery!"</p>
+                    <span class="industry health"><i class="fas fa-hospital"></i> Health</span>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </div>
+                <!-- Client 3 -->
+                <div class="swiper-slide client-card">
+                    <img src="./assets/aqib.jpg" alt="Client 3">
+                    <h3 class="client-name">Michael Lee</h3>
+                    <h4 class="client-designation">Marketing Director</h4>
+                    <p>"Outstanding service! The UX design was beyond our expectations."</p>
+                    <span class="industry marketing"><i class="fas fa-envelope"></i> Marketing</span>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <!-- Client 4 -->
+                <div class="swiper-slide client-card">
+                    <img src="./assets/ashraf1.webp" alt="Client 4">
+                    <h3 class="client-name">Anna Johnson</h3>
+                    <h4 class="client-designation">COO of WebSolvers</h4>
+                    <p>"Our experience was amazing, and the results exceeded expectations."</p>
+                    <span class="industry web"><i class="fas fa-laptop"></i> Web</span>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+
+            <!-- Swiper Pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Swiper Navigation Buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</section>
+
+
+<section id="our-team" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="meet-our-experts">Meet Our Experts</h2>
+        <p class="meet-our-experts-subtitle">
+            A team of passionate professionals driving innovation and success.
         </p>
         
-        <div class="container">
-            <div class="card">
-                <div class="icon"><i class="fas fa-code"></i></div>
-                <h3>Web Development</h3>
-                <h4>Fast, Scalable & Secure Websites</h4>
-                <p>We develop high-performance websites with modern frameworks like React, Vue, and Laravel.</p>
-                <ul>
-                    <li>⚡ High-Speed Performance</li>
-                    <li>🔒 Secure Architecture</li>
-                    <li>📱 Mobile Responsive</li>
-                </ul>
-                <a href="#contact" class="btn">Learn More</a>
+        <div class="row g-4 justify-content-center">
+            <!-- Team Cards (3 in First Row) -->
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="team-card p-3 shadow-lg rounded bg-white w-100">
+                    <div class="team-image text-center">
+                        <img src="./assets/aqib.png" alt="Aqib Ali Khan" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="team-info text-center">
+                        <h3 class="fw-bold mt-3">Aqib Ali Khan</h3>
+                        <span class="role text-primary">CEO</span>
+                        <p class="motto text-muted">"Innovation is the heartbeat of success."</p>
+                        <p class="description">Guiding the company with 5+ years of experience in leadership.</p>
+                        <ul class="list-unstyled expertise">
+                            <li><i class="fas fa-lightbulb text-warning"></i> Leadership & Vision</li>
+                            <li><i class="fas fa-chart-line text-warning"></i> Strategic Planning</li>
+                            <li><i class="fas fa-globe text-warning"></i> Business Expansion</li>
+                        </ul>
+                        <div class="social-icons mt-2">
+                            <a href="#" class="text-primary me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+                            <a href="#" class="text-info"><i class="fab fa-twitter fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-    
-            <div class="card">
-                <div class="icon"><i class="fas fa-mobile-alt"></i></div>
-                <h3>Mobile App Development</h3>
-                <h4>Native & Cross-Platform Solutions</h4>
-                <p>Build custom Android & iOS apps using React Native, Flutter, or native Swift/Kotlin.</p>
-                <ul>
-                    <li>📲 iOS & Android Support</li>
-                    <li>🚀 High-Performance Apps</li>
-                    <li>🔗 API & Database Integration</li>
-                </ul>
-                <a href="#contact" class="btn">Learn More</a>
-            </div>
-    
-            <div class="card">
-                <div class="icon"><i class="fas fa-paint-brush"></i></div>
-                <h3>UI/UX Design</h3>
-                <h4>Visually Stunning & User-Friendly</h4>
-                <p>Our design team creates engaging interfaces that enhance the user experience.</p>
-                <ul>
-                    <li>🎨 Modern Aesthetic</li>
-                    <li>🖱️ Interactive Prototypes</li>
-                    <li>📊 User Research & Testing</li>
-                </ul>
-                <a href="#contact" class="btn">Learn More</a>
-            </div>
-    
-            <div class="card">
-                <div class="icon"><i class="fas fa-chart-line"></i></div>
-                <h3>SEO Optimization</h3>
-                <h4>Boost Rankings & Drive Traffic</h4>
-                <p>We optimize websites for better Google rankings, organic traffic, and conversion rates.</p>
-                <ul>
-                    <li>🔍 Keyword Optimization</li>
-                    <li>📈 On-Page & Off-Page SEO</li>
-                    <li>🔗 Link Building Strategies</li>
-                </ul>
-                <a href="#contact" class="btn">Learn More</a>
-            </div>
-        </div>
-        <a href="#portfolio" class="scroll-down">&#x25BC;</a> <!-- Down Arrow -->
 
-    </section>
-
-    <section id="portfolio" class="full-page">
-        <h2>Our Work</h2>
-        <p class="section-intro">Discover our top-notch projects, crafted with precision and creativity.</p>
-    
-        <div class="carousel">
-            <div class="carousel-track">
-                <!-- Project 1 -->
-                <div class="carousel-slide active">
-                    <div class="project-item">
-                        <div class="project-info">
-                            <h3>Website Redesign for TechCorp</h3>
-                            <p class="project-description">Boosted conversion rates by <strong>40%</strong> with a sleek UI/UX redesign.</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Figma</span>
-                            </div>
-                            <div class="project-languages">
-                                <strong>Languages Used:</strong> <span>HTML, CSS, JavaScript, React</span>
-                            </div>
-                            <a href="https://example.com/project-one" class="btn" target="_blank" rel="noopener">Live Demo</a>
-                        </div>
-                        <div class="project-thumbnail">
-                            <img src="./assets/hero-image.jpg" alt="Website Redesign for TechCorp" loading="lazy">
-                        </div>
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="team-card p-3 shadow-lg rounded bg-white w-100">
+                    <div class="team-image text-center">
+                        <img src="./assets/ashraf1.webp" alt="Ashraf Hussain" class="img-fluid rounded-circle">
                     </div>
-                </div>
-    
-                <!-- Project 2 -->
-                <div class="carousel-slide">
-                    <div class="project-item">
-                        <div class="project-info">
-                            <h3>E-Commerce Mobile App</h3>
-                            <p class="project-description">AI-powered shopping app with <strong>seamless UX</strong>.</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">Flutter</span>
-                                <span class="tech-tag">Firebase</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                            </div>
-                            <div class="project-languages">
-                                <strong>Languages Used:</strong> <span>Flutter, Firebase, Node.js</span>
-                            </div>
-                            <a href="https://example.com/project-two" class="btn" target="_blank" rel="noopener">Live Demo</a>
-                        </div>
-                        <div class="project-thumbnail">
-                            <img src="./assets/image-1.jpg" alt="E-Commerce Mobile App" loading="lazy">
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Project 3 -->
-                <div class="carousel-slide">
-                    <div class="project-item">
-                        <div class="project-info">
-                            <h3>SEO Growth Strategy</h3>
-                            <p class="project-description">Boosted organic traffic by <strong>150%</strong> with advanced SEO tactics.</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">SEO Tools</span>
-                                <span class="tech-tag">Google Analytics</span>
-                                <span class="tech-tag">WordPress</span>
-                            </div>
-                            <div class="project-languages">
-                                <strong>Languages Used:</strong> <span>SEO, Google Analytics, WordPress</span>
-                            </div>
-                            <a href="https://example.com/project-three" class="btn" target="_blank" rel="noopener">Live Demo</a>
-                        </div>
-                        <div class="project-thumbnail">
-                            <img src="./assets/seo-growth.jpg" alt="SEO Growth Strategy" loading="lazy">
+                    <div class="team-info text-center">
+                        <h3 class="fw-bold mt-3">Ashraf Hussain</h3>
+                        <span class="role text-primary">Lead Developer</span>
+                        <p class="motto text-muted">"Code is the bridge between dreams and reality."</p>
+                        <p class="description">Expert in full-stack development and AI-driven applications.</p>
+                        <ul class="list-unstyled expertise">
+                            <li><i class="fas fa-robot text-warning"></i> AI & Machine Learning</li>
+                            <li><i class="fas fa-code text-warning"></i> Full-Stack Development</li>
+                            <li><i class="fas fa-cloud text-warning"></i> Cloud Computing</li>
+                        </ul>
+                        <div class="social-icons mt-2">
+                            <a href="#" class="text-primary me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+                            <a href="#" class="text-dark"><i class="fab fa-github fa-lg"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-    
-            <!-- Dots for Navigation -->
-            <div class="carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-    
-            <!-- Arrows for Navigation -->
-            <button class="carousel-prev">&#10094;</button>
-            <button class="carousel-next">&#10095;</button>
-        </div>
 
-        <a href="#clients" class="scroll-down">&#x25BC;</a> <!-- Down Arrow -->
-
-    </section>
-    
-    <section id="clients-testimonials">
-        <div class="clients-testimonials-container">
-            <h2>Our Trusted Clients</h2>
-            <div class="clients-grid-container">
-                <!-- Previous Button -->
-                <button class="scroll-btn prev-btn">&#10094;</button>
-    
-                <!-- Clients Grid (Wrapped in a Scrollable Container) -->
-                <div class="clients-grid-wrapper">
-                    <div class="clients-grid">
-                        <div class="client-card">
-                            <img src="./assets/hero-image.jpg" alt="Client 1">
-                            <h3>Client 1</h3>
-                            <p>"Code Folio transformed our website and boosted our sales. A true game-changer!"</p>
-                            <h4>- John Doe, CEO of TechCorp</h4>
-                            <span class="industry"><i class="fas fa-laptop-code"></i> Technology</span>
-                            <div class="rating">⭐⭐⭐⭐⭐</div>
-                        </div>
-                        <div class="client-card">
-                            <img src="client2.png" alt="Client 2">
-                            <h3>Client 2</h3>
-                            <p>"The best development team we've worked with. High quality and on-time delivery!"</p>
-                            <h4>- Sarah Smith, Founder of Startup X</h4>
-                            <span class="industry"><i class="fas fa-hospital"></i> Health</span>
-                            <div class="rating">⭐⭐⭐⭐</div>
-                        </div>
-                        <div class="client-card">
-                            <img src="client3.png" alt="Client 3">
-                            <h3>Client 3</h3>
-                            <p>"Outstanding service! The UX design was beyond our expectations."</p>
-                            <h4>- Michael Lee, Marketing Director</h4>
-                            <span class="industry"><i class="fas fa-envelope"></i> Marketing</span>
-                            <div class="rating">⭐⭐⭐⭐⭐</div>
-                        </div>
-                        <div class="client-card">
-                            <img src="client4.png" alt="Client 4">
-                            <h3>Client 4</h3>
-                            <p>"Our experience was amazing, and the results exceeded expectations."</p>
-                            <h4>- Anna Johnson, COO of WebSolvers</h4>
-                            <span class="industry"><i class="fas fa-laptop"></i> Web</span>
-                            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="team-card p-3 shadow-lg rounded bg-white w-100">
+                    <div class="team-image text-center">
+                        <img src="./assets/israr.jpg" alt="Israr Ahmad" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="team-info text-center">
+                        <h3 class="fw-bold mt-3">Israr Ahmad</h3>
+                        <span class="role text-primary">UI/UX Designer</span>
+                        <p class="motto text-muted">"Design is thinking made visible."</p>
+                        <p class="description">Passionate about user-friendly interfaces and branding.</p>
+                        <ul class="list-unstyled expertise">
+                            <li><i class="fas fa-paint-brush text-warning"></i> UX & UI Design</li>
+                            <li><i class="fas fa-pen-nib text-warning"></i> Brand Identity</li>
+                            <li><i class="fas fa-desktop text-warning"></i> Interface Prototyping</li>
+                        </ul>
+                        <div class="social-icons mt-2">
+                            <a href="#" class="text-danger me-2"><i class="fab fa-dribbble fa-lg"></i></a>
+                            <a href="#" class="text-primary"><i class="fab fa-behance fa-lg"></i></a>
                         </div>
                     </div>
                 </div>
-    
-                <!-- Next Button -->
-                <button class="scroll-btn next-btn">&#10095;</button>
             </div>
-        </div>
-    </section>
-    
-    <section id="our-team">
-        <div class="team-container">
-            <h2>Meet Our Experts</h2>
-            <p class="subheading">A team of passionate professionals driving innovation and success.</p>
-    
-            <div class="team-grid">
-                <!-- First Row (Three Cards) -->
-                <div class="team-row">
-                    <div class="team-card">
-                        <div class="team-image"><img src="./assets/aqib.jpg" alt="John Smith"></div>
-                        <div class="team-info">
-                            <h3>Aqib Ali khan</h3>
-                            <span class="role">CEO</span>
-                            <p class="motto">"Innovation is the heartbeat of success."</p>
-                            <p class="description">Guiding the company with 5+ years of experience in leadership.</p>
-                            <ul class="expertise">
-                                <li><i class="fas fa-lightbulb"></i> Leadership & Vision</li>
-                                <li><i class="fas fa-chart-line"></i> Strategic Planning</li>
-                                <li><i class="fas fa-globe"></i> Business Expansion</li>
-                            </ul>
-                            <div class="social-icons">
-                                <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-                            </div>
-                        </div>
+
+            <!-- Team Cards (2 in Second Row) -->
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="team-card p-3 shadow-lg rounded bg-white w-100">
+                    <div class="team-image text-center">
+                        <img src="./assets/sheeraz.png" alt="Sheeraz Ahmed" class="img-fluid rounded-circle">
                     </div>
-    
-                    <div class="team-card">
-                        <div class="team-image"><img src="./assets/ashraf1.webp" alt="Emily Johnson"></div>
-                        <div class="team-info">
-                            <h3>Ashraf Hussain</h3>
-                            <span class="role">Lead Developer</span>
-                            <p class="motto">"Code is the bridge between dreams and reality."</p>
-                            <p class="description">Expert in full-stack development and AI-driven applications.</p>
-                            <ul class="expertise">
-                                <li><i class="fas fa-robot"></i> AI & Machine Learning</li>
-                                <li><i class="fas fa-code"></i> Full-Stack Development</li>
-                                <li><i class="fas fa-cloud"></i> Cloud Computing</li>
-                            </ul>
-                            <div class="social-icons">
-                                <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" class="github"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="team-card">
-                        <div class="team-image"><img src="./assets/image-1.jpeg" alt="Michael Lee"></div>
-                        <div class="team-info">
-                            <h3>Israr Ahmed</h3>
-                            <span class="role">UI/UX Designer</span>
-                            <p class="motto">"Design is thinking made visible."</p>
-                            <p class="description">Passionate about user-friendly interfaces and branding.</p>
-                            <ul class="expertise">
-                                <li><i class="fas fa-paint-brush"></i> UX & UI Design</li>
-                                <li><i class="fas fa-pen-nib"></i> Brand Identity</li>
-                                <li><i class="fas fa-desktop"></i> Interface Prototyping</li>
-                            </ul>
-                            <div class="social-icons">
-                                <a href="#" class="dribbble"><i class="fab fa-dribbble"></i></a>
-                                <a href="#" class="behance"><i class="fab fa-behance"></i></a>
-                            </div>
+                    <div class="team-info text-center">
+                        <h3 class="fw-bold mt-3">Sheeraz Ahmed</h3>
+                        <span class="role text-primary">Marketing Head</span>
+                        <p class="motto text-muted">"Great marketing makes the brand unforgettable."</p>
+                        <p class="description">Bringing brands to life with innovative marketing strategies.</p>
+                        <ul class="list-unstyled expertise">
+                            <li><i class="fas fa-bullhorn text-warning"></i> Digital Marketing</li>
+                            <li><i class="fas fa-search text-warning"></i> SEO & Branding</li>
+                            <li><i class="fas fa-chart-bar text-warning"></i> Social Media Growth</li>
+                        </ul>
+                        <div class="social-icons mt-2">
+                            <a href="#" class="text-primary me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+                            <a href="#" class="text-danger"><i class="fab fa-instagram fa-lg"></i></a>
                         </div>
                     </div>
                 </div>
-    
-                <!-- Second Row (Two Centered Cards) -->
-                <div class="team-row">
-                    <div class="team-card">
-                        <div class="team-image"><img src="./assets/image-1.jpeg" alt="Sophia Carter"></div>
-                        <div class="team-info">
-                            <h3>Sheeraz Ahmad</h3>
-                            <span class="role">Marketing Head</span>
-                            <p class="motto">"Great marketing makes the brand unforgettable."</p>
-                            <p class="description">Bringing brands to life with innovative marketing strategies.</p>
-                            <ul class="expertise">
-                                <li><i class="fas fa-bullhorn"></i> Digital Marketing</li>
-                                <li><i class="fas fa-search"></i> SEO & Branding</li>
-                                <li><i class="fas fa-chart-bar"></i> Social Media Growth</li>
-                            </ul>
-                            <div class="social-icons">
-                                <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="team-card p-3 shadow-lg rounded bg-white w-100">
+                    <div class="team-image text-center">
+                        <img src="./assets/shahroze.png" alt="Shahroze Kamran Sahotra" class="img-fluid rounded-circle">
                     </div>
-    
-                    <div class="team-card">
-                        <div class="team-image"><img src="./assets/shahroze.png" alt="Daniel Martinez"></div>
-                        <div class="team-info">
-                            <h3>Shahroze Kamran Sahotra</h3>
-                            <span class="role">Project Manager</span>
-                            <p class="motto">"Efficiency is doing things right, effectiveness is doing the right things."</p>
-                            <p class="description">Ensuring smooth workflows and successful project deliveries.</p>
-                            <ul class="expertise">
-                                <li><i class="fas fa-tasks"></i> Agile Management</li>
-                                <li><i class="fas fa-clock"></i> Time Optimization</li>
-                                <li><i class="fas fa-exclamation-triangle"></i> Risk Analysis</li>
-                            </ul>
-                            <div class="social-icons">
-                                <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-                            </div>
+                    <div class="team-info text-center">
+                        <h3 class="fw-bold mt-3">Shahroze Kamran Sahotra</h3>
+                        <span class="role text-primary">Project Manager</span>
+                        <p class="motto text-muted">"Efficiency is doing things right, effectiveness is doing the right things."</p>
+                        <p class="description">Ensuring smooth workflows and successful project deliveries.</p>
+                        <ul class="list-unstyled expertise">
+                            <li><i class="fas fa-tasks text-warning"></i> Agile Management</li>
+                            <li><i class="fas fa-clock text-warning"></i> Time Optimization</li>
+                            <li><i class="fas fa-exclamation-triangle text-warning"></i> Risk Analysis</li>
+                        </ul>
+                        <div class="social-icons mt-2">
+                            <a href="#" class="text-primary me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+                            <a href="#" class="text-info"><i class="fab fa-twitter fa-lg"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <section id="contact">
-        <div class="contact-container">
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+        <!-- Section Header -->
+        <div class="contact-header text-center">
+            <h2 class="contact-title">Contact Us</h2>
+        </div>
+        <div class="contact-wrapper d-flex flex-lg-row flex-column shadow-lg rounded overflow-hidden bg-white">
             <!-- Left Side: Contact Details -->
-            <div class="contact-info">
-                <h2>Get in Touch</h2>
-                <p>We’d love to hear from you! Reach out via email, phone, or visit us.</p>
-    
+            <div class="contact-info d-flex flex-column justify-content-center p-4">
+                <h2 class="fw-bold mb-3">Get in Touch</h2>
+                <p class="mb-4">We’d love to hear from you! Reach out via email, phone, or visit us.</p>
+
                 <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>123 Business Street, City, Country</span>
+                    <i class="fas fa-map-marker-alt fs-4 text-warning me-3"></i>
+                    <span>Islamabad, Pakistan</span>
                 </div>
                 <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>contact@yourcompany.com</span>
+                    <i class="fas fa-envelope fs-4 text-warning me-3"></i>
+                    <span>codesfolio.com</span>
                 </div>
                 <div class="contact-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>+123 456 7890</span>
+                    <i class="fas fa-phone-alt fs-4 text-warning me-3"></i>
+                    <span>+92 339 0065477</span>
                 </div>
             </div>
-    
+
             <!-- Right Side: Contact Form -->
-            <div class="contact-form">
-                <h2>Send a Message</h2>
+            <div class="contact-form p-4">
+                <h2 class="fw-bold text-dark mb-4">Send a Message</h2>
                 <form id="contact-form">
-                    <div class="input-group">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control p-3" placeholder="Your Name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control p-3" placeholder="Your Email" required>
+                        </div>
                     </div>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
+                    <textarea class="form-control mt-3 p-3" rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary w-100 mt-3 p-3">Send Message</button>
                 </form>
             </div>
         </div>
-    </section>
-    
-    
-    
-    
-    
-    <footer>
-        <p>&copy; 2025 Code Folio. All rights reserved.</p>
-    </footer>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Code Folio. All rights reserved.</p>
+</footer>
+
 </body>
 </html>

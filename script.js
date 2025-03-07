@@ -1,41 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Register ScrollToPlugin
-    gsap.registerPlugin(ScrollToPlugin);
+document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".custom-navbar");
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll("nav ul li a").forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href");
-            if (document.querySelector(targetId)) {
-                gsap.to(window, {
-                    duration: 1,
-                    scrollTo: { y: targetId, offsetY: 70 }, // Offset to adjust for fixed navbar
-                    ease: "power2.inOut"
-                });
-            }
-        });
-    });
-
-    // Mobile navigation toggle
-    const navToggle = document.querySelector(".nav-toggle");
-    const navMenu = document.querySelector("nav ul");
-
-    navToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-
-        anime({
-            targets: "nav ul",
-            opacity: [0, 1],
-            translateY: [-20, 0],
-            duration: 500,
-            easing: "easeOutQuad"
-        });
-    });
-
-    // Navbar background change on scroll
-    const navbar = document.getElementById("navbar");
-    window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", function () {
         if (window.scrollY > 50) {
             navbar.classList.add("scrolled");
         } else {
@@ -43,6 +9,35 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+AOS.init();
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".nav-link");
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            if (navbarCollapse.classList.contains("show")) {
+                navbarToggler.click(); // Close navbar on mobile
+            }
+        });
+    });
+
+    // Add scroll effect to navbar
+    window.addEventListener("scroll", function () {
+        let navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+});
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const aboutBoxes = document.querySelectorAll(".about-box");
@@ -58,104 +53,123 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-document.querySelectorAll('.scroll-down, .scroll-up').forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({
-            behavior: 'smooth'
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const projectCards = document.querySelectorAll(".project-card");
+    const categoryButtons = document.querySelectorAll(".category-btn");
+
+    // Handle project card click for modal
+    projectCards.forEach(card => {
+        card.addEventListener("click", function () {
+            const project = JSON.parse(this.getAttribute("data-project"));
+
+            // Set Modal Content
+            document.getElementById("modalTitleText").innerText = project.title;
+            document.getElementById("modalImage").src = project.image;
+            document.getElementById("modalDescription").innerText = project.description;
+
+            // Update Technologies List
+            const techList = document.getElementById("modalTechnologies");
+            techList.innerHTML = "";
+            project.technologies.forEach(tech => {
+                const li = document.createElement("li");
+                li.textContent = tech;
+                li.classList.add("badge", "bg-secondary", "mx-1", "p-2");
+                techList.appendChild(li);
+            });
+
+            // Update Tags
+            const tagContainer = document.getElementById("modalTags");
+            tagContainer.innerHTML = "";
+            project.tags.forEach(tag => {
+                const span = document.createElement("span");
+                span.textContent = tag;
+                span.classList.add("badge", "bg-warning", "text-dark", "mx-1", "p-2");
+                tagContainer.appendChild(span);
+            });
+
+            // Set Demo Link
+            document.getElementById("modalDemo").href = project.demo;
+
+            // Show Modal
+            const modalElement = document.getElementById("projectModal");
+            const modalInstance = new bootstrap.Modal(modalElement);
+            modalInstance.show();
+        });
+    });
+
+    // Handle category filtering
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const selectedCategory = this.getAttribute("data-category");
+
+            // Update active state
+            categoryButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            // Show/hide projects based on category
+            projectCards.forEach(card => {
+                const cardCategory = card.getAttribute("data-category");
+                if (selectedCategory === "all" || cardCategory === selectedCategory) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
         });
     });
 });
 
-
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const dots = document.querySelectorAll('.carousel-dots .dot');
-const prevButton = document.querySelector('.carousel-prev');
-const nextButton = document.querySelector('.carousel-next');
-
-// Function to go to a specific slide
-function goToSlide(index) {
-    if (index >= slides.length) {
-        currentSlide = 0;
-    } else if (index < 0) {
-        currentSlide = slides.length - 1;
-    } else {
-        currentSlide = index;
-    }
-
-    updateCarousel();
-}
-
-// Function to move to the next slide
-function nextSlide() {
-    goToSlide(currentSlide + 1);
-}
-
-// Function to move to the previous slide
-function prevSlide() {
-    goToSlide(currentSlide - 1);
-}
-
-// Function to update the carousel
-function updateCarousel() {
-    // Hide all slides
-    slides.forEach(slide => slide.classList.remove('active'));
-    // Show the current slide
-    slides[currentSlide].classList.add('active');
-
-    // Update active dot
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
+document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".mySwiper", {
+        slidesPerView: 3, // Show 3 cards per view
+        spaceBetween: 20, // Spacing between cards
+        loop: true, // Enable infinite scrolling
+        autoplay: {
+            delay: 3000, // Auto-slide every 3 seconds
+            disableOnInteraction: false, // Keep autoplay even after interaction
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            1024: { slidesPerView: 3 }, // 3 slides for desktop
+            768: { slidesPerView: 2 }, // 2 slides for tablets
+            480: { slidesPerView: 1 }, // 1 slide for mobile
+        }
     });
-}
-
-// Event listeners for dot navigation
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => goToSlide(index));
 });
 
-// Event listeners for arrow navigation
-nextButton.addEventListener('click', nextSlide);
-prevButton.addEventListener('click', prevSlide);
+// Highlight Active Navbar Item Based on Scroll
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links a");
 
-// Initialize carousel
-updateCarousel();
+    function updateActiveLink() {
+        let scrollPosition = window.scrollY + window.innerHeight / 2; // Adjust for better detection
 
+        sections.forEach((section) => {
+            let sectionTop = section.offsetTop;
+            let sectionHeight = section.clientHeight;
+            let sectionId = section.getAttribute("id");
 
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-const clientsGrid = document.querySelector('.clients-grid');
-const clientCards = document.querySelectorAll('.client-card');
-const clientsPerScroll = 4; // Show 4 clients at a time
-let currentIndex = 0; // Track the current position
-
-// Function to update the scroll position
-function updateScrollPosition() {
-    const newTransformValue = -(currentIndex * (clientCards[0].offsetWidth + 25)); // Adjust gap
-    clientsGrid.style.transform = `translateX(${newTransformValue}px)`;
-}
-
-// Next button functionality
-nextBtn.addEventListener('click', () => {
-    if (currentIndex < clientCards.length / clientsPerScroll - 1) {
-        currentIndex++;
-    } else {
-        currentIndex = 0; // Loop back to start
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${sectionId}`) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+        });
     }
-    updateScrollPosition();
+
+    window.addEventListener("scroll", updateActiveLink);
+    updateActiveLink(); // Call on page load
 });
-
-// Previous button functionality
-prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = Math.floor(clientCards.length / clientsPerScroll) - 1; // Loop to last set
-    }
-    updateScrollPosition();
-});
-
-
-
