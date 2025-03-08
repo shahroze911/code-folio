@@ -123,28 +123,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     new Swiper(".mySwiper", {
-        slidesPerView: 3, // Show 3 cards per view
-        spaceBetween: 20, // Spacing between cards
+        slidesPerView: 3, // Default: 3 slides visible
+        spaceBetween: 20, // Spacing between slides
         loop: true, // Enable infinite scrolling
         autoplay: {
             delay: 3000, // Auto-slide every 3 seconds
-            disableOnInteraction: false, // Keep autoplay even after interaction
+            disableOnInteraction: false, // Autoplay continues after swipe
         },
         pagination: {
             el: ".swiper-pagination",
-            clickable: true,
+            clickable: true, // Allow pagination clicks
         },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
+        grabCursor: true, // Shows hand cursor for better UX
+        touchRatio: 1, // Enables swipe gestures
         breakpoints: {
-            1024: { slidesPerView: 3 }, // 3 slides for desktop
-            768: { slidesPerView: 2 }, // 2 slides for tablets
-            480: { slidesPerView: 1 }, // 1 slide for mobile
+            1024: { slidesPerView: 3 }, // 3 slides on large screens
+            768: { slidesPerView: 2 }, // 2 slides on tablets
+            480: { 
+                slidesPerView: 1, // 1 slide on mobile
+                allowTouchMove: true // Enable swipe on mobile
+            }
         }
     });
 });
+
 // Highlight Active Navbar Item Based on Scroll
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
