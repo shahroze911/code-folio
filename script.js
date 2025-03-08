@@ -145,14 +145,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
 // Highlight Active Navbar Item Based on Scroll
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-links a");
 
     function updateActiveLink() {
-        let scrollPosition = window.scrollY + window.innerHeight / 2; // Adjust for better detection
+        let scrollPosition = window.scrollY + window.innerHeight / 2;
 
         sections.forEach((section) => {
             let sectionTop = section.offsetTop;
@@ -171,5 +170,164 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.addEventListener("scroll", updateActiveLink);
-    updateActiveLink(); // Call on page load
+    updateActiveLink();
 });
+
+// Toggle Mobile Menu
+function toggleMenu() {
+    document.querySelector(".nav-links").classList.toggle("active");
+}document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".counter");
+    counters.forEach(counter => {
+        counter.innerText = "0";
+        const updateCounter = () => {
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerText;
+            const increment = Math.max(1, target / 100);
+            if (count < target) {
+                counter.innerText = `${Math.ceil(count + increment)}`;
+                setTimeout(updateCounter, 20);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        updateCounter();
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("portfolioModal");
+    modal.addEventListener("show.bs.modal", function () {
+        document.body.classList.add("modal-open");
+    });
+    modal.addEventListener("hidden.bs.modal", function () {
+        document.body.classList.remove("modal-open");
+    });
+});// Portfolio Projects Array
+const projects = [
+    {
+        title: "TechCorp Redesign",
+        image: "./assets/hero-image.jpg",
+        description: "Revamped TechCorp’s website, improving UX and boosting conversions by 40%.",
+        technologies: ["HTML", "CSS", "JavaScript", "React"],
+        tags: ["UI/UX", "Corporate Website", "Optimization"],
+        category: "web",
+        demo: "https://example.com/project-one"
+    },
+    {
+        title: "E-Commerce Dashboard",
+        image: "./assets/hero-image.jpg",
+        description: "Built a robust e-commerce analytics dashboard with interactive charts.",
+        technologies: ["Vue.js", "Node.js", "MongoDB"],
+        tags: ["Analytics", "E-Commerce", "Dashboard"],
+        category: "web",
+        demo: "https://example.com/project-two"
+    },
+    {
+        title: "Mobile App UI Kit",
+        image: "./assets/hero-image.jpg",
+        description: "Designed a modern UI kit for a financial tracking mobile application.",
+        technologies: ["Figma", "Adobe XD"],
+        tags: ["Mobile UI", "Fintech", "Design"],
+        category: "mobile",
+        demo: "https://example.com/project-three"
+    },
+    {
+        title: "SEO Optimization Suite",
+        image: "./assets/hero-image.jpg",
+        description: "Developed an automated SEO optimization tool for web performance.",
+        technologies: ["Python", "Django", "SEO"],
+        tags: ["SEO", "Web Tools", "Performance"],
+        category: "seo",
+        demo: "https://example.com/project-four"
+    }
+];function renderPortfolio(category = "all") {
+    const portfolioGrid = document.getElementById("portfolio-grid");
+    portfolioGrid.innerHTML = ""; // Clear existing cards
+
+    const filteredProjects = category === "all" ? projects : projects.filter(project => project.category === category);
+
+    filteredProjects.forEach((project, index) => {
+        const cardWrapper = document.createElement("div");
+        cardWrapper.classList.add("col-12", "col-md-6", "col-lg-3"); // Responsive grid classes
+
+        const card = document.createElement("div");
+        card.classList.add("project-card");
+
+        card.innerHTML = `
+            <img src="${project.image}" alt="${project.title}" class="img-fluid rounded">
+            <div class="card-body">
+                <h3 class="card-title">${project.title}</h3>
+                <button class="view-project-btn" data-index="${index}">
+                    <i class="fas fa-eye"></i> View Project
+                </button>
+            </div>
+        `;
+
+        cardWrapper.appendChild(card);
+        portfolioGrid.appendChild(cardWrapper);
+    });
+
+    // Attach event listeners
+    document.querySelectorAll(".view-project-btn").forEach(button => {
+        button.addEventListener("click", event => {
+            event.stopPropagation();
+            const projectIndex = button.getAttribute("data-index");
+            openProjectModal(projectIndex);
+        });
+    });
+}
+
+
+
+// Function to Open Modal and Populate Data
+function openProjectModal(index) {
+    const project = projects[index];
+
+    document.getElementById("modalTitleText").textContent = project.title;
+    document.getElementById("modalImage").src = project.image;
+    document.getElementById("modalDescription").textContent = project.description;
+
+    // Populate Technologies
+    const techList = document.getElementById("modalTechnologies");
+    techList.innerHTML = "";
+    project.technologies.forEach(tech => {
+        const techItem = document.createElement("li");
+        techItem.textContent = tech;
+        techItem.classList.add("badge", "bg-secondary", "me-1");
+        techList.appendChild(techItem);
+    });
+
+    // Populate Tags
+    const tagList = document.getElementById("modalTags");
+    tagList.innerHTML = "";
+    project.tags.forEach(tag => {
+        const tagSpan = document.createElement("span");
+        tagSpan.textContent = tag;
+        tagSpan.classList.add("badge", "bg-dark", "me-1");
+        tagList.appendChild(tagSpan);
+    });
+
+    // Set Demo Link
+    const demoButton = document.getElementById("modalDemo");
+    demoButton.href = project.demo;
+
+    // Open Modal
+    const projectModal = new bootstrap.Modal(document.getElementById("projectModal"));
+    projectModal.show();
+}
+
+// Function to Handle Category Filtering
+document.querySelectorAll(".category-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        document.querySelectorAll(".category-btn").forEach(btn => btn.classList.remove("active"));
+        this.classList.add("active");
+
+        const selectedCategory = this.getAttribute("data-category");
+        renderPortfolio(selectedCategory);
+    });
+});
+
+// Initial Call to Render All Projects
+renderPortfolio();
+
+
