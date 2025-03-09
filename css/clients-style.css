@@ -348,3 +348,20 @@
     }
 }
 
+@media (max-width: 768px) {
+    .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .card {
+      margin: 10px;
+    }
+  }
+  @media (max-width: 768px) {
+    .card {
+      animation: none !important; /* Disables animations */
+    }
+  }
+    
