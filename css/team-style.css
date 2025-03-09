@@ -20,6 +20,10 @@
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     max-width: 500px;
     width: 100%;
+    display:block;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
 }
 
 .team-card:hover {
@@ -37,9 +41,16 @@
 .team-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure images fill the space properly */
+    object-fit:fill; /* Ensure images fill the space properly */
     border-radius: 50%;
     border: 4px solid #e6c844;
+}
+/* Team Info Layout */
+.team-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
 /* Team Info */

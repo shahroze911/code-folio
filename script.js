@@ -281,3 +281,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+emailjs.init('062QrqU8Enk1it5Q6');
+
+function sendEmail(event) {
+event.preventDefault();
+const formData = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value,
+};
+
+emailjs.send('service_mkyverp', 'template_mm2iu85', formData)
+    .then(response => {
+        alert('Message Sent Successfully!');
+        document.getElementById('contact-form').reset();
+    })
+    .catch(error => {
+        alert('Error sending message: ' + error.text);
+    });
+}

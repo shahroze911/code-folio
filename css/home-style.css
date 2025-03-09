@@ -136,7 +136,11 @@ section {
         text-align: center;
         justify-content: center;
     }
-
+    body {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
     .btn1 {
         width: auto;
     }
@@ -152,4 +156,43 @@ section {
         text-align: center;
         font-size:1.7rem;
     }
+}/* Ensure arrow is only inside #home */
+#home {
+    position: relative; /* Restrict arrow visibility */
+}
+
+/* Scroll Down Arrow */
+#home .scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #e6c844;
+    animation: bounce 1.5s infinite;
+}
+
+#home .scroll-down a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#home .scroll-down a:hover {
+    color: #d4af37;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
 }

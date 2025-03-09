@@ -48,7 +48,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
 <!-- Modern Top Navbar -->
@@ -87,7 +87,8 @@
                 <p class="description" data-aos="fade-up" data-aos-delay="200">
                     Unlock new opportunities with our innovative tech solutions, tailored to elevate your business.
                 </p>                
- <div class="social-icons1">
+                <!-- 🌍 Social Icons -->
+                <div class="social-icons1">
                     <a href="#" class="social facebook"><i class="fab fa-facebook"></i></a>
                     <a href="#" class="social twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" class="social instagram"><i class="fab fa-instagram"></i></a>
@@ -102,38 +103,22 @@
                         <i class="fas fa-phone-alt"></i> Contact Us
                     </a>
                 </div>                
-                <!-- 🌍 Social Icons -->               
             </div>
             <!-- 🖼 Right Image -->
             <div class="col-lg-6 text-center">
                 <img src="./assets/sd-2.png" alt="Innovation" class="img-fluid hero-image">
             </div>
         </div>
-        <!-- 📊 Stats Section -->
-        <!-- <div class="stats-container">
-            <div class="stat-box">
-                <i class="fas fa-project-diagram stat-icon"></i>
-                <div class="counter" data-target="150">0</div>
-                <p>Projects Delivered</p>
-            </div>
-            <div class="stat-box">
-                <i class="fas fa-users stat-icon"></i>
-                <div class="counter" data-target="120">0</div>
-                <p>Satisfied Clients</p>
-            </div>
-            <div class="stat-box">
-                <i class="fas fa-award stat-icon"></i>
-                <div class="counter" data-target="20">0</div>
-                <p>Industry Awards</p>
-            </div>
-            <div class="stat-box">
-                <i class="fas fa-star stat-icon"></i>
-                <div class="counter" data-target="500">0</div>
-                <p>5-Star Reviews</p>
-            </div>
-        </div> -->
+    </div>
+
+    <!-- 🔽 Scroll Down Arrow -->
+    <div class="scroll-down">
+        <a href="#about">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </div>
 </section>
+
 
 <section id="about">
     <div class="about-content">
@@ -170,30 +155,32 @@
                 <div class="stat-box">
                     <i class="fas fa-project-diagram stat-icon"></i>
                     <div class="counter" data-target="150">0</div>
-                    <p>Projects Delivered</p>
+                    <p style="font-weight: bold;">Projects Delivered</p>
                     <p class="stat-desc">Successfully completed projects across multiple industries.</p>
                 </div>
                 <div class="stat-box">
                     <i class="fas fa-users stat-icon"></i>
                     <div class="counter" data-target="120">0</div>
-                    <p>Satisfied Clients</p>
+                    <p style="font-weight: bold;">Satisfied Clients</p>
                     <p class="stat-desc">A growing network of happy and returning clients worldwide.</p>
                 </div>
                 <div class="stat-box">
                     <i class="fas fa-award stat-icon"></i>
                     <div class="counter" data-target="20">0</div>
-                    <p>Industry Awards</p>
+                    <p style="font-weight: bold;">Industry Awards</p>
                     <p class="stat-desc">Recognized for innovation and excellence in technology.</p>
                 </div>
                 <div class="stat-box">
                     <i class="fas fa-star stat-icon"></i>
                     <div class="counter" data-target="500">0</div>
-                    <p>5-Star Reviews</p>
+                    <p style="font-weight: bold;">5-Star Reviews</p>
                     <p class="stat-desc">Highly rated by clients for exceptional service and quality.</p>
                 </div>
             </div>
         </div>
     </div>
+     <!-- 🔽 Scroll Down Arrow -->
+   
 </section>
 
 
@@ -370,9 +357,7 @@
                     <span class="industry web"><i class="fas fa-laptop"></i> Web</span>
                     <div class="rating">⭐⭐⭐⭐⭐</div>
                 </div>
-            </div>
-
-           
+            </div>           
         </div>
     </div>
 </section>
@@ -495,54 +480,50 @@
     </div>
 </section>
 
-
 <!-- Contact Section -->
 <section id="contact">
     <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
-        <!-- Section Header -->
         <div class="contact-header text-center">
             <h2 class="contact-title">Contact Us</h2>
         </div>
         <div class="contact-wrapper d-flex flex-lg-row flex-column shadow-lg rounded overflow-hidden bg-white">
-            <!-- Left Side: Contact Details -->
             <div class="contact-info d-flex flex-column justify-content-center p-4">
                 <h2 class="fw-bold mb-3">Get in Touch</h2>
                 <p class="mb-4">We’d love to hear from you! Reach out via email, phone, or visit us.</p>
-
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt fs-4 text-warning me-3"></i>
                     <span>Islamabad, Pakistan</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope fs-4 text-warning me-3"></i>
-                    <span>codesfolio.com</span>
+                    <span>thecodesfolio.vercel.app</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-phone-alt fs-4 text-warning me-3"></i>
                     <span>+92 339 0065477</span>
                 </div>
             </div>
-
-            <!-- Right Side: Contact Form -->
-            <div class="contact-form p-4">
+            <div class="contact-form p-4" onsubmit="sendEmail(event)">
                 <h2 class="fw-bold text-dark mb-4">Send a Message</h2>
                 <form id="contact-form">
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <input type="text" class="form-control p-3" placeholder="Your Name" required>
+                            <input type="text" id="name" class="form-control p-3" placeholder="Your Name" required>
                         </div>
                         <div class="col-md-6">
-                            <input type="email" class="form-control p-3" placeholder="Your Email" required>
+                            <input type="email" id="email" class="form-control p-3" placeholder="Your Email" required>
                         </div>
                     </div>
-                    <textarea class="form-control mt-3 p-3" rows="4" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn btn-primary w-100 mt-3 p-3">Send Message</button>
+                    <textarea id="message" class="form-control mt-3 p-3" rows="4" placeholder="Your Message" required></textarea>
+                    <button id="send-btn" type="submit" class="btn btn-primary w-100 mt-3 p-3">
+                        <span id="loading-spinner" style="display: none;">Sending...</span>
+                        Send Message
+                    </button>
                 </form>
             </div>
         </div>
     </div>
 </section>
-
 
 <!-- Footer -->
 <footer>
@@ -589,3 +570,4 @@
     ]
     </script>
 </html>
+
