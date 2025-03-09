@@ -83,17 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 touchRatio: 1, // Enable swipe gestures
                 observer: true, // Enable observer to watch for changes
                 observeParents: true, // Observe changes to parent elements
-                on: {
-                    init: function () {
-                        this.el.classList.remove('no-animation'); // Ensure animations are not disabled
-                    },
-                    slideChangeTransitionStart: function () {
-                        this.el.classList.remove('no-animation'); // Ensure the animation runs
-                    },
-                    slideChangeTransitionEnd: function () {
-                        this.el.classList.add('no-animation'); // Optionally add no-animation after a slide transition
-                    }
-                }
             },
             768: { 
                 slidesPerView: 1, // 1 slide at a time on small screens
@@ -111,11 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 touchRatio: 0, // Disable swipe gestures
                 observer: true, 
                 observeParents: true,
-                on: {
-                    init: function () {
-                        this.el.classList.add('no-animation'); // Add no animation class to disable animations
-                    }
-                }
             },
             480: {
                 slidesPerView: 1, // 1 slide at a time on mobile
@@ -133,23 +117,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 touchRatio: 0, // Disable swipe gestures
                 observer: true, 
                 observeParents: true,
-                on: {
-                    init: function () {
-                        this.el.classList.add('no-animation'); // Add no animation class to disable animations on mobile
-                    }
-                }
             },
         },
     });
 
-    // For mobile screens, disable animations completely
+    // Disable animations completely for mobile screens (less than 768px)
     if (window.innerWidth < 768) {
         swiper.on('init', function () {
-            swiper.el.classList.add('no-animation'); // Add 'no-animation' class to disable animations on mobile
-        });
-    } else {
-        swiper.on('init', function () {
-            swiper.el.classList.remove('no-animation'); // Ensure animations work for desktop
+            // Force disable animations for mobile by setting transition property to none
+            document.querySelectorAll('.swiper-slide').forEach(slide => {
+                slide.style.transition = 'none !important'; // Disable transition on mobile
+            });
         });
     }
 });
