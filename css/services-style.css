@@ -1,0 +1,182 @@
+/* 🚀 Services Section */
+#services {
+    background: linear-gradient(to bottom right, #e3f2fd, #cfd9df);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    padding: 40px 4%; /* Reduced padding */
+}
+
+/* 🔹 Header Styling */
+.service-header {
+    max-width: 100%;
+    text-align: center;
+}
+
+/* 🔹 Section Title */
+#services h2 {
+    font-size: 38px; /* Slightly reduced for compact design */
+    font-weight: bold;
+    color: #2b2d42;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    padding-top: 50px;;
+}
+
+/* 🔹 Underline Effect */
+#services h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #6a67ce, #ff4081);
+    display: block;
+    margin: 8px auto;
+    border-radius: 2px;
+}
+
+/* 🔹 Section Description */
+.section-description {
+    font-size: 16px;
+    color: #555;
+    max-width: 500px; /* Slightly reduced */
+    margin: 8px auto 15px;
+    text-align: center;
+}
+
+/* 🔹 Service Cards */
+.service-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 20px; /* Reduced padding */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 360px; /* Reduced height */
+    height: 100%;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+}
+
+/* 🔥 Gradient Glowing Effect */
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(45deg, #ff4081, #6a67ce, #17a2b8);
+    -webkit-mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    transition: all 0.4s ease-in-out;
+}
+
+/* 🌟 Glassmorphism Effect on Hover */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+.service-card:hover::before {
+    filter: brightness(1.2);
+}
+
+/* 🎨 Icon Styling */
+.icon-container {
+    font-size: 40px;
+    color: white;
+    background: var(--color);
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.service-card:hover .icon-container {
+    transform: rotate(360deg);
+}
+
+/* 🔹 Service Title */
+.service-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 6px;
+}
+
+/* 🔹 Service Description */
+.service-card p {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* 📋 Service Details */
+.service-details {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 12px;
+}
+.service-details li {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+.service-details i {
+    margin-right: 5px;
+    color: var(--color);
+    font-size: 15px;
+}
+
+/* 🎯 Button */
+.btn-custom {
+    background: var(--color);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    font-size: 14px;
+}
+.btn-custom:hover {
+    background: darken(var(--color), 10%);
+    transform: scale(1.05);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 992px) {
+    #services {
+        padding: 40px 4%;
+    }
+
+    .service-card {
+        min-height: 320px;
+    }
+
+    .service-card h3 {
+        font-size: 16px;
+    }
+
+    .service-card p {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,169 @@
+
+
+/* Full Page Layout */
+#our-team {
+    min-height: 100vh;
+    padding: 80px 3%;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Team Card */
+.team-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    max-width: 500px;
+    width: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Fix */
+.team-image {
+    width: 120px; /* Set fixed width */
+    height: 120px; /* Set fixed height */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images fill the space properly */
+    border-radius: 50%;
+    border: 4px solid #e6c844;
+}
+
+/* Team Info */
+.team-info {
+    text-align: left;
+    flex-grow: 1;
+}
+
+h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.role {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #e6c844;
+}
+
+.motto {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Expertise with Icons */
+.expertise {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.expertise li {
+    font-size: 0.9rem;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.expertise i {
+    font-size: 1rem;
+    color: #e6c844;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 8px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .team-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .team-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .team-info {
+        text-align: center;
+    }
+}
+/* Meet Our Experts Heading */
+.meet-our-experts {
+    font-size: 48px; /* Increased for better visibility */
+    font-weight: bold;
+    padding-top: 50px;
+    color: #0073e6;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 20px; /* Centers the heading */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Underline Effect (Consistent with Other Sections) */
+.meet-our-experts::after {
+    content: "";
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #6a67ce, #ff4081);
+    display: block;
+    margin: 12px auto;
+    border-radius: 2px;
+}
+
+/* Meet Our Experts Subtitle */
+.meet-our-experts-subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #555; /* Slightly darker for better readability */
+    text-align: center;
+    max-width: 700px; /* Restrict width for better layout */
+    margin: 0 auto 40px; /* Centered alignment with spacing */
+    line-height: 1.6;
+}

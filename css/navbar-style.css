@@ -1,0 +1,230 @@
+/* 🌐 Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth Scrolling */
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #222;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+}
+
+/* 🎯 Section Padding Fix (Avoids Navbar Overlap) */
+section {
+    padding: 120px 40px; /* Adjusted to account for fixed navbar */
+    min-height: 100vh;
+    position: relative;
+}
+
+/* 🔽 Scroll Down & 🔼 Scroll Up Arrows */
+.scroll-down, .scroll-up {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    font-size: 32px;
+    color: #6a67ce;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    animation: bounce 1.5s infinite;
+    transform: translateX(-50%);
+}
+
+/* 🎯 Bouncing Arrow Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+
+/* 🌟 Floating Navbar */
+.floating-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px; /* Reduced padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 📌 Navbar on Scroll */
+.floating-navbar.scrolled {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 🚀 Navbar Container */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* 🚀 Brand Logo */
+.brand-logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.brand-logo:hover {
+    transform: scale(1.05);
+}
+
+/* 📌 Navbar Items */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Reduced spacing */
+    margin: 0;
+    padding: 0;
+}
+
+/* Dark-colored list items */
+.nav-links li {
+    display: inline-block;
+}
+
+/* 🎨 Navbar Links */
+.nav-links a {
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #222;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 🖼️ Navbar Icons */
+.nav-links a i {
+    font-size: 18px;
+    color: #007bff;
+}
+
+/* 🎯 Hover Effect */
+.nav-links a:hover {
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+/* 🟡 Highlight Active Section */
+.nav-links a.active {
+    background: #007bff;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 18px;
+    box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* ✅ Ensure Icons Are Visible in Active Tabs */
+.nav-links a.active i {
+    color: white !important;
+}
+
+/* 🌟 Navbar Toggle Button (Ensure Visibility & Positioning) */
+.nav-toggle {
+    display: block; /* Ensure it's visible */
+    font-size: 24px; /* Adjust size */
+    cursor: pointer;
+    color: #222;
+    background: none;
+    border: none;
+    padding: 8px 10px; /* Reduced padding */
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    right: 20px; /* Align to the right */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1100; /* Ensure it's above other elements */
+}
+
+
+/* 🔽 Mobile Menu Adjustments */
+@media (max-width: 1024px) {
+    .floating-navbar {
+        padding: 12px 20px;
+        position: fixed;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 200px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease-in-out;
+        z-index: 1050; /* Ensure it's above other content */
+    }
+
+    .nav-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        padding: 10px 15px;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .nav-links a span {
+        display: none; /* Hide text on small screens */
+    }
+
+    .nav-links a i {
+        font-size: 24px;
+    }
+
+    .nav-links a:hover {
+        /* background: #007bff; */
+        color: white;
+    }
+
+    /* ✅ Ensure Toggle Button is Visible */
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        right: 15px; /* Adjusted for better visibility */
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1100; /* Higher than menu */
+    }
+
+    /* Open menu */
+    .nav-links.active {
+        right: 0;
+    }
+}
+
+/* 🔼 Hide Toggle on Desktop */
+@media (min-width: 1025px) {
+    .nav-toggle {
+        display: none;
+    }
+}

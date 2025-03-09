@@ -1,0 +1,34 @@
+[
+    {
+        "title": "TechCorp Redesign",
+        "image": "./assets/hero-image.jpg",
+        "description": "Revamped TechCorp’s website, improving UX and boosting conversions by 40%.",
+        "technologies": ["HTML", "CSS", "JavaScript", "React"],
+        "category": "web",
+        "demo": "https://example.com/project-one"
+    },
+    {
+        "title": "E-Commerce Dashboard",
+        "image": "./assets/hero-image.jpg",
+        "description": "Built a robust e-commerce analytics dashboard with interactive charts.",
+        "technologies": ["Vue.js", "Node.js", "MongoDB"],
+        "category": "web",
+        "demo": "https://example.com/project-two"
+    },
+    {
+        "title": "Mobile App UI Kit",
+        "image": "./assets/hero-image.jpg",
+        "description": "Designed a modern UI kit for a financial tracking mobile application.",
+        "technologies": ["Figma", "Adobe XD"],
+        "category": "mobile",
+        "demo": "https://example.com/project-three"
+    },
+    {
+        "title": "SEO Optimization Suite",
+        "image": "./assets/hero-image.jpg",
+        "description": "Developed an automated SEO optimization tool for web performance.",
+        "technologies": ["Python", "Django", "SEO"],
+        "category": "seo",
+        "demo": "https://example.com/project-four"
+    }
+]

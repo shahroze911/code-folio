@@ -1,0 +1,227 @@
+
+/* Clients Testimonials Section */
+#clients-testimonials {
+    padding-top: 80px;
+    text-align: center;
+}
+
+/* Clients Testimonials Container */
+.clients-testimonials-container {
+    text-align: center;
+    padding: 20px 5%;
+    width: 100%;
+}
+
+/* Section Heading Styling */
+.clients-testimonials-container h2 {
+    font-size: 48px; /* Increased for better visibility */
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 20px; /* Ensures full centering */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Underline Effect (Consistent with Other Sections) */
+.clients-testimonials-container h2::after {
+    content: "";
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #6a67ce, #ff4081);
+    display: block;
+    margin: 12px auto;
+    border-radius: 2px;
+}
+
+
+/* Swiper Full Width */
+.swiper {
+    width: 100%;
+    max-width: 1400px; /* Ensures a proper layout on large screens */
+    padding: 20px 0;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* Client Card Styles */
+.client-card {
+    background: #fff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    min-width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid #e0e0e0;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Increased Image Size */
+.client-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+    border: 4px solid #0073e6;
+}
+
+/* Larger Client Name */
+.client-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Subtle Designation Styling */
+.client-designation {
+    font-size: 17px;
+    font-weight: 500;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+/* Larger & More Stylish Comments */
+.client-card p {
+    font-size: 18px;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 15px;
+    padding: 15px;
+    position: relative;
+    background: #f5f5f5;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+/* Interactive Quote Style */
+.client-card p::before, .client-card p::after {
+    font-size: 34px;
+    color: #0073e6;
+    font-family: Georgia, serif;
+    position: absolute;
+}
+.client-card p::before {
+    content: "“";
+    left: -12px;
+    top: -12px;
+}
+.client-card p::after {
+    content: "”";
+    right: -12px;
+    bottom: -12px;
+}
+
+/* Colorful Industry Tags */
+.industry {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    padding: 7px 16px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Colorful Industry Backgrounds */
+.industry.tech { background-color: #0073e6; }
+.industry.health { background-color: #28a745; }
+.industry.marketing { background-color: #ff5722; }
+.industry.web { background-color: #673ab7; }
+
+/* Rating */
+.rating {
+    font-size: 22px;
+    color: gold;
+    margin-top: 8px;
+}
+
+/* Swiper Navigation */
+.swiper-button-next, .swiper-button-prev {
+    color: #0073e6;
+}
+
+/* Pagination Bullets */
+.swiper-pagination-bullet {
+    background: #0073e6;
+    opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+    background: #0073e6;
+    opacity: 1;
+}
+
+/* Hover Effect */
+.client-card:hover {
+    transform: scale(1.05);
+}
+@media (max-width: 768px) {
+    /* Adjust Testimonial Section for Smaller Screens */
+    #clients-testimonials {
+        padding-top: 50px;
+    }
+
+    .clients-testimonials-container {
+        padding: 15px 4%;
+    }
+
+    .clients-testimonials-container h2 {
+        font-size: 32px; /* Reduce heading size */
+    }
+
+    /* Adjust Swiper Wrapper */
+    .swiper {
+        max-width: 100%;
+        padding: 10px 0;
+    }
+
+    /* Client Card */
+    .client-card {
+        min-width: 100%; /* Ensure single column */
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Reduce Image Size */
+    .client-card img {
+        width: 100px;
+        height: 100px;
+        border: 3px solid #0073e6;
+    }
+
+    /* Adjust Font Sizes */
+    .client-name {
+        font-size: 18px;
+    }
+
+    .client-designation {
+        font-size: 15px;
+    }
+
+    .client-card p {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    /* Adjust Industry Tag */
+    .industry {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+
+    /* Adjust Rating Stars */
+    .rating {
+        font-size: 18px;
+    }
+}

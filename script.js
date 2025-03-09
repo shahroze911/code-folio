@@ -34,11 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const aboutBoxes = document.querySelectorAll(".about-box");
 
@@ -53,74 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const projectCards = document.querySelectorAll(".project-card");
-    const categoryButtons = document.querySelectorAll(".category-btn");
-
-    // Handle project card click for modal
-    projectCards.forEach(card => {
-        card.addEventListener("click", function () {
-            const project = JSON.parse(this.getAttribute("data-project"));
-
-            // Set Modal Content
-            document.getElementById("modalTitleText").innerText = project.title;
-            document.getElementById("modalImage").src = project.image;
-            document.getElementById("modalDescription").innerText = project.description;
-
-            // Update Technologies List
-            const techList = document.getElementById("modalTechnologies");
-            techList.innerHTML = "";
-            project.technologies.forEach(tech => {
-                const li = document.createElement("li");
-                li.textContent = tech;
-                li.classList.add("badge", "bg-secondary", "mx-1", "p-2");
-                techList.appendChild(li);
-            });
-
-            // Update Tags
-            const tagContainer = document.getElementById("modalTags");
-            tagContainer.innerHTML = "";
-            project.tags.forEach(tag => {
-                const span = document.createElement("span");
-                span.textContent = tag;
-                span.classList.add("badge", "bg-warning", "text-dark", "mx-1", "p-2");
-                tagContainer.appendChild(span);
-            });
-
-            // Set Demo Link
-            document.getElementById("modalDemo").href = project.demo;
-
-            // Show Modal
-            const modalElement = document.getElementById("projectModal");
-            const modalInstance = new bootstrap.Modal(modalElement);
-            modalInstance.show();
-        });
-    });
-
-    // Handle category filtering
-    categoryButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            const selectedCategory = this.getAttribute("data-category");
-
-            // Update active state
-            categoryButtons.forEach(btn => btn.classList.remove("active"));
-            this.classList.add("active");
-
-            // Show/hide projects based on category
-            projectCards.forEach(card => {
-                const cardCategory = card.getAttribute("data-category");
-                if (selectedCategory === "all" || cardCategory === selectedCategory) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        });
-    });
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     new Swiper(".mySwiper", {
         slidesPerView: 3, // Default: 3 slides visible
@@ -200,140 +127,73 @@ function toggleMenu() {
         updateCounter();
     });
 });
-document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("portfolioModal");
-    modal.addEventListener("show.bs.modal", function () {
-        document.body.classList.add("modal-open");
+
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        
+        document.querySelectorAll('.about-text').forEach(content => content.style.display = 'none');
+        document.getElementById(this.getAttribute('data-target')).style.display = 'block';
     });
-    modal.addEventListener("hidden.bs.modal", function () {
-        document.body.classList.remove("modal-open");
-    });
-});// Portfolio Projects Array
-const projects = [
-    {
-        title: "TechCorp Redesign",
-        image: "./assets/hero-image.jpg",
-        description: "Revamped TechCorp’s website, improving UX and boosting conversions by 40%.",
-        technologies: ["HTML", "CSS", "JavaScript", "React"],
-        tags: ["UI/UX", "Corporate Website", "Optimization"],
-        category: "web",
-        demo: "https://example.com/project-one"
-    },
-    {
-        title: "E-Commerce Dashboard",
-        image: "./assets/hero-image.jpg",
-        description: "Built a robust e-commerce analytics dashboard with interactive charts.",
-        technologies: ["Vue.js", "Node.js", "MongoDB"],
-        tags: ["Analytics", "E-Commerce", "Dashboard"],
-        category: "web",
-        demo: "https://example.com/project-two"
-    },
-    {
-        title: "Mobile App UI Kit",
-        image: "./assets/hero-image.jpg",
-        description: "Designed a modern UI kit for a financial tracking mobile application.",
-        technologies: ["Figma", "Adobe XD"],
-        tags: ["Mobile UI", "Fintech", "Design"],
-        category: "mobile",
-        demo: "https://example.com/project-three"
-    },
-    {
-        title: "SEO Optimization Suite",
-        image: "./assets/hero-image.jpg",
-        description: "Developed an automated SEO optimization tool for web performance.",
-        technologies: ["Python", "Django", "SEO"],
-        tags: ["SEO", "Web Tools", "Performance"],
-        category: "seo",
-        demo: "https://example.com/project-four"
-    }
-];function renderPortfolio(category = "all") {
+});document.addEventListener("DOMContentLoaded", function () {
+    const projectData = JSON.parse(document.getElementById("project-data").textContent);
     const portfolioGrid = document.getElementById("portfolio-grid");
-    portfolioGrid.innerHTML = ""; // Clear existing cards
 
-    const filteredProjects = category === "all" ? projects : projects.filter(project => project.category === category);
+    // Mapping Technologies to FontAwesome Icons
+    const techIcons = {
+        "HTML": "fab fa-html5",
+        "CSS": "fab fa-css3-alt",
+        "JavaScript": "fab fa-js",
+        "React": "fab fa-react",
+        "Vue.js": "fab fa-vuejs",
+        "Node.js": "fab fa-node-js",
+        "MongoDB": "fas fa-database",
+        "Python": "fab fa-python",
+        "Django": "fas fa-server",
+        "SEO": "fas fa-search",
+        "Figma": "fab fa-figma",
+        "Adobe XD": "fab fa-adobe"
+    };
 
-    filteredProjects.forEach((project, index) => {
-        const cardWrapper = document.createElement("div");
-        cardWrapper.classList.add("col-12", "col-md-6", "col-lg-3"); // Responsive grid classes
-
-        const card = document.createElement("div");
-        card.classList.add("project-card");
-
-        card.innerHTML = `
-            <img src="${project.image}" alt="${project.title}" class="img-fluid rounded">
-            <div class="card-body">
-                <h3 class="card-title">${project.title}</h3>
-                <button class="view-project-btn" data-index="${index}">
-                    <i class="fas fa-eye"></i> View Project
-                </button>
+    function createProjectCard(project) {
+        return `
+            <div class="col-md-4">
+                <div class="card dark-card">
+                    <img src="${project.image}" alt="${project.title}">
+                    <div class="card-body">
+                        <h5>${project.title}</h5>
+                        <p>${project.description}</p>
+                        <div class="tech-icons">
+                            ${project.technologies.map(tech => techIcons[tech] ? `<i class="${techIcons[tech]}"></i>` : '').join('')}
+                        </div>
+                    </div>
+                    <div class="btn-container">
+                        <a href="${project.demo}" class="btn btn-primary" target="_blank">View Project</a>
+                    </div>
+                </div>
             </div>
         `;
+    }
+    
 
-        cardWrapper.appendChild(card);
-        portfolioGrid.appendChild(cardWrapper);
-    });
+    // Load Projects
+    function loadProjects(filter = "all") {
+        portfolioGrid.innerHTML = projectData
+            .filter(proj => filter === "all" || proj.category === filter)
+            .map(createProjectCard)
+            .join("");
+    }
 
-    // Attach event listeners
-    document.querySelectorAll(".view-project-btn").forEach(button => {
-        button.addEventListener("click", event => {
-            event.stopPropagation();
-            const projectIndex = button.getAttribute("data-index");
-            openProjectModal(projectIndex);
+    // Load All Projects Initially
+    loadProjects();
+
+    // Filter Projects
+    document.querySelectorAll(".category-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+            document.querySelector(".category-btn.active").classList.remove("active");
+            this.classList.add("active");
+            loadProjects(this.getAttribute("data-category"));
         });
     });
-}
-
-
-
-// Function to Open Modal and Populate Data
-function openProjectModal(index) {
-    const project = projects[index];
-
-    document.getElementById("modalTitleText").textContent = project.title;
-    document.getElementById("modalImage").src = project.image;
-    document.getElementById("modalDescription").textContent = project.description;
-
-    // Populate Technologies
-    const techList = document.getElementById("modalTechnologies");
-    techList.innerHTML = "";
-    project.technologies.forEach(tech => {
-        const techItem = document.createElement("li");
-        techItem.textContent = tech;
-        techItem.classList.add("badge", "bg-secondary", "me-1");
-        techList.appendChild(techItem);
-    });
-
-    // Populate Tags
-    const tagList = document.getElementById("modalTags");
-    tagList.innerHTML = "";
-    project.tags.forEach(tag => {
-        const tagSpan = document.createElement("span");
-        tagSpan.textContent = tag;
-        tagSpan.classList.add("badge", "bg-dark", "me-1");
-        tagList.appendChild(tagSpan);
-    });
-
-    // Set Demo Link
-    const demoButton = document.getElementById("modalDemo");
-    demoButton.href = project.demo;
-
-    // Open Modal
-    const projectModal = new bootstrap.Modal(document.getElementById("projectModal"));
-    projectModal.show();
-}
-
-// Function to Handle Category Filtering
-document.querySelectorAll(".category-btn").forEach(button => {
-    button.addEventListener("click", function () {
-        document.querySelectorAll(".category-btn").forEach(btn => btn.classList.remove("active"));
-        this.classList.add("active");
-
-        const selectedCategory = this.getAttribute("data-category");
-        renderPortfolio(selectedCategory);
-    });
 });
-
-// Initial Call to Render All Projects
-renderPortfolio();
-
-
