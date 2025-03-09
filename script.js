@@ -175,7 +175,6 @@ document.querySelectorAll('.tab').forEach(tab => {
             </div>
         `;
     }
-    
 
     // Load Projects
     function loadProjects(filter = "all") {
@@ -197,3 +196,4 @@ document.querySelectorAll('.tab').forEach(tab => {
         });
     });
 });
+

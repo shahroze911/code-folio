@@ -10,6 +10,7 @@
     padding: 40px 4%;
     color: #ffffff;
 }
+
 /* 🔹 Header Styling */
 .text-center {
     max-width: 100%;
@@ -46,13 +47,15 @@
     margin: 8px auto 15px;
     text-align: center;
 }
+
 /* 🔹 Sidebar */
 .sidebar {
     padding: 20px;
     border-radius: 15px;
-    backdrop-filter: blur(10px);    
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 20px;
+    width: 100%;
 }
 
 /* 🔹 Category Buttons */
@@ -77,14 +80,8 @@
     transform: translateY(-2px);
 }
 
-/* 🌟 Portfolio Grid */
-#portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    justify-content: center;
-    max-width: 1200px;
-}/* 🌟 Portfolio Cards - Ensuring Same Size */
+
+/* 🌟 Portfolio Cards - Ensuring Same Size */
 .card {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
@@ -92,29 +89,29 @@
     transition: all 0.3s;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
-    padding: 20px;
+    padding: 15px; /* Reduced padding */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 12px;
-    width: 320px; /* Fixed width */
-    min-height: 420px; /* Ensures all cards are at least this height */
-    max-height: 450px; /* Prevents expansion beyond this height */
-    position: relative; /* Required for absolute positioning */
+    gap: 8px; /* Reduced gap */
+    width: 280px; /* Reduced width */
+    min-height: 380px; /* Adjusted height */
+    max-height: 400px; /* Adjusted height */
+    position: relative;
 }
 
 /* 🌟 Image Consistency */
 .card img {
     width: 100%;
-    height: 180px; /* Consistent image height */
+    height: 150px; /* Reduced height */
     object-fit: cover;
     border-radius: 10px;
 }
 
 /* 🌟 Ensuring Content is Balanced */
 .card-body {
-    flex-grow: 1; /* Allows content to expand */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -146,14 +143,14 @@
 .btn {
     background: #0088ff;
     color: white;
-    padding: 10px 16px;
+    padding: 8px 14px; /* Reduced padding */
     border-radius: 8px;
     transition: all 0.3s;
     display: flex;
     align-items: center;
     gap: 8px;
     justify-content: center;
-    width: 160px; /* Ensures all buttons have the same width */
+    width: 140px; /* Reduced button width */
     text-align: center;
 }
 
@@ -162,16 +159,13 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-
-
-
 /* 🌑 Full Dark Theme for Portfolio Cards */
 .dark-card {
     background: rgba(20, 20, 20, 0.95) !important;
     color: #ffffff !important;
     border-radius: 12px;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    padding: 15px; /* Reduced padding */
     text-align: center;
     transition: all 0.3s;
 }
@@ -189,7 +183,7 @@
 
 /* 🌑 Ensure Titles & Descriptions are White */
 .dark-card h5 {
-    font-size: 24px;
+    font-size: 20px; /* Reduced font size */
     font-weight: bold;
     color: #ffffff !important;
 }
@@ -212,59 +206,83 @@
 /* 🔹 Technology Icons */
 .tech-icons {
     display: flex;
-    gap: 15px;
+    gap: 10px; /* Reduced gap */
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 8px; /* Reduced margin */
 }
 
 .tech-icons i {
-    font-size: 24px;
+    font-size: 22px; /* Reduced icon size */
     color: #0088ff;
     transition: transform 0.3s ease;
 }
 
 .tech-icons i:hover {
-    transform: scale(1.3);
+    transform: scale(1.2); /* Slightly smaller scale */
 }
 
 /* 🏷️ Technology Tags */
 .tech-tags span {
     background: rgba(0, 136, 255, 0.3) !important;
     color: #0088ff !important;
-    padding: 6px 12px;
-    font-size: 14px;
+    padding: 5px 10px; /* Reduced padding */
+    font-size: 12px; /* Reduced font size */
     border-radius: 8px;
     font-weight: bold;
 }
 
+/* 🌟 Portfolio Grid - Compact Layout */
+#portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted to fit smaller cards */
+    gap: 20px; /* Reduced gap between cards */
+    justify-content: center;
+    max-width: 1200px;
+    margin-left: 20px;
+}
 /* 📱 Responsive Adjustments */
 @media (max-width: 1024px) {
     #portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        gap: 10px; /* Further reduced gap */
+    }
+
+    .card {
+        max-width: 100%;
+        padding: 14px; /* Further reduced padding */
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        padding: 6px; /* Further reduced padding */
+    }
+
+    .category-btn {
+        font-size: 14px;
+        padding: 8px 10px; /* Reduced padding */
     }
 }
 
 @media (max-width: 768px) {
     #portfolio-grid {
-        grid-template-columns: repeat(1, 1fr);
-        justify-content: center;
-    }
-}@media (max-width: 768px) {
-    #portfolio-grid {
-        grid-template-columns: 1fr;
-        width: 100%;
-        padding: 0 15px;
+        grid-template-columns: 1fr; /* One column */
+        gap: 8px; /* Reduced gap */
+        margin-left: 0;
+        margin-top: 10px; /* Reduced space above grid */
     }
 
     .card {
         width: 100%;
-        max-width: 400px;
+        max-width: 100%;
         min-height: auto;
+        padding: 10px; /* Reduced padding */
     }
 
     .card-body p {
         max-height: none;
         overflow: visible;
+        font-size: 12px; /* Smaller text size */
     }
 
     .btn-container {
@@ -272,31 +290,110 @@
         transform: none;
         left: auto;
         width: 100%;
-        margin-top: 10px;
+        margin-top: 6px; /* Reduced space above button */
+    }
+
+    .sidebar {
+        display: block; /* Display sidebar on mobile */
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background: rgba(20, 20, 20, 0.95);
+        padding: 6px 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        z-index: 10;
+    }
+
+    .category-btn {
+        font-size: 14px;
+        padding: 8px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .category-btn span {
+        display: none; /* Hide text */
+    }
+
+    .sidebar i {
+        font-size: 18px;
+        color: #fff;
     }
 }
 
 @media (max-width: 480px) {
     .section-title {
-        font-size: 28px;
+        font-size: 24px; /* Smaller section title */
     }
 
     .section-intro {
-        font-size: 14px;
+        font-size: 10px; /* Smaller intro text */
     }
 
     .tech-icons i {
-        font-size: 20px;
-        gap: 10px;
+        font-size: 16px; /* Further reduced icon size */
+        gap: 6px; /* Further reduced gap between icons */
     }
 
     .card {
-        padding: 15px;
+        padding: 10px; /* Further reduced padding */
+        min-height: 280px; /* Adjusted height */
     }
 
     .btn {
         width: auto;
-        padding: 8px 14px;
-        font-size: 14px;
+        padding: 6px 10px; /* Further reduced button padding */
+        font-size: 10px; /* Very small font size for buttons */
+    }
+
+    .sidebar {
+        display: block; /* Show sidebar on very small screens */
+        padding: 4px; /* Further reduced padding */
+        gap: 12px;
+    }
+
+    .category-btn {
+        font-size: 12px; /* Further reduced font size for category buttons */
+        padding: 6px 8px; /* Further reduced padding */
+    }
+}
+
+@media (max-width: 375px) {
+    /* For very small screens (e.g., mobile in portrait mode) */
+    .section-title {
+        font-size: 22px; /* Further reduced section title size */
+    }
+
+    .section-intro {
+        font-size: 8px; /* Smaller intro text */
+    }
+
+    .tech-icons i {
+        font-size: 14px; /* Further reduced icon size */
+    }
+
+    .card {
+        padding: 8px; /* Further reduced padding */
+        min-height: 240px; /* Adjusted height */
+    }
+
+    .btn {
+        width: auto;
+        padding: 6px 8px; /* Further reduced button padding */
+        font-size: 8px; /* Very small font size for buttons */
+    }
+
+    .sidebar {
+        display: block; /* Show sidebar on very small screens */
+        padding: 4px; /* Further reduced padding */
+        gap: 8px;
+    }
+
+    .category-btn {
+        font-size: 10px; /* Further reduced font size for category buttons */
+        padding: 4px 6px; /* Further reduced padding */
     }
 }
