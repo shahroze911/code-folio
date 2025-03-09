@@ -261,125 +261,76 @@
     transition: all 0.3s ease-in-out !important; /* Enable animations by default */
 }/* Mobile Screens Adjustments */
 @media (max-width: 768px) {
-    /* Ensure column layout for client cards */
-    .swiper-wrapper {
-        display: block !important; /* Arrange items in a column */
-        text-align: center; /* Center the cards */
-    }
-
-    .swiper-slide {
-        width: 100% !important; /* Ensure full width for each card */
-        margin-bottom: 20px; /* Add some spacing between cards */
-        display: block !important; /* Force block display */
-        text-align: center; /* Center text inside each card */
-    }
-
-    /* Disable animations on mobile */
-    .swiper-slide, .client-card {
-        transition: none !important; /* Disable all animations */
-    }
-
-    /* Hide navigation arrows */
-    .swiper-button-next, .swiper-button-prev {
-        display: none !important; /* Hide arrows on mobile */
-    }
-
-    /* Adjust pagination visibility */
-    .swiper-pagination {
-        display: none !important; /* Hide pagination on mobile */
-    }
-
-    /* Force the swiper container to be centered */
+    /* Enable sliding on mobile */
     .swiper {
-        display: block !important;
-        text-align: center !important;
-        margin: 0 auto;
+        padding: 10px 0;
+        display: block;
+        max-width: 100%;
+    }
+
+    /* Ensure each card fits within the screen */
+    .swiper-slide {
+        width: 80% !important; /* Small width for mobile */
+        margin: 10px auto; /* Centered cards with space between */
+    }
+
+    /* Reduced card styles for mobile */
+    .client-card {
+        min-width: 100%;
+        height: 280px; /* Adjust height to fit mobile screen */
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Adjust images */
+    .client-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Adjust text sizes */
+    .client-name {
+        font-size: 16px;
+    }
+
+    .client-designation, .client-card p {
+        font-size: 12px;
     }
 }
 
-/* Medium Screens (Laptops) Adjustments */
 @media (max-width: 1024px) {
-    /* Enable animations for medium screens (laptops) */
+    /* Enable animations for medium screens */
     .swiper-slide, .client-card {
-        transition: all 0.3s ease-in-out !important; /* Enable animations */
+        transition: all 0.3s ease-in-out !important;
     }
 
-    /* Keep navigation arrows visible for medium screens */
-    .swiper-button-next, .swiper-button-prev {
-        display: block !important; /* Show arrows on laptops */
+    /* Show arrows and pagination */
+    .swiper-button-next, .swiper-button-prev, .swiper-pagination {
+        display: block !important;
     }
 
-    /* Show pagination on medium screens */
-    .swiper-pagination {
-        display: block !important; /* Show pagination */
-    }
-
-    /* Force center alignment for the swiper container */
+    /* Center alignment for the swiper container */
     .swiper {
         display: block !important;
         text-align: center !important;
         margin: 0 auto;
     }
 
-    /* Enable hand cursor for interactivity on medium screens */
+    /* Add cursor pointer for interactivity */
     .swiper-slide {
         cursor: pointer !important;
     }
 }
 @media (max-width: 768px) {
-    .swiper-button-next, .swiper-button-prev {
-        display: none !important; /* Hide arrows on mobile */
-    }
-}
-@media (max-width: 768px) {
-    .swiper-slide, .client-card {
-        transition: none !important; /* Disable animations */
-    }
-}
-@media (max-width: 768px) {
-    .swiper-wrapper {
-        display: block !important;
-        text-align: center;
-    }
-
+    /* Ensure each card takes full width */
     .swiper-slide {
-        width: 100% !important;
-        transition: none !important; /* Disable animations */
+        width: 100% !important; /* Full width for mobile */
+        margin: 0 auto; /* Center cards */
     }
-}
-
-@media (max-width: 768px) {
-    .card-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .card {
-      margin: 10px;
-    }
-  }
-  @media (max-width: 768px) {
-    .card {
-      animation: none !important; /* Disables animations */
-    }
-  }
-    /* Fixing multiple media queries */
-@media (max-width: 768px) {
-    .swiper-slide {
-        width: 100% !important;
-    }
-
-    .swiper-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
+    
     .client-card {
-        width: 100% !important;
-        height: auto; /* Adjust height to fit content */
-        margin: 10px;
+        min-width: 100%; /* Ensure the card takes full width */
+        height: 280px; /* Adjust height to fit mobile screen */
     }
 }

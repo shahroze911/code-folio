@@ -118,6 +118,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 observer: true, 
                 observeParents: true,
             },
+            480: {
+                slidesPerView: 1, // Show 1 slide at a time on mobile
+                spaceBetween: 0, // No space between slides
+                loop: true, // Enable looping on mobile
+                autoplay: true, // Enable autoplay on mobile
+                navigation: { 
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                pagination: { 
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                grabCursor: true, // Enable hand cursor
+                touchRatio: 1, // Enable swipe gestures
+                observer: true,
+                observeParents: true,
+            }
+            
+            
         },
     });
 

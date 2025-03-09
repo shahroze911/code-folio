@@ -243,13 +243,13 @@
 /* 📱 Responsive Adjustments */
 @media (max-width: 1024px) {
     #portfolio-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns */
-        gap: 10px; /* Further reduced gap */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Dynamic card width */
+        gap: 16px; /* Adjust gap for spacing */
     }
 
     .card {
-        max-width: 100%;
-        padding: 14px; /* Further reduced padding */
+        padding: 16px; /* Adjust padding for balance */
+        width: 100%; /* Ensure cards are responsive */
     }
 
     .sidebar {
@@ -314,6 +314,9 @@
         align-items: center;
     }
 
+    .category-btn span {
+        display: none; /* Hide text */
+    }
 
     .sidebar i {
         font-size: 18px;
