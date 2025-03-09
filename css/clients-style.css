@@ -364,4 +364,22 @@
       animation: none !important; /* Disables animations */
     }
   }
-    
+    /* Fixing multiple media queries */
+@media (max-width: 768px) {
+    .swiper-slide {
+        width: 100% !important;
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .client-card {
+        width: 100% !important;
+        height: auto; /* Adjust height to fit content */
+        margin: 10px;
+    }
+}
