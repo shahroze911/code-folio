@@ -301,3 +301,43 @@ emailjs.send('service_mkyverp', 'template_mm2iu85', formData)
         alert('Error sending message: ' + error.text);
     });
 }
+document.addEventListener("DOMContentLoaded", function () {
+    // Scroll to top on page load
+    window.scrollTo(0, 0);
+
+    // // Get all sections
+    // const sections = document.querySelectorAll("section");
+    // let currentIndex = 0; // Track the current section index
+    // let isScrolling = false; // Prevent multiple rapid scrolls
+
+    // function scrollToSection(index) {
+    //     if (index >= 0 && index < sections.length) {
+    //         sections[index].scrollIntoView({ behavior: "smooth" });
+    //         currentIndex = index;
+    //     }
+    // }
+
+    // // Scroll when arrow keys are pressed
+    // document.addEventListener("keydown", function (event) {
+    //     if (event.key === "ArrowDown" || event.key === "PageDown") {
+    //         event.preventDefault();
+    //         scrollToSection(currentIndex + 1);
+    //     } else if (event.key === "ArrowUp" || event.key === "PageUp") {
+    //         event.preventDefault();
+    //         scrollToSection(currentIndex - 1);
+    //     }
+    // });
+
+    // // Scroll when using the mouse wheel or touchpad
+    // window.addEventListener("wheel", function (event) {
+    //     if (!isScrolling) {
+    //         isScrolling = true;
+    //         if (event.deltaY > 0) {
+    //             scrollToSection(currentIndex + 1);
+    //         } else {
+    //             scrollToSection(currentIndex - 1);
+    //         }
+    //         setTimeout(() => (isScrolling = false), 800); // Prevent multiple fast scrolls
+    //     }
+    // });
+});
