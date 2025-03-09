@@ -47,110 +47,91 @@ document.addEventListener("DOMContentLoaded", () => {
             box.style.transform = "translateY(0) scale(1)";
         });
     });
-});document.addEventListener("DOMContentLoaded", function () {
+});
+
+document.addEventListener("DOMContentLoaded", function () {
     const swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3, // Default: 3 slides visible
-        spaceBetween: 20, // Spacing between slides
-        loop: true, // Enable infinite scrolling
+        slidesPerView: 3, 
+        spaceBetween: 20, 
+        loop: true, 
         autoplay: {
-            delay: 3000, // Auto-slide every 3 seconds
-            disableOnInteraction: false, // Autoplay continues after swipe
+            delay: 3000,
+            disableOnInteraction: false,
         },
         pagination: {
             el: ".swiper-pagination",
-            clickable: true, // Allow pagination clicks
+            clickable: true, 
         },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
-        grabCursor: true, // Shows hand cursor for better UX
-        touchRatio: 1, // Enables swipe gestures
+        grabCursor: true,
+        touchRatio: 1,
         breakpoints: {
             1024: { 
-                slidesPerView: 3, // Show 3 slides on medium screens
-                loop: true, // Enable looping on medium screens
-                autoplay: true, // Enable autoplay on medium screens
-                navigation: { 
+                slidesPerView: 3,
+                loop: true,
+                autoplay: true,
+                navigation: {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
                 },
-                pagination: { 
-                    el: ".swiper-pagination",
-                    clickable: true, // Allow pagination clicks
-                },
-                grabCursor: true, // Enable hand cursor
-                touchRatio: 1, // Enable swipe gestures
-                observer: true, // Enable observer to watch for changes
-                observeParents: true, // Observe changes to parent elements
-            },
-            768: { 
-                slidesPerView: 1, // 1 slide at a time on small screens
-                spaceBetween: 0, // No space between slides
-                loop: false, // Disable looping on small screens
-                autoplay: false, // Disable autoplay on small screens
-                navigation: { 
-                    nextEl: null,
-                    prevEl: null,
-                },
-                pagination: { 
-                    el: null,
-                },
-                grabCursor: false, // Disable hand cursor
-                touchRatio: 0, // Disable swipe gestures
-                observer: true, 
-                observeParents: true,
-            },
-            480: {
-                slidesPerView: 1, // 1 slide at a time on mobile
-                spaceBetween: 0, // No space between slides
-                loop: false, // Disable looping on mobile
-                autoplay: false, // Disable autoplay on mobile
-                navigation: { 
-                    nextEl: null,
-                    prevEl: null,
-                },
-                pagination: { 
-                    el: null,
-                },
-                grabCursor: false, // Disable hand cursor
-                touchRatio: 0, // Disable swipe gestures
-                observer: true, 
-                observeParents: true,
-            },
-            480: {
-                slidesPerView: 1, // Show 1 slide at a time on mobile
-                spaceBetween: 0, // No space between slides
-                loop: true, // Enable looping on mobile
-                autoplay: true, // Enable autoplay on mobile
-                navigation: { 
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-                pagination: { 
+                pagination: {
                     el: ".swiper-pagination",
                     clickable: true,
                 },
-                grabCursor: true, // Enable hand cursor
-                touchRatio: 1, // Enable swipe gestures
+                grabCursor: true,
+                touchRatio: 1,
+                observer: true,
+                observeParents: true,
+            },
+            768: { 
+                slidesPerView: 1, 
+                spaceBetween: 10,
+                loop: true, 
+                autoplay: true, 
+                navigation: {
+                    enabled: false, 
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                grabCursor: true,
+                touchRatio: 1,
+                observer: true, 
+                observeParents: true,
+            },
+            480: {
+                slidesPerView: 1, 
+                spaceBetween: 10, 
+                loop: true,
+                autoplay: true,
+                navigation: {
+                    enabled: false, 
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                grabCursor: true,
+                touchRatio: 1,
                 observer: true,
                 observeParents: true,
             }
-            
-            
         },
     });
 
-    // Disable animations completely for mobile screens (less than 768px)
-    if (window.innerWidth < 768) {
-        swiper.on('init', function () {
-            // Force disable animations for mobile by setting transition property to none
-            document.querySelectorAll('.swiper-slide').forEach(slide => {
-                slide.style.transition = 'none !important'; // Disable transition on mobile
-                slide.style.innerWidth='100%';
-            });
+    // Ensure smooth animations
+    swiper.on('init', function () {
+        document.querySelectorAll('.swiper-slide').forEach(slide => {
+            slide.style.transition = 'transform 0.3s ease-in-out';
+            slide.style.width = '100%';
         });
-    }
+    });
+
+    swiper.init();
 });
 
 
@@ -219,25 +200,40 @@ document.querySelectorAll('.tab').forEach(tab => {
         document.getElementById(this.getAttribute('data-target')).style.display = 'block';
     });
 });
-
 document.addEventListener("DOMContentLoaded", function () {
     const projectData = JSON.parse(document.getElementById("project-data").textContent);
     const portfolioGrid = document.getElementById("portfolio-grid");
 
-    // Mapping Technologies to FontAwesome Icons
+    // Mapping Technologies to FontAwesome Icons with Colors
     const techIcons = {
-        "HTML": "fab fa-html5",
-        "CSS": "fab fa-css3-alt",
-        "JavaScript": "fab fa-js",
-        "React": "fab fa-react",
-        "Vue.js": "fab fa-vuejs",
-        "Node.js": "fab fa-node-js",
-        "MongoDB": "fas fa-database",
-        "Python": "fab fa-python",
-        "Django": "fas fa-server",
-        "SEO": "fas fa-search",
-        "Figma": "fab fa-figma",
-        "Adobe XD": "fab fa-adobe"
+        "HTML": { icon: "fab fa-html5", color: "#E34F26" },   // HTML (Orange)
+        "CSS": { icon: "fab fa-css3-alt", color: "#1572B6" }, // CSS (Blue)
+        "JavaScript": { icon: "fab fa-js", color: "#F7DF1E" }, // JavaScript (Yellow)
+        "React": { icon: "fab fa-react", color: "#61DAFB" },  // React (Light Blue)
+        "Vue.js": { icon: "fab fa-vuejs", color: "#42B883" },  // Vue.js (Green)
+        "Node.js": { icon: "fab fa-node-js", color: "#68A063" }, // Node.js (Greenish)
+        "MongoDB": { icon: "fas fa-database", color: "#4DB33D" }, // MongoDB (Green)
+        "Python": { icon: "fab fa-python", color: "#3776AB" },  // Python (Blue)
+        "Django": { icon: "fas fa-server", color: "#092E20" },  // Django (Dark Green)
+        "SEO": { icon: "fas fa-search", color: "#FF5722" },  // SEO (Orange-Red)
+        "Figma": { icon: "fab fa-figma", color: "#F24E1E" },  // Figma (Red-Orange)
+        "Adobe XD": { icon: "fab fa-adobe", color: "#FF61F6" }, // Adobe XD (Pink)
+        "Bootstrap": { icon: "fab fa-bootstrap", color: "#7952B3" }, // Bootstrap (Purple)
+        "SASS": { icon: "fab fa-sass", color: "#CC6699" }, // SASS (Pink)
+        "Laravel": { icon: "fab fa-laravel", color: "#FF2D20" }, // Laravel (Red)
+        "PHP": { icon: "fab fa-php", color: "#777BB4" }, // PHP (Blue)
+        "Java": { icon: "fab fa-java", color: "#F89820" }, // Java (Orange)
+        "C++": { icon: "fab fa-cuttlefish", color: "#00599C" }, // C++ (Blue)
+        "C#": { icon: "fab fa-microsoft", color: "#68217A" }, // C# (Purple)
+        "MySQL": { icon: "fas fa-database", color: "#4479A1" }, // MySQL (Blue)
+        "Firebase": { icon: "fas fa-fire", color: "#FFCA28" }, // Firebase (Yellow)
+        "GraphQL": { icon: "fas fa-project-diagram", color: "#E10098" }, // GraphQL (Pink)
+        "Docker": { icon: "fab fa-docker", color: "#2496ED" }, // Docker (Blue)
+        "Kubernetes": { icon: "fas fa-cube", color: "#326CE5" }, // Kubernetes (Blue)
+        "AWS": { icon: "fab fa-aws", color: "#FF9900" }, // AWS (Orange)
+        "Linux": { icon: "fab fa-linux", color: "#FCC624" }, // Linux (Yellow)
+        "Git": { icon: "fab fa-git-alt", color: "#F34F29" }, // Git (Orange)
+        "GitHub": { icon: "fab fa-github", color: "#181717" } // GitHub (Black)
     };
 
     function createProjectCard(project) {
@@ -249,7 +245,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         <h5>${project.title}</h5>
                         <p>${project.description}</p>
                         <div class="tech-icons">
-                            ${project.technologies.map(tech => techIcons[tech] ? `<i class="${techIcons[tech]}"></i>` : '').join('')}
+                            ${project.technologies.map(tech => 
+                                techIcons[tech] ? 
+                                `<i class="${techIcons[tech].icon}" style="color: ${techIcons[tech].color}; font-size: 24px; margin-right: 8px;"></i>` 
+                                : '').join('')
+                            }
                         </div>
                     </div>
                     <div class="btn-container">
@@ -280,6 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
 
 emailjs.init('062QrqU8Enk1it5Q6');
 

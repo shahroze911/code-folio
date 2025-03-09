@@ -1,4 +1,4 @@
-/* About Section - Light Theme with Colorful Icons */
+/* 🌟 About Section - Light Theme with Colorful Icons */
 #about {
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@
     position: relative;
 }
 
-/* Flex container */
+/* 🌟 Flex container */
 .about-content {
     display: flex;
     flex-wrap: wrap;
@@ -25,12 +25,13 @@
     gap: 30px;
 }
 
-/* Left Section - About Text & Services */
+/* 🌟 Left Section - About Text & Services */
 .about-left {
     flex: 1;
     max-width: 55%;
     text-align: left;
-    animation: fadeInLeft 1s ease-out forwards 0.3s;
+    animation: fadeInLeft 0.8s ease-out forwards;
+    opacity: 0;
 }
 
 .about-text h2 {
@@ -42,18 +43,20 @@
     position: relative;
     display: inline-block;
     margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards 0.3s;
 }
 
-/* Underline Animation */
+/* 🌟 Underline Animation */
 .about-text h2::after {
     content: "";
-    width: 80px;
+    width: 0;
     height: 4px;
     background: linear-gradient(90deg, #ff5722, #4caf50);
     display: block;
     margin-top: 10px;
     border-radius: 2px;
-    animation: expandLine 1s ease-in-out forwards;
+    animation: expandLine 1s ease-in-out forwards 0.5s;
 }
 
 @keyframes expandLine {
@@ -70,7 +73,7 @@
     text-align: justify;
 }
 
-/* Right Section - Stats & Descriptions */
+/* 🌟 Right Section - Stats & Services */
 .about-right {
     flex: 1;
     max-width: 40%;
@@ -80,19 +83,24 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    opacity: 0;
+    animation: fadeInRight 0.8s ease-out forwards 0.5s;
 }
+
+/* 🌟 Service Boxes */
 .about-box {
     background: #ffffff;
     padding: 20px;
-    border-radius: 15px; 
+    border-radius: 15px;
     text-align: left;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start; /* Align content to the left */
+    justify-content: flex-start;
     height: 80px;
-    gap: 15px; /* Ensures equal spacing between icon and text */
+    gap: 15px;
+    width: 100%;
 }
 
 .about-box:hover {
@@ -102,24 +110,23 @@
 
 .icon-style {
     font-size: 32px;
-    flex-shrink: 0; /* Prevents icon from shrinking */
+    flex-shrink: 0;
 }
 
-.about-box h3 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #2b2d42;
-    margin: 0; /* Remove default margin for better alignment */
-}
-
-
+/* 🌟 Different Colors for Each Box */
 .about-box:nth-child(1) .icon-style { color: #ff5722; }
 .about-box:nth-child(2) .icon-style { color: #4caf50; }
 .about-box:nth-child(3) .icon-style { color: #2196f3; }
 .about-box:nth-child(4) .icon-style { color: #ff9800; }
 
+.about-box h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2b2d42;
+    margin: 0;
+}
 
-/* 📊 Stats Section - Centered & Spaced */
+/* 🌟 Stats Section - Centered & Spaced */
 .stats-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -130,21 +137,25 @@
     width: 100%;
 }
 
+/* 🌟 Stat Box */
 .stat-box {
     text-align: center;
     color: #222;
     padding: 20px;
     border-radius: 14px;
     transition: transform 0.3s ease-in-out;
-    background: transparent;
-    box-shadow: none;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .stat-box:hover {
     transform: translateY(-5px);
 }
 
-/* 🎨 Different Colors for Stats Icons */
+/* 🌟 Different Colors for Stats Icons */
 .stat-icon {
     font-size: 45px;
     margin-bottom: 8px;
@@ -155,13 +166,13 @@
 .stat-box:nth-child(3) .stat-icon { color: #3CB371; }
 .stat-box:nth-child(4) .stat-icon { color: #F5A623; }
 
-/* 🔢 Counter */
+/* 🌟 Counter */
 .counter {
     font-size: 30px;
     font-weight: bold;
 }
 
-/* Responsive Adjustments */
+/* 🌟 Responsive Adjustments */
 @media (max-width: 992px) {
     #about {
         padding: 40px 5%;
@@ -190,6 +201,7 @@
         gap: 10px;
         text-align: left;
         padding: 15px;
+        width: 100%;
     }
     .stat-icon {
         font-size: 30px;
@@ -202,7 +214,7 @@
     }
 }
 
-/* Keyframes */
+/* 🌟 Keyframe Animations */
 @keyframes fadeInLeft {
     from {
         opacity: 0;
@@ -211,5 +223,25 @@
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
