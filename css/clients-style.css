@@ -336,4 +336,15 @@
         transition: none !important; /* Disable animations */
     }
 }
+@media (max-width: 768px) {
+    .swiper-wrapper {
+        display: block !important;
+        text-align: center;
+    }
+
+    .swiper-slide {
+        width: 100% !important;
+        transition: none !important; /* Disable animations */
+    }
+}
 
