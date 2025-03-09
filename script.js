@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Force disable animations for mobile by setting transition property to none
             document.querySelectorAll('.swiper-slide').forEach(slide => {
                 slide.style.transition = 'none !important'; // Disable transition on mobile
+                slide.style.innerWidth='100%';
             });
         });
     }
