@@ -314,9 +314,6 @@
         align-items: center;
     }
 
-    .category-btn span {
-        display: none; /* Hide text */
-    }
 
     .sidebar i {
         font-size: 18px;

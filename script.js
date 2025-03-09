@@ -47,9 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
             box.style.transform = "translateY(0) scale(1)";
         });
     });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    new Swiper(".mySwiper", {
+});document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".mySwiper", {
         slidesPerView: 3, // Default: 3 slides visible
         spaceBetween: 20, // Spacing between slides
         loop: true, // Enable infinite scrolling
@@ -68,15 +67,97 @@ document.addEventListener("DOMContentLoaded", function () {
         grabCursor: true, // Shows hand cursor for better UX
         touchRatio: 1, // Enables swipe gestures
         breakpoints: {
-            1024: { slidesPerView: 3 }, // 3 slides on large screens
-            768: { slidesPerView: 2 }, // 2 slides on tablets
-            480: { 
-                slidesPerView: 1, // 1 slide on mobile
-                allowTouchMove: true // Enable swipe on mobile
-            }
-        }
+            1024: { 
+                slidesPerView: 3, // Show 3 slides on medium screens
+                loop: true, // Enable looping on medium screens
+                autoplay: true, // Enable autoplay on medium screens
+                navigation: { 
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                pagination: { 
+                    el: ".swiper-pagination",
+                    clickable: true, // Allow pagination clicks
+                },
+                grabCursor: true, // Enable hand cursor
+                touchRatio: 1, // Enable swipe gestures
+                observer: true, // Enable observer to watch for changes
+                observeParents: true, // Observe changes to parent elements
+                on: {
+                    init: function () {
+                        this.el.classList.remove('no-animation'); // Ensure animations are not disabled
+                    },
+                    slideChangeTransitionStart: function () {
+                        this.el.classList.remove('no-animation'); // Ensure the animation runs
+                    },
+                    slideChangeTransitionEnd: function () {
+                        this.el.classList.add('no-animation'); // Optionally add no-animation after a slide transition
+                    }
+                }
+            },
+            768: { 
+                slidesPerView: 1, // 1 slide at a time on small screens
+                spaceBetween: 0, // No space between slides
+                loop: false, // Disable looping on small screens
+                autoplay: false, // Disable autoplay on small screens
+                navigation: { 
+                    nextEl: null,
+                    prevEl: null,
+                },
+                pagination: { 
+                    el: null,
+                },
+                grabCursor: false, // Disable hand cursor
+                touchRatio: 0, // Disable swipe gestures
+                observer: true, 
+                observeParents: true,
+                on: {
+                    init: function () {
+                        this.el.classList.add('no-animation'); // Add no animation class to disable animations
+                    }
+                }
+            },
+            480: {
+                slidesPerView: 1, // 1 slide at a time on mobile
+                spaceBetween: 0, // No space between slides
+                loop: false, // Disable looping on mobile
+                autoplay: false, // Disable autoplay on mobile
+                navigation: { 
+                    nextEl: null,
+                    prevEl: null,
+                },
+                pagination: { 
+                    el: null,
+                },
+                grabCursor: false, // Disable hand cursor
+                touchRatio: 0, // Disable swipe gestures
+                observer: true, 
+                observeParents: true,
+                on: {
+                    init: function () {
+                        this.el.classList.add('no-animation'); // Add no animation class to disable animations on mobile
+                    }
+                }
+            },
+        },
     });
+
+    // For mobile screens, disable animations completely
+    if (window.innerWidth < 768) {
+        swiper.on('init', function () {
+            swiper.el.classList.add('no-animation'); // Add 'no-animation' class to disable animations on mobile
+        });
+    } else {
+        swiper.on('init', function () {
+            swiper.el.classList.remove('no-animation'); // Ensure animations work for desktop
+        });
+    }
 });
+
+
+
+
+
 
 // Highlight Active Navbar Item Based on Scroll
 document.addEventListener("DOMContentLoaded", function () {
@@ -109,7 +190,9 @@ document.addEventListener("DOMContentLoaded", function () {
 // Toggle Mobile Menu
 function toggleMenu() {
     document.querySelector(".nav-links").classList.toggle("active");
-}document.addEventListener("DOMContentLoaded", function () {
+}
+
+document.addEventListener("DOMContentLoaded", function () {
     const counters = document.querySelectorAll(".counter");
     counters.forEach(counter => {
         counter.innerText = "0";
@@ -136,7 +219,9 @@ document.querySelectorAll('.tab').forEach(tab => {
         document.querySelectorAll('.about-text').forEach(content => content.style.display = 'none');
         document.getElementById(this.getAttribute('data-target')).style.display = 'block';
     });
-});document.addEventListener("DOMContentLoaded", function () {
+});
+
+document.addEventListener("DOMContentLoaded", function () {
     const projectData = JSON.parse(document.getElementById("project-data").textContent);
     const portfolioGrid = document.getElementById("portfolio-grid");
 

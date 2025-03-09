@@ -1,4 +1,3 @@
-
 /* Clients Testimonials Section */
 #clients-testimonials {
     padding-top: 80px;
@@ -14,18 +13,18 @@
 
 /* Section Heading Styling */
 .clients-testimonials-container h2 {
-    font-size: 48px; /* Increased for better visibility */
+    font-size: 48px;
     font-weight: bold;
     color: #222;
     text-align: center;
     position: relative;
     display: inline-block;
-    margin: 0 auto 20px; /* Ensures full centering */
+    margin: 0 auto 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Underline Effect (Consistent with Other Sections) */
+/* Underline Effect */
 .clients-testimonials-container h2::after {
     content: "";
     width: 100px;
@@ -36,11 +35,10 @@
     border-radius: 2px;
 }
 
-
-/* Swiper Full Width */
+/* Adjust Swiper Wrapper for Mobile */
 .swiper {
     width: 100%;
-    max-width: 1400px; /* Ensures a proper layout on large screens */
+    max-width: 1400px;
     padding: 20px 0;
     overflow: hidden;
     margin: 0 auto;
@@ -49,12 +47,12 @@
 /* Client Card Styles */
 .client-card {
     background: #fff;
-    padding: 35px;
+    padding: 20px; /* Reduced padding for compactness */
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     text-align: center;
-    min-width: 300px;
-    height: auto;
+    min-width: 270px; /* Adjusted width */
+    height: 320px; /* Fixed height for uniformity */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -65,18 +63,18 @@
 
 /* Increased Image Size */
 .client-card img {
-    width: 130px;
-    height: 130px;
+    width: 100px; /* Standardized image size */
+    height: 100px; /* Standardized image size */
     border-radius: 50%;
     object-fit: cover;
     display: block;
-    margin: 0 auto 15px;
-    border: 4px solid #0073e6;
+    margin: 0 auto 12px;
+    border: 3px solid #0073e6;
 }
 
 /* Larger Client Name */
 .client-name {
-    font-size: 22px;
+    font-size: 18px; /* Reduced font size */
     font-weight: bold;
     color: #333;
     margin-bottom: 5px;
@@ -84,49 +82,51 @@
 
 /* Subtle Designation Styling */
 .client-designation {
-    font-size: 17px;
+    font-size: 14px; /* Reduced font size */
     font-weight: 500;
     color: #777;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 /* Larger & More Stylish Comments */
 .client-card p {
-    font-size: 18px;
+    font-size: 14px; /* Reduced font size */
     font-style: italic;
     color: #333;
-    margin-bottom: 15px;
-    padding: 15px;
+    margin-bottom: 12px;
+    padding: 12px;
     position: relative;
     background: #f5f5f5;
     border-radius: 10px;
-    line-height: 1.6;
+    line-height: 1.5; /* Reduced line height */
 }
 
 /* Interactive Quote Style */
 .client-card p::before, .client-card p::after {
-    font-size: 34px;
+    font-size: 32px;
     color: #0073e6;
     font-family: Georgia, serif;
     position: absolute;
 }
+
 .client-card p::before {
     content: "“";
-    left: -12px;
-    top: -12px;
+    left: -10px;
+    top: -10px;
 }
+
 .client-card p::after {
     content: "”";
-    right: -12px;
-    bottom: -12px;
+    right: -10px;
+    bottom: -10px;
 }
 
 /* Colorful Industry Tags */
 .industry {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     color: #fff;
-    padding: 7px 16px;
+    padding: 5px 12px;
     border-radius: 20px;
     display: inline-flex;
     align-items: center;
@@ -141,7 +141,7 @@
 
 /* Rating */
 .rating {
-    font-size: 22px;
+    font-size: 18px;
     color: gold;
     margin-top: 8px;
 }
@@ -156,6 +156,7 @@
     background: #0073e6;
     opacity: 0.6;
 }
+
 .swiper-pagination-bullet-active {
     background: #0073e6;
     opacity: 1;
@@ -165,8 +166,8 @@
 .client-card:hover {
     transform: scale(1.05);
 }
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-    /* Adjust Testimonial Section for Smaller Screens */
     #clients-testimonials {
         padding-top: 50px;
     }
@@ -176,52 +177,153 @@
     }
 
     .clients-testimonials-container h2 {
-        font-size: 32px; /* Reduce heading size */
+        font-size: 32px;
     }
 
-    /* Adjust Swiper Wrapper */
     .swiper {
-        max-width: 100%;
         padding: 10px 0;
+        max-width: 100%;
+        display: block; /* Preventing the layout from breaking */
     }
 
-    /* Client Card */
     .client-card {
-        min-width: 100%; /* Ensure single column */
-        padding: 25px;
+        min-width: 100%;
+        height: 320px; /* Ensured consistency */
+        padding: 20px;
         border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
-    /* Reduce Image Size */
     .client-card img {
-        width: 100px;
-        height: 100px;
-        border: 3px solid #0073e6;
+        width: 90px;
+        height: 90px;
     }
 
-    /* Adjust Font Sizes */
     .client-name {
         font-size: 18px;
     }
 
     .client-designation {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .client-card p {
-        font-size: 16px;
-        padding: 12px;
+        font-size: 14px;
+        padding: 10px;
     }
 
-    /* Adjust Industry Tag */
     .industry {
         font-size: 12px;
-        padding: 5px 12px;
+        padding: 5px 10px;
     }
 
-    /* Adjust Rating Stars */
     .rating {
-        font-size: 18px;
+        font-size: 16px;
+    }
+}/* Swiper Navigation */
+.swiper-button-next, .swiper-button-prev {
+    color: #0073e6;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Ensures the arrows are above the slides */
+}
+
+/* Next Button (Right) */
+.swiper-button-next {
+    right: -30px; /* Moves the next button to the right of the page */
+}
+
+/* Prev Button (Left) */
+.swiper-button-prev {
+    left: -30px; /* Moves the prev button to the left of the page */
+}
+
+/* Pagination Bullets */
+.swiper-pagination {
+    position: absolute;
+    bottom: -40px; /* Adjusts the position of pagination dots below the swiper */
+    width: 100%;
+    text-align: center;
+    z-index: 5; /* Keeps the pagination dots below the arrows */
+}
+
+.swiper-pagination-bullet {
+    background: #0073e6;
+    opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+    background: #0073e6;
+    opacity: 1;
+}/* Default animations enabled */
+.swiper-slide, .client-card {
+    transition: all 0.3s ease-in-out !important; /* Enable animations by default */
+}/* Mobile Screens Adjustments */
+@media (max-width: 768px) {
+    /* Ensure column layout for client cards */
+    .swiper-wrapper {
+        display: block !important; /* Arrange items in a column */
+        text-align: center; /* Center the cards */
+    }
+
+    .swiper-slide {
+        width: 100% !important; /* Ensure full width for each card */
+        margin-bottom: 20px; /* Add some spacing between cards */
+        display: block !important; /* Force block display */
+        text-align: center; /* Center text inside each card */
+    }
+
+    /* Disable animations on mobile */
+    .swiper-slide, .client-card {
+        transition: none !important; /* Disable all animations */
+    }
+
+    /* Hide navigation arrows */
+    .swiper-button-next, .swiper-button-prev {
+        display: none !important; /* Hide arrows on mobile */
+    }
+
+    /* Adjust pagination visibility */
+    .swiper-pagination {
+        display: none !important; /* Hide pagination on mobile */
+    }
+
+    /* Force the swiper container to be centered */
+    .swiper {
+        display: block !important;
+        text-align: center !important;
+        margin: 0 auto;
     }
 }
+
+/* Medium Screens (Laptops) Adjustments */
+@media (max-width: 1024px) {
+    /* Enable animations for medium screens (laptops) */
+    .swiper-slide, .client-card {
+        transition: all 0.3s ease-in-out !important; /* Enable animations */
+    }
+
+    /* Keep navigation arrows visible for medium screens */
+    .swiper-button-next, .swiper-button-prev {
+        display: block !important; /* Show arrows on laptops */
+    }
+
+    /* Show pagination on medium screens */
+    .swiper-pagination {
+        display: block !important; /* Show pagination */
+    }
+
+    /* Force center alignment for the swiper container */
+    .swiper {
+        display: block !important;
+        text-align: center !important;
+        margin: 0 auto;
+    }
+
+    /* Enable hand cursor for interactivity on medium screens */
+    .swiper-slide {
+        cursor: pointer !important;
+    }
+}
+
