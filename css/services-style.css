@@ -1,6 +1,6 @@
 /* 🚀 Services Section */
 #services {
-    background: linear-gradient(to bottom right, #e3f2fd, #cfd9df);
+    /* background: linear-gradient(to bottom right, #e3f2fd, #cfd9df); */
     display: flex;
     flex-direction: column;
     justify-content: center;

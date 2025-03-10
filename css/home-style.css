@@ -1,3 +1,19 @@
+.brand-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem; /* Adjust size as needed */
+    font-weight: bold;
+    color: white; /* Adjust color */
+    text-decoration: none;
+}
+
+.brand-logo .logo {
+    height: 40px; /* Adjust size */
+    width: auto;
+    margin-right: 10px; /* Spacing between logo and text */
+    margin-left: 50px;
+}
+
 /* 🎯 Section Styling */
 section {
     padding: 60px 0;    
