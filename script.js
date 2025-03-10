@@ -134,11 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
     swiper.init();
 });
 
-
-
-
-
-
 // Highlight Active Navbar Item Based on Scroll
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
@@ -303,7 +298,7 @@ emailjs.send('service_mkyverp', 'template_mm2iu85', formData)
 }
 document.addEventListener("DOMContentLoaded", function () {
     // Scroll to top on page load
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 
     // // Get all sections
     // const sections = document.querySelectorAll("section");
@@ -340,4 +335,27 @@ document.addEventListener("DOMContentLoaded", function () {
     //         setTimeout(() => (isScrolling = false), 800); // Prevent multiple fast scrolls
     //     }
     // });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".services-carousel", {
+        loop: true,
+        spaceBetween: 20,
+        slidesPerView: 1,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true, // Ensure pagination bullets are clickable
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+    });
 });

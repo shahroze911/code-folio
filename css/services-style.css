@@ -8,7 +8,13 @@
     min-height: 100vh;
     text-align: center;
     backdrop-filter: blur(8px);
-    padding: 40px 4%; /* Reduced padding */
+    padding: 30px 3%; /* Reduced padding */
+}
+.service-details-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 12px;
 }
 
 /* 🔹 Header Styling */
@@ -53,13 +59,13 @@
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
     border-radius: 12px;
-    padding: 20px; /* Reduced padding */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 16px; /* Reduced padding */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 360px; /* Reduced height */
+    min-height: 320px; /* Reduced height */
     height: 100%;
     position: relative;
     transition: all 0.3s ease-in-out;
@@ -94,8 +100,8 @@
 
 /* 🎨 Icon Styling */
 .icon-container {
-    font-size: 40px;
-    color: white;
+    font-size: 42px; /* Slightly bigger */
+        color: white;
     background: var(--color);
     border-radius: 50%;
     width: 65px;
@@ -112,7 +118,7 @@
 
 /* 🔹 Service Title */
 .service-card h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     color: #222;
     margin-bottom: 6px;
@@ -120,9 +126,9 @@
 
 /* 🔹 Service Description */
 .service-card p {
-    font-size: 14px;
+    font-size: 15px; /* Increased */
     color: #444;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 /* 📋 Service Details */
@@ -133,7 +139,7 @@
     margin-bottom: 12px;
 }
 .service-details li {
-    font-size: 13px;
+    font-size: 14px; /* Increased */
     color: #333;
     margin-bottom: 5px;
     display: flex;
@@ -149,8 +155,8 @@
 .btn-custom {
     background: var(--color);
     color: white;
-    padding: 8px 18px;
-    border-radius: 6px;
+    padding: 7px 16px; /* Slightly smaller */
+        border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
