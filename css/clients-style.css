@@ -16,12 +16,11 @@
     font-size: 48px;
     font-weight: bold;
     color: #222;
-    text-align: center;
-    position: relative;
-    display: inline-block;
-    margin: 0 auto 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
 }
 
 /* Underline Effect */
@@ -35,24 +34,25 @@
     border-radius: 2px;
 }
 
-/* Adjust Swiper Wrapper for Mobile */
-.swiper {
-    width: 100%;
-    max-width: 1400px;
-    padding: 20px 0;
-    overflow: hidden;
-    margin: 0 auto;
+/* Glide Styling */
+.glide__slides {
+    display: flex;
+    align-items: stretch; /* Ensures all slides align properly */
+}
+
+.glide__slide {
+    flex: 0 0 auto;
+    width: auto;
 }
 
 /* Client Card Styles */
 .client-card {
     background: #fff;
-    padding: 20px; /* Reduced padding for compactness */
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     text-align: center;
-    min-width: 270px; /* Adjusted width */
-    height: 320px; /* Fixed height for uniformity */
+    min-height: 340px; /* Flexible height to prevent content cut-off */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -63,18 +63,16 @@
 
 /* Increased Image Size */
 .client-card img {
-    width: 100px; /* Standardized image size */
-    height: 100px; /* Standardized image size */
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 12px;
+    object-fit: cover; /* Ensures proper display */
     border: 3px solid #0073e6;
 }
 
 /* Larger Client Name */
 .client-name {
-    font-size: 18px; /* Reduced font size */
+    font-size: 18px;
     font-weight: bold;
     color: #333;
     margin-bottom: 5px;
@@ -82,44 +80,46 @@
 
 /* Subtle Designation Styling */
 .client-designation {
-    font-size: 14px; /* Reduced font size */
+    font-size: 14px;
     font-weight: 500;
     color: #777;
     margin-bottom: 10px;
 }
-
-/* Larger & More Stylish Comments */
+/* Interactive Quote Style */
 .client-card p {
-    font-size: 14px; /* Reduced font size */
+    position: relative;
+    padding: 16px;
+    font-size: 14px;
     font-style: italic;
     color: #333;
-    margin-bottom: 12px;
-    padding: 12px;
-    position: relative;
     background: #f5f5f5;
     border-radius: 10px;
-    line-height: 1.5; /* Reduced line height */
+    line-height: 1.5;
+    display: inline-block;
 }
 
-/* Interactive Quote Style */
-.client-card p::before, .client-card p::after {
-    font-size: 32px;
+/* Fix quote marks inside the card */
+.client-card p::before, 
+.client-card p::after {
+    font-size: 24px; /* Adjust size */
     color: #0073e6;
     font-family: Georgia, serif;
     position: absolute;
+    line-height: 1;
 }
 
 .client-card p::before {
     content: "“";
-    left: -10px;
-    top: -10px;
+    left: 8px;  /* Shift slightly inside */
+    top: 8px;
 }
 
 .client-card p::after {
     content: "”";
-    right: -10px;
-    bottom: -10px;
+    right: 8px;  /* Shift slightly inside */
+    bottom: 8px;
 }
+
 
 /* Colorful Industry Tags */
 .industry {
@@ -146,26 +146,11 @@
     margin-top: 8px;
 }
 
-/* Swiper Navigation */
-.swiper-button-next, .swiper-button-prev {
-    color: #0073e6;
-}
-
-/* Pagination Bullets */
-.swiper-pagination-bullet {
-    background: #0073e6;
-    opacity: 0.6;
-}
-
-.swiper-pagination-bullet-active {
-    background: #0073e6;
-    opacity: 1;
-}
-
 /* Hover Effect */
 .client-card:hover {
     transform: scale(1.05);
 }
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     #clients-testimonials {
@@ -180,36 +165,23 @@
         font-size: 32px;
     }
 
-    .swiper {
-        padding: 10px 0;
-        max-width: 100%;
-        display: block; /* Preventing the layout from breaking */
-    }
-
     .client-card {
-        min-width: 100%;
-        height: 320px; /* Ensured consistency */
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: 100%; /* Ensure the card takes full width */
+        min-height: auto; /* Allow flexibility */
+        padding: 15px;
     }
 
     .client-card img {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
     }
 
     .client-name {
-        font-size: 18px;
+        font-size: 16px;
     }
 
-    .client-designation {
-        font-size: 14px;
-    }
-
-    .client-card p {
-        font-size: 14px;
-        padding: 10px;
+    .client-designation, .client-card p {
+        font-size: 12px;
     }
 
     .industry {
@@ -219,118 +191,5 @@
 
     .rating {
         font-size: 16px;
-    }
-}/* Swiper Navigation */
-.swiper-button-next, .swiper-button-prev {
-    color: #0073e6;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10; /* Ensures the arrows are above the slides */
-}
-
-/* Next Button (Right) */
-.swiper-button-next {
-    right: -30px; /* Moves the next button to the right of the page */
-}
-
-/* Prev Button (Left) */
-.swiper-button-prev {
-    left: -30px; /* Moves the prev button to the left of the page */
-}
-
-/* Pagination Bullets */
-.swiper-pagination {
-    position: absolute;
-    bottom: -40px; /* Adjusts the position of pagination dots below the swiper */
-    width: 100%;
-    text-align: center;
-    z-index: 5; /* Keeps the pagination dots below the arrows */
-}
-
-.swiper-pagination-bullet {
-    background: #0073e6;
-    opacity: 0.6;
-}
-
-.swiper-pagination-bullet-active {
-    background: #0073e6;
-    opacity: 1;
-}/* Default animations enabled */
-.swiper-slide, .client-card {
-    transition: all 0.3s ease-in-out !important; /* Enable animations by default */
-}/* Mobile Screens Adjustments */
-@media (max-width: 768px) {
-    /* Enable sliding on mobile */
-    .swiper {
-        padding: 10px 0;
-        display: block;
-        max-width: 100%;
-    }
-
-    /* Ensure each card fits within the screen */
-    .swiper-slide {
-        width: 80% !important; /* Small width for mobile */
-        margin: 10px auto; /* Centered cards with space between */
-    }
-
-    /* Reduced card styles for mobile */
-    .client-card {
-        min-width: 100%;
-        height: 280px; /* Adjust height to fit mobile screen */
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Adjust images */
-    .client-card img {
-        width: 80px;
-        height: 80px;
-    }
-
-    /* Adjust text sizes */
-    .client-name {
-        font-size: 16px;
-    }
-
-    .client-designation, .client-card p {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 1024px) {
-    /* Enable animations for medium screens */
-    .swiper-slide, .client-card {
-        transition: all 0.3s ease-in-out !important;
-    }
-
-    /* Show arrows and pagination */
-    .swiper-button-next, .swiper-button-prev, .swiper-pagination {
-        display: block !important;
-    }
-
-    /* Center alignment for the swiper container */
-    .swiper {
-        display: block !important;
-        text-align: center !important;
-        margin: 0 auto;
-    }
-
-    /* Add cursor pointer for interactivity */
-    .swiper-slide {
-        cursor: pointer !important;
-    }
-}
-@media (max-width: 768px) {
-    /* Ensure each card takes full width */
-    .swiper-slide {
-        width: 100% !important; /* Full width for mobile */
-        margin: 0 auto; /* Center cards */
-    }
-    
-    .client-card {
-        min-width: 100%; /* Ensure the card takes full width */
-        height: 280px; /* Adjust height to fit mobile screen */
     }
 }

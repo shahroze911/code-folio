@@ -15,6 +15,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script defer src="./script.js"></script>
+
+    <!-- Glide CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
+
+<!-- Glide JS -->
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/just-validate@latest/dist/just-validate.production.min.js"></script>
@@ -60,13 +69,12 @@
         <div class="nav-toggle" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
         </div>
-
         <nav>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-item"><i class="fas fa-home"></i> <span>Home</span></a></li>
                 <li><a href="#about" class="nav-item"><i class="fas fa-user"></i> <span>About</span></a></li>
                 <li><a href="#services" class="nav-item"><i class="fas fa-briefcase"></i> <span>Services</span></a></li>
-                <li><a href="#portfolio" class="nav-item"><i class="fas fa-image"></i> <span>Portfolio</span></a></li>
+                <!-- <li><a href="#portfolio" class="nav-item"><i class="fas fa-image"></i> <span>Portfolio</span></a></li> -->
                 <li><a href="#clients-testimonials" class="nav-item"><i class="fas fa-users"></i> <span>Clients</span></a></li>
                 <li><a href="#our-team" class="nav-item"><i class="fas fa-users-cog"></i> <span>Team</span></a></li>
                 <li><a href="#contact" class="nav-item"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
@@ -290,101 +298,60 @@
     </div>
 </section>
 
-
-
-<section id="portfolio" class="py-5">
-    <div class="container-fluid">
-        <div class="text-center">
-            <h2 class="section-title">Our Work</h2>
-            <p class="section-intro">Discover our top-notch projects, crafted with precision and creativity.</p>
-        </div>
-        <div class="row">
-            <!-- Sidebar (Portfolio Categories) -->
-            <aside class="col-12 col-md-3 col-lg-2 sidebar mb-4 mb-md-0">
-                <div class="category-container">
-                    <div class="row">
-                        <div class="col-12 mb-2">
-                            <button class="category-btn active w-100" data-category="all">
-                                <i class="fas fa-th"></i> <span>All</span>
-                            </button>
-                        </div>
-                        <div class="col-12 mb-2">
-                            <button class="category-btn w-100" data-category="web">
-                                <i class="fas fa-code"></i> <span>Web</span>
-                            </button>
-                        </div>
-                        <div class="col-12 mb-2">
-                            <button class="category-btn w-100" data-category="mobile">
-                                <i class="fas fa-mobile-alt"></i> <span>Mobile</span>
-                            </button>
-                        </div>
-                        <div class="col-12 mb-2">
-                            <button class="category-btn w-100" data-category="seo">
-                                <i class="fas fa-chart-line"></i> <span>Marketing</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- Portfolio Content -->
-            <div class="col-12 col-md-9 col-lg-10">
-                <div id="portfolio-grid" class="row g-4">
-                    <!-- Projects will be inserted here by JavaScript -->
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section id="clients-testimonials">
     <div class="clients-testimonials-container">
         <h2>Our Trusted Clients</h2>
-
-        <!-- Swiper Container -->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <!-- Client 1 -->
-                <div class="swiper-slide client-card">
-                    <img src="./assets/client_2.jpg" alt="Client 1">
-                    <h3 class="client-name">John Doe</h3>
-                    <h4 class="client-designation">CEO of TechCorp</h4>
-                    <p>"Code Folio transformed our website and boosted our sales. A true game-changer!"</p>
-                    <span class="industry tech"><i class="fas fa-laptop-code"></i> Technology</span>
-                    <div class="rating">⭐⭐⭐⭐⭐</div>
-                </div>
-                <!-- Client 2 -->
-                <div class="swiper-slide client-card">
-                    <img src="./assets/client_1.png" alt="Client 2">
-                    <h3 class="client-name">Sarah Smith</h3>
-                    <h4 class="client-designation">Founder of Startup X</h4>
-                    <p>"The best development team we've worked with. High quality and on-time delivery!"</p>
-                    <span class="industry health"><i class="fas fa-hospital"></i> Health</span>
-                    <div class="rating">⭐⭐⭐⭐</div>
-                </div>
-                <!-- Client 3 -->
-                <div class="swiper-slide client-card">
-                    <img src="./assets/client_3.png" alt="Client 3">
-                    <h3 class="client-name">Michael Lee</h3>
-                    <h4 class="client-designation">Marketing Director</h4>
-                    <p>"Outstanding service! The UX design was beyond our expectations."</p>
-                    <span class="industry marketing"><i class="fas fa-envelope"></i> Marketing</span>
-                    <div class="rating">⭐⭐⭐⭐⭐</div>
-                </div>
-                <!-- Client 4 -->
-                <div class="swiper-slide client-card">
-                    <img src="./assets/client_4.jpeg" alt="Client 4">
-                    <h3 class="client-name">Anna Johnson</h3>
-                    <h4 class="client-designation">COO of WebSolvers</h4>
-                    <p>"Our experience was amazing, and the results exceeded expectations."</p>
-                    <span class="industry web"><i class="fas fa-laptop"></i> Web</span>
-                    <div class="rating">⭐⭐⭐⭐⭐</div>
-                </div>
-            </div>           
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <div class="client-card">
+                            <img src="./assets/client_2.jpg" alt="Client 1" class="img-fluid rounded-circle mx-auto d-block mb-3" style="max-width: 100px;">
+                            <h3 class="client-name">John Doe</h3>
+                            <h4 class="client-designation text-muted">CEO of TechCorp</h4>
+                            <p class="text-muted">"Code Folio transformed our website and boosted our sales. A true game-changer!"</p>
+                            <span class="industry tech d-block mb-2"><i class="fas fa-laptop-code"></i> Technology</span>
+                            <div class="rating text-warning">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="client-card">
+                            <img src="./assets/client_1.png" alt="Client 2" class="img-fluid rounded-circle mx-auto d-block mb-3" style="max-width: 100px;">
+                            <h3 class="client-name">Sarah Smith</h3>
+                            <h4 class="client-designation text-muted">Founder of Startup X</h4>
+                            <p class="text-muted">"The best development team we've worked with. High quality and on-time delivery!"</p>
+                            <span class="industry health d-block mb-2"><i class="fas fa-hospital"></i> Health</span>
+                            <div class="rating text-warning">⭐⭐⭐⭐</div>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="client-card">
+                            <img src="./assets/client_3.png" alt="Client 3" class="img-fluid rounded-circle mx-auto d-block mb-3" style="max-width: 100px;">
+                        <h3 class="client-name">Michael Lee</h3>
+                        <h4 class="client-designation text-muted">Marketing Director</h4>
+                        <p class="text-muted">"Outstanding service! The UX design was beyond our expectations."</p>
+                        <span class="industry marketing d-block mb-2"><i class="fas fa-envelope"></i> Marketing</span>
+                        <div class="rating text-warning">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="client-card">
+                            <img src="./assets/client_4.jpeg" alt="Client 4" class="img-fluid rounded-circle mx-auto d-block mb-3" style="max-width: 100px;">
+                            <h3 class="client-name">Anna Johnson</h3>
+                            <h4 class="client-designation text-muted">COO of WebSolvers</h4>
+                            <p class="text-muted">"Our experience was amazing, and the results exceeded expectations."</p>
+                            <span class="industry web d-block mb-2"><i class="fas fa-laptop"></i> Web</span>
+                            <div class="rating text-warning">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </li>
+                   
+                   
+                </ul>
+            </div>
         </div>
+        
     </div>
 </section>
-
 
 
 <section id="our-team" class="py-5 bg-light">
@@ -403,13 +370,15 @@
                     </div>
                     <h3 class="fw-bold mt-3">Aqib Ali Khan</h3>
                     <span class="role text-primary">CEO</span>                         
-                        <p class="description mt-2 flex-grow-1" style="text-align: center;"> Guiding the company with 5+ years of experience in leadership, strategic planning, and innovative problem-solving.</p>
+                        <p class="description mt-2 flex-grow-1" style="text-align: center;"> Guiding the company with 5+ years of experience in leadership, and innovative problem-solving.</p>
                        
- <ul class="list-unstyled expertise text-start mx-auto">
-    <li><i class="fas fa-lightbulb text-warning"></i> Leadership & Vision</li>
-    <li><i class="fas fa-chart-line text-warning"></i> Strategic Planning</li>
-    <li><i class="fas fa-globe text-warning"></i> Certified Cyber Ethical Hacker</li>
-    <li><i class="fas fa-globe text-warning"></i> Certified Computer Hacking Forensics Investigator</li>
+                        <ul class="list-unstyled expertise text-start mx-auto">
+                            <li><i class="fas fa-lightbulb text-primary"></i> Leadership & Vision</li>
+                            <li><i class="fas fa-chart-line text-success"></i> Strategic Planning</li>
+                            <li><i class="fas fa-globe text-danger"></i> Certified Cyber Ethical Hacker</li>
+                            <li><i class="fas fa-user-secret text-info"></i> Certified Computer Hacking Forensics Investigator</li>
+                        </ul>
+                        
 </ul>             
                 </div>
             </div>
@@ -423,12 +392,13 @@
                     <h3 class="fw-bold mt-3">Ashraf Hussain</h3>
                     <span class="role text-primary">CTO</span>                         
                         <p class="description mt-2 flex-grow-1" style="text-align: center;">Experienced in managing the development and implementation of advanced technology solutions.</p>
-                    <ul class="list-unstyled expertise">
-                        <li><i class="fas fa-code text-warning"></i> Full-Stack Development </li>
-                        <li><i class="fas fa-robot text-warning"></i> AI Engineering & Machine Learning</li>                    
-                                                <li><i class="fas fa-cloud text-warning"></i> Cloud Computing & Deployment</li>
-                                                <li><i class="fas fa-project-diagram text-warning"></i> Solutions Architecture & System Design</li>
-                    </ul>                   
+                        <ul class="list-unstyled expertise">
+                            <li><i class="fas fa-code text-primary"></i> Full-Stack Development</li>
+                            <li><i class="fas fa-robot text-success"></i> AI Engineering & Machine Learning</li>                    
+                            <li><i class="fas fa-cloud text-info"></i> Cloud Computing & Deployment</li>
+                            <li><i class="fas fa-project-diagram text-danger"></i> Solutions Architecture & System Design</li>
+                        </ul>
+                                          
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 d-flex">
@@ -440,13 +410,15 @@
                     <span class="role text-primary">
                         Business Development Executive</span>   
                         <p class="description mt-2 flex-grow-1" style="text-align: center;">
-                            Leveraging business intelligence to develop scalable solutions that drive growth and optimize decision-making.</p>
-                            <ul class="list-unstyled expertise">
-                                <li><i class="fas fa-chart-line text-warning"></i> Business Process Analysis</li>
-                                <li><i class="fas fa-lightbulb text-warning"></i> Data-Driven Decision Making</li>
-                                <li><i class="fas fa-cogs text-warning"></i> System & Workflow Optimization</li>
-                                <li><i class="fas fa-tasks text-warning"></i> Requirement Gathering</li>
-                            </ul>                   
+                            Optimizing decision-making and driving growth through scalable, data-driven solutions.
+</p>
+<ul class="list-unstyled expertise">
+    <li><i class="fas fa-chart-line text-primary"></i> Business Process Analysis</li>
+    <li><i class="fas fa-lightbulb text-success"></i> Data-Driven Decision Making</li>
+    <li><i class="fas fa-cogs text-danger"></i> System & Workflow Optimization</li>
+    <li><i class="fas fa-tasks text-info"></i> Requirement Gathering</li>
+</ul>
+
                 </div>
             </div>           
         </div>
@@ -462,13 +434,14 @@
                     <h3 class="fw-bold mt-3">Sheeraz Ahmed</h3>
                     <span class="role text-primary">iOS Developer</span>
                     <p class="description mt-2 flex-grow-1" style="text-align: center;">
-                        Building high-performance mobile experiences with scalable backend solutions, ensuring quality and user engagement.</p>
-                    <ul class="list-unstyled expertise">
-                        <li><i class="fas fa-code text-warning"></i> Cross-Platform App Development</li>
-                        <li><i class="fas fa-paint-brush text-warning"></i> User Experience & Interface Design</li>                
-                        <li><i class="fas fa-network-wired text-warning"></i> Backend Integration & API Development</li>
-                        <li><i class="fas fa-check-circle text-warning"></i> Software Quality Assurance</li>
-                    </ul>                    
+                        Building high-performance mobile experiences, ensuring quality and user engagement.</p>
+                        <ul class="list-unstyled expertise">
+                            <li><i class="fas fa-code text-primary"></i> Cross-Platform App Development</li>
+                            <li><i class="fas fa-paint-brush text-success"></i> User Experience & Interface Design</li>                
+                            <li><i class="fas fa-network-wired text-info"></i> Backend Integration & API Development</li>
+                            <li><i class="fas fa-check-circle text-danger"></i> Software Quality Assurance</li>
+                        </ul>
+                                          
                 </div>
             </div>
             
@@ -481,12 +454,13 @@
                     <span class="role text-primary">Mobile Developer</span>                    
                     <p class="description mt-2 flex-grow-1" style="text-align: center;">
                         Expert in building scalable and user-friendly hybrid mobile applications.</p>
-                    <ul class="list-unstyled expertise">
-                        <li><i class="fas fa-code text-warning"></i> Android & iOS App Development</li>
-                        <li><i class="fas fa-mobile-alt text-warning"></i> Cross-Platform Development</li>
-                        <li><i class="fas fa-chart-line text-warning"></i> App Store Optimization (ASO)</li>
-                        <li><i class="fas fa-search text-warning"></i> Search Engine Optimization (SEO)</li>
-                    </ul>            
+                        <ul class="list-unstyled expertise">
+                            <li><i class="fas fa-code text-primary"></i> Android & iOS App Development</li>
+                            <li><i class="fas fa-mobile-alt text-success"></i> Cross-Platform Development</li>
+                            <li><i class="fas fa-chart-line text-info"></i> App Store Optimization (ASO)</li>
+                            <li><i class="fas fa-search text-danger"></i> Search Engine Optimization (SEO)</li>
+                        </ul>
+                                   
                 </div>
             </div>
             
@@ -499,11 +473,12 @@
             <span class="role text-primary">Sales Executive</span>    
             <p class="description">Driving revenue growth with effective sales strategies and client relations.</p>
             <ul class="list-unstyled expertise">
-                <li><i class="fas fa-handshake text-warning"></i> Client Acquisition & Negotiation</li>
-                <li><i class="fas fa-chart-line text-warning"></i> Sales Strategy & Market Analysis</li>
-                <li><i class="fas fa-users text-warning"></i> Relationship Management</li>
-                <li><i class="fas fa-bullhorn text-warning"></i> Lead Generation & Cold Outreach</li>
-            </ul>                    
+                <li><i class="fas fa-handshake text-primary"></i> Client Acquisition & Negotiation</li>
+                <li><i class="fas fa-chart-line text-success"></i> Sales Strategy & Market Analysis</li>
+                <li><i class="fas fa-users text-info"></i> Relationship Management</li>
+                <li><i class="fas fa-bullhorn text-danger"></i> Lead Generation & Cold Outreach</li>
+            </ul>
+                              
         </div>
     </div>
     

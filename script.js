@@ -49,90 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3, 
-        spaceBetween: 20, 
-        loop: true, 
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true, 
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        grabCursor: true,
-        touchRatio: 1,
-        breakpoints: {
-            1024: { 
-                slidesPerView: 3,
-                loop: true,
-                autoplay: true,
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                grabCursor: true,
-                touchRatio: 1,
-                observer: true,
-                observeParents: true,
-            },
-            768: { 
-                slidesPerView: 1, 
-                spaceBetween: 10,
-                loop: true, 
-                autoplay: true, 
-                navigation: {
-                    enabled: false, 
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                grabCursor: true,
-                touchRatio: 1,
-                observer: true, 
-                observeParents: true,
-            },
-            480: {
-                slidesPerView: 1, 
-                spaceBetween: 10, 
-                loop: true,
-                autoplay: true,
-                navigation: {
-                    enabled: false, 
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                grabCursor: true,
-                touchRatio: 1,
-                observer: true,
-                observeParents: true,
-            }
-        },
-    });
 
-    // Ensure smooth animations
-    swiper.on('init', function () {
-        document.querySelectorAll('.swiper-slide').forEach(slide => {
-            slide.style.transition = 'transform 0.3s ease-in-out';
-            slide.style.width = '100%';
-        });
-    });
-
-    swiper.init();
-});
 
 // Highlight Active Navbar Item Based on Scroll
 document.addEventListener("DOMContentLoaded", function () {
@@ -370,4 +287,19 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+});    document.addEventListener("DOMContentLoaded", function () {
+    new Glide('.glide', {
+        type: 'carousel',
+        startAt: 0,
+        perView: 3,
+        focusAt: 'center',
+        autoplay: 1500,
+        hoverpause: true,
+        gap: 20,
+        peek: { before: 10, after: 10 },
+        breakpoints: {
+            1024: { perView: 3 }, // Three cards on tablets
+            768: { perView: 1, autoplay: false, gap: 0 } // One card on mobile, no sliding
+        }
+    }).mount();
 });
