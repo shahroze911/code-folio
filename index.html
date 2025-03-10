@@ -181,9 +181,8 @@
         </div>
     </div>
 </section>
-    
-<!-- Services Section -->
-<section id="services" class="services-section py-5">
+ <!-- Services Section -->
+<section id="services" class="services-section py-5 mt-1">
     <div class="container text-center">
         <div class="service-header">
             <h2 class="section-title">Our Premium Services</h2>
@@ -208,7 +207,7 @@
                             <li><i class="fas fa-lock"></i> Advanced Security Measures</li>
                             <li><i class="fas fa-mobile-alt"></i> Responsive & Optimized</li>
                         </ul>
-                        <a href="#contact" class="btn-custom">Request a Demo</a>
+                        <button class="btn-custom" data-url="#contact">Request a Demo</button>
                     </div>
                 </div>
 
@@ -224,7 +223,7 @@
                             <li><i class="fas fa-link"></i> API & Database Integration</li>
                             <li><i class="fas fa-cogs"></i> Custom Features</li>
                         </ul>
-                        <a href="#contact" class="btn-custom">Request a Demo</a>
+                        <a href="javascript:void(0);" class="btn-custom">Request a Demo</a>
                     </div>
                 </div>
 
@@ -240,7 +239,7 @@
                             <li><i class="fas fa-user-check"></i> User-Friendly Interfaces</li>
                             <li><i class="fas fa-mouse-pointer"></i> Interactive Prototypes</li>
                         </ul>
-                        <a href="#contact" class="btn-custom">Request a Demo</a>
+                        <a href="javascript:void(0);" class="btn-custom">Request a Demo</a>
                     </div>
                 </div>
 
@@ -259,50 +258,38 @@
                         <a href="#contact" class="btn-custom">Request a Demo</a>
                     </div>
                 </div>
-
-                <div class="swiper-slide">
-                    <div class="service-card" style="--color:#6f42c1;">
-                        <div class="icon-container">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>Artificial Intelligence</h3>
-                        <p>Harness AI-driven solutions for automation and smarter decision-making.</p>
-                        <ul class="service-details">
-                            <li><i class="fas fa-robot"></i> AI-Powered Automation</li>
-                            <li><i class="fas fa-chart-pie"></i> Machine Learning Models</li>
-                            <li><i class="fas fa-lightbulb"></i> Intelligent Analytics</li>
-                        </ul>
-                        <a href="#contact" class="btn-custom">Request a Demo</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="service-card" style="--color:#dc3545;">
-                        <div class="icon-container">
-                            <i class="fas fa-user-shield"></i>
-                        </div>
-                        <h3>Cybersecurity</h3>
-                        <p>Protect your business with advanced security solutions.</p>
-                        <ul class="service-details">
-                            <li><i class="fas fa-shield-alt"></i> Threat Detection & Prevention</li>
-                            <li><i class="fas fa-user-lock"></i> Risk Mitigation Strategies</li>
-                            <li><i class="fas fa-database"></i> Data Encryption & Protection</li>
-                        </ul>
-                        <a href="#contact" class="btn-custom">Request a Demo</a>
-                    </div>
-                </div>
             </div>
 
-        </div>
-        
-            <!-- Navigation Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+          <!-- Navigation Arrows -->
+<div data-swiper-button-next="services" class="swiper-button-next"></div>
+<div data-swiper-button-prev="services" class="swiper-button-prev"></div>
 
-            <!-- Pagination -->
-            <div class="swiper-pagination"></div>
+<!-- Pagination -->
+<div class="services-pagination"></div>
+        </div>
+ 
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <div class="why-choose-us text-center mt-5">
+        <h3 class="why-title">Why Choose Us?</h3>
+        <div class="why-container">
+            <div class="why-box">
+                <i class="fas fa-check-circle"></i>
+                <h4>Cutting-Edge Technology</h4>
+            </div>
+            <div class="why-box">
+                <i class="fas fa-headset"></i>
+                <h4>24/7 Customer Support</h4>
+            </div>
+            <div class="why-box">
+                <i class="fas fa-users"></i>
+                <h4>Experienced Professionals</h4>
+            </div>
+        </div>
     </div>
 </section>
+
 
 
 <section id="portfolio" class="py-5">
@@ -415,16 +402,18 @@
                         <img src="./assets/aqib.png" alt="Aqib Ali Khan" class="img-fluid rounded-circle">
                     </div>
                     <h3 class="fw-bold mt-3">Aqib Ali Khan</h3>
-                    <span class="role text-primary">CEO</span>                    
-                    <p class="description">Guiding the company with 5+ years of experience in leadership, strategic planning, and innovative problem-solving.</p>
-                    <ul class="list-unstyled expertise">
-                        <li><i class="fas fa-lightbulb text-warning"></i> Leadership & Vision</li>
-                        <li><i class="fas fa-chart-line text-warning"></i> Strategic Planning</li>
-                        <li><i class="fas fa-globe text-warning"></i> International Certified Cyber Ethical Hacker</li>
-                        <li><i class="fas fa-globe text-warning"></i> International Certified Computer Hacking Forensics Investigator</li>
-                    </ul>                    
+                    <span class="role text-primary">CEO</span>                         
+                        <p class="description mt-2 flex-grow-1" style="text-align: center;"> Guiding the company with 5+ years of experience in leadership, strategic planning, and innovative problem-solving.</p>
+                       
+ <ul class="list-unstyled expertise text-start mx-auto">
+    <li><i class="fas fa-lightbulb text-warning"></i> Leadership & Vision</li>
+    <li><i class="fas fa-chart-line text-warning"></i> Strategic Planning</li>
+    <li><i class="fas fa-globe text-warning"></i> Certified Cyber Ethical Hacker</li>
+    <li><i class="fas fa-globe text-warning"></i> Certified Computer Hacking Forensics Investigator</li>
+</ul>             
                 </div>
             </div>
+            
 
             <div class="col-lg-4 col-md-6 d-flex">
                 <div class="team-card p-3 shadow-sm rounded bg-white text-center w-100">
@@ -432,8 +421,8 @@
                         <img src="./assets/ashraf1.webp" alt="Ashraf Hussain" class="img-fluid rounded-circle">
                     </div>
                     <h3 class="fw-bold mt-3">Ashraf Hussain</h3>
-                    <span class="role text-primary">CTO</span>                    
-                    <p class="description">Experienced in managing the development and implementation of advanced technology solutions.</p>
+                    <span class="role text-primary">CTO</span>                         
+                        <p class="description mt-2 flex-grow-1" style="text-align: center;">Experienced in managing the development and implementation of advanced technology solutions.</p>
                     <ul class="list-unstyled expertise">
                         <li><i class="fas fa-code text-warning"></i> Full-Stack Development </li>
                         <li><i class="fas fa-robot text-warning"></i> AI Engineering & Machine Learning</li>                    
@@ -448,17 +437,18 @@
                         <img src="./assets/shahroze.png" alt="Shahroze Kamran Sahotra" class="img-fluid rounded-circle">
                     </div>
                     <h3 class="fw-bold mt-3">Shahroze Kamran Sahotra</h3>
-                    <span class="role text-primary">Business Development Executive</span>    
-                    <p class="description">Leveraging business intelligence to develop scalable solutions that drive growth and optimize decision-making.</p>
-                    <ul class="list-unstyled expertise">
-                        <li><i class="fas fa-chart-line text-warning"></i> Business Process Analysis</li>
-                        <li><i class="fas fa-lightbulb text-warning"></i> Data-Driven Decision Making</li>
-                        <li><i class="fas fa-cogs text-warning"></i> System & Workflow Optimization</li>
-                        <li><i class="fas fa-tasks text-warning"></i> Requirement Gathering</li>
-                    </ul>                    
+                    <span class="role text-primary">
+                        Business Development Executive</span>   
+                        <p class="description mt-2 flex-grow-1" style="text-align: center;">
+                            Leveraging business intelligence to develop scalable solutions that drive growth and optimize decision-making.</p>
+                            <ul class="list-unstyled expertise">
+                                <li><i class="fas fa-chart-line text-warning"></i> Business Process Analysis</li>
+                                <li><i class="fas fa-lightbulb text-warning"></i> Data-Driven Decision Making</li>
+                                <li><i class="fas fa-cogs text-warning"></i> System & Workflow Optimization</li>
+                                <li><i class="fas fa-tasks text-warning"></i> Requirement Gathering</li>
+                            </ul>                   
                 </div>
-            </div>
-                       
+            </div>           
         </div>
 
         <!-- Second Row (Centered 2 Members) -->
@@ -471,7 +461,8 @@
                     </div>
                     <h3 class="fw-bold mt-3">Sheeraz Ahmed</h3>
                     <span class="role text-primary">iOS Developer</span>
-                    <p class="description">Building high-performance mobile experiences with scalable backend solutions, ensuring quality and user engagement.</p>
+                    <p class="description mt-2 flex-grow-1" style="text-align: center;">
+                        Building high-performance mobile experiences with scalable backend solutions, ensuring quality and user engagement.</p>
                     <ul class="list-unstyled expertise">
                         <li><i class="fas fa-code text-warning"></i> Cross-Platform App Development</li>
                         <li><i class="fas fa-paint-brush text-warning"></i> User Experience & Interface Design</li>                
@@ -488,7 +479,8 @@
                     </div>
                     <h3 class="fw-bold mt-3">Israr Ahmad</h3>
                     <span class="role text-primary">Mobile Developer</span>                    
-                    <p class="description">Expert in building scalable and user-friendly hybrid mobile applications.</p>
+                    <p class="description mt-2 flex-grow-1" style="text-align: center;">
+                        Expert in building scalable and user-friendly hybrid mobile applications.</p>
                     <ul class="list-unstyled expertise">
                         <li><i class="fas fa-code text-warning"></i> Android & iOS App Development</li>
                         <li><i class="fas fa-mobile-alt text-warning"></i> Cross-Platform Development</li>
@@ -503,7 +495,7 @@
             <div class="team-image">
                 <img src="./assets/awais.png" alt="Awais Kayani" class="img-fluid rounded-circle">
             </div>
-            <h3 class="fw-bold mt-3">Awais Kayani K Block</h3>
+            <h3 class="fw-bold mt-3">Awais Kayani</h3>
             <span class="role text-primary">Sales Executive</span>    
             <p class="description">Driving revenue growth with effective sales strategies and client relations.</p>
             <ul class="list-unstyled expertise">

@@ -342,20 +342,32 @@ document.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 20,
         slidesPerView: 1,
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: "[data-swiper-button-next='services']",
+            prevEl: "[data-swiper-button-prev='services']",
         },
         pagination: {
-            el: ".swiper-pagination",
-            clickable: true, // Ensure pagination bullets are clickable
+            el: ".services-pagination",
+            clickable: true,
         },
         breakpoints: {
-            768: {
-                slidesPerView: 2,
-            },
-            1024: {
-                slidesPerView: 3,
-            },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
         },
+        preventClicks: false,
+        preventClicksPropagation: false,
+        allowTouchMove: true
+    });
+
+    // ✅ Button Click Event to Redirect
+    document.querySelectorAll(".btn-custom").forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.stopPropagation(); // ✅ Prevent Swiper interference
+            const url = this.getAttribute("data-url");
+            if (url.startsWith("#")) {
+                document.querySelector(url)?.scrollIntoView({ behavior: "smooth" });
+            } else {
+                window.location.href = url; // ✅ For external links
+            }
+        });
     });
 });

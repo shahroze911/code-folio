@@ -7,6 +7,7 @@
     align-items: center;
     min-height: 100vh;
     text-align: center;
+    
     backdrop-filter: blur(8px);
     padding: 30px 3%; /* Reduced padding */
 }
@@ -21,6 +22,7 @@
 .service-header {
     max-width: 100%;
     text-align: center;
+
 }
 
 /* 🔹 Section Title */
@@ -30,8 +32,7 @@
     color: #2b2d42;
     position: relative;
     display: inline-block;
-    margin: 0 auto;
-    padding-top: 50px;;
+    margin: 0 auto;    
 }
 
 /* 🔹 Underline Effect */
@@ -87,8 +88,7 @@
 }
 
 /* 🌟 Glassmorphism Effect on Hover */
-.service-card:hover {
-    transform: translateY(-5px);
+.service-card:hover {    
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(20px);
@@ -164,8 +164,7 @@
     font-size: 14px;
 }
 .btn-custom:hover {
-    background: darken(var(--color), 10%);
-    transform: scale(1.05);
+    background: linear-gradient(45deg, #ff9900, #ff4d4d);
 }
 
 /* 📱 Responsive Design */
@@ -185,4 +184,136 @@
     .service-card p {
         font-size: 13px;
     }
+}/* Ensure parent container allows absolute positioning */
+.services-section {
+    position: relative; /* Important */
+    overflow: visible; /* Ensure arrows are not clipped */
+}
+.services-button-next,
+.services-button-prev {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    color: #333; /* Arrow color */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 30px; /* Adjusted size */
+    height: 30px; /* Adjusted size */
+    font-size: 14px; /* Smaller icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    z-index: 20; /* Ensure it's above everything */
+}* Move Next Arrow Completely Outside */
+.services-button-next {
+    right: -70px; /* Move completely outside */
+}
+
+/* Move Previous Arrow Completely Outside */
+.services-button-prev {
+    left: -70px; /* Move completely outside */
+}
+
+/* Hover Effects */
+.services-button-next:hover,
+.services-button-prev:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: #000;
+}
+
+/* Responsive Fix for Smaller Screens */
+@media (max-width: 768px) {
+    .services-button-next,
+    .services-button-prev {
+        width: 25px; /* Smaller for mobile */
+        height: 25px; /* Smaller for mobile */
+        font-size: 12px; /* Reduce icon size */
+    }
+    .services-button-next,
+    .services-button-prev {
+        display: none !important; /* Completely hide arrows */
+    }
+
+    .services-button-next {
+        right: -30px; /* Adjust for smaller screens */
+    }
+
+    .services-button-prev {
+        left: -30px; /* Adjust for smaller screens */
+    }
+}
+
+
+
+.why-choose-us {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px 20px;
+    border-radius: 10px;
+}
+
+.why-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.why-description {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.why-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.why-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-box i {
+    font-size: 2rem;
+    color: #ff4d4d;
+    margin-bottom: 10px;
+}
+
+.why-box h4 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.why-box p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.why-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .why-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.service-card {
+    position: relative; /* Ensures proper stacking */
+    z-index: 2; /* Keeps button clickable */
+}
+
+.btn-custom {
+    position: relative; /* Prevents being blocked */
+    z-index: 5; /* Ensures it is above Swiper */
 }
