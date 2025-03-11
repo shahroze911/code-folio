@@ -1,41 +1,30 @@
 /* 🚀 Services Section */
 #services {
-    /* background: linear-gradient(to bottom right, #e3f2fd, #cfd9df); */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     text-align: center;
-    
     backdrop-filter: blur(8px);
-    padding: 30px 3%; /* Reduced padding */
-}
-.service-details-container {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 12px;
+    padding: 30px 3%;
 }
 
-/* 🔹 Header Styling */
+/* 🔹 Service Header */
 .service-header {
-    max-width: 100%;
     text-align: center;
-
 }
 
 /* 🔹 Section Title */
 #services h2 {
-    font-size: 38px; /* Slightly reduced for compact design */
+    font-size: 38px;
     font-weight: bold;
     color: #2b2d42;
     position: relative;
     display: inline-block;
-    margin: 0 auto;    
+    margin: 0 auto;
 }
 
-/* 🔹 Underline Effect */
 #services h2::after {
     content: "";
     width: 80px;
@@ -50,30 +39,28 @@
 .section-description {
     font-size: 16px;
     color: #555;
-    max-width: 500px; /* Slightly reduced */
+    max-width: 500px;
     margin: 8px auto 15px;
     text-align: center;
 }
 
-/* 🔹 Service Cards */
+/* 🎨 Service Cards */
 .service-card {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
     border-radius: 12px;
-    padding: 16px; /* Reduced padding */
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 320px; /* Reduced height */
-    height: 100%;
+    min-height: 320px;
     position: relative;
     transition: all 0.3s ease-in-out;
     border: 2px solid transparent;
 }
 
-/* 🔥 Gradient Glowing Effect */
 .service-card::before {
     content: "";
     position: absolute;
@@ -87,8 +74,8 @@
     transition: all 0.4s ease-in-out;
 }
 
-/* 🌟 Glassmorphism Effect on Hover */
-.service-card:hover {    
+/* ✨ Glassmorphism Effect on Hover */
+.service-card:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(20px);
@@ -100,8 +87,8 @@
 
 /* 🎨 Icon Styling */
 .icon-container {
-    font-size: 42px; /* Slightly bigger */
-        color: white;
+    font-size: 42px;
+    color: white;
     background: var(--color);
     border-radius: 50%;
     width: 65px;
@@ -112,6 +99,7 @@
     margin: 0 auto 10px;
     transition: transform 0.3s ease-in-out;
 }
+
 .service-card:hover .icon-container {
     transform: rotate(360deg);
 }
@@ -126,7 +114,7 @@
 
 /* 🔹 Service Description */
 .service-card p {
-    font-size: 15px; /* Increased */
+    font-size: 15px;
     color: #444;
     margin-bottom: 8px;
 }
@@ -139,7 +127,7 @@
     margin-bottom: 12px;
 }
 .service-details li {
-    font-size: 14px; /* Increased */
+    font-size: 14px;
     color: #333;
     margin-bottom: 5px;
     display: flex;
@@ -155,8 +143,8 @@
 .btn-custom {
     background: var(--color);
     color: white;
-    padding: 7px 16px; /* Slightly smaller */
-        border-radius: 6px;
+    padding: 7px 16px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
@@ -172,80 +160,47 @@
     #services {
         padding: 40px 4%;
     }
-
     .service-card {
         min-height: 320px;
     }
-
     .service-card h3 {
         font-size: 16px;
     }
-
     .service-card p {
         font-size: 13px;
     }
-}/* Ensure parent container allows absolute positioning */
-.services-section {
-    position: relative; /* Important */
-    overflow: visible; /* Ensure arrows are not clipped */
 }
-.services-button-next,
-.services-button-prev {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%);
-    color: #333; /* Arrow color */
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    width: 30px; /* Adjusted size */
-    height: 30px; /* Adjusted size */
-    font-size: 14px; /* Smaller icon */
+
+
+/* 🔥 Carousel Fix */
+.carousel {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    transition: all 0.3s ease-in-out;
-    z-index: 20; /* Ensure it's above everything */
-}* Move Next Arrow Completely Outside */
-.services-button-next {
-    right: -70px; /* Move completely outside */
+    gap: 20px;
+    overflow: visible;
 }
 
-/* Move Previous Arrow Completely Outside */
-.services-button-prev {
-    left: -70px; /* Move completely outside */
+.carousel-cell {
+    flex: 1 1 300px;
+    max-width: 350px;
+    margin: 10px;
 }
 
-/* Hover Effects */
-.services-button-next:hover,
-.services-button-prev:hover {
-    background: rgba(255, 255, 255, 0.4);
-    color: #000;
+/* 🚀 Ensuring Buttons Stay Clickable */
+.service-card {
+    position: relative;
+    z-index: 2;
 }
-
-/* Responsive Fix for Smaller Screens */
-@media (max-width: 768px) {
-    .services-button-next,
-    .services-button-prev {
-        width: 25px; /* Smaller for mobile */
-        height: 25px; /* Smaller for mobile */
-        font-size: 12px; /* Reduce icon size */
-    }
-    .services-button-next,
-    .services-button-prev {
-        display: none !important; /* Completely hide arrows */
-    }
-
-    .services-button-next {
-        right: -30px; /* Adjust for smaller screens */
-    }
-
-    .services-button-prev {
-        left: -30px; /* Adjust for smaller screens */
-    }
+.btn-custom {
+    position: relative;
+    z-index: 5;
 }
 
 
 
+
+/* 🌟 Why Choose Us Section */
 .why-choose-us {
     background: rgba(255, 255, 255, 0.05);
     padding: 50px 20px;
@@ -301,19 +256,10 @@
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive Design */
+/* 📱 Responsive Design */
 @media (max-width: 768px) {
     .why-container {
         flex-direction: column;
         align-items: center;
     }
-}
-.service-card {
-    position: relative; /* Ensures proper stacking */
-    z-index: 2; /* Keeps button clickable */
-}
-
-.btn-custom {
-    position: relative; /* Prevents being blocked */
-    z-index: 5; /* Ensures it is above Swiper */
 }

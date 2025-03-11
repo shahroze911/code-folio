@@ -254,27 +254,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // });
 });
 document.addEventListener("DOMContentLoaded", function () {
-    var swiper = new Swiper(".services-carousel", {
-        loop: true,
-        spaceBetween: 20,
-        slidesPerView: 1,
-        navigation: {
-            nextEl: "[data-swiper-button-next='services']",
-            prevEl: "[data-swiper-button-prev='services']",
-        },
-        pagination: {
-            el: ".services-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-        },
-        preventClicks: false,
-        preventClicksPropagation: false,
-        allowTouchMove: true
-    });
-
     // ✅ Button Click Event to Redirect
     document.querySelectorAll(".btn-custom").forEach(button => {
         button.addEventListener("click", function (event) {
@@ -287,8 +266,25 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-});    document.addEventListener("DOMContentLoaded", function () {
-    new Glide('.glide', {
+});  
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    new Glide('.glide-services', {
+        type: 'carousel',
+        startAt: 0,
+        perView: 3,
+        focusAt: 'center',
+        autoplay: 1500,
+        hoverpause: true,
+        gap: 20,
+        peek: { before: 50, after: 50 },
+        breakpoints: {
+            1024: { perView: 3 }, // Three cards on tablets
+            768: { perView: 1, autoplay: false, gap: 0 } // One card on mobile, no sliding
+        }
+    }).mount();
+    new Glide('.glide-testimonials', {
         type: 'carousel',
         startAt: 0,
         perView: 3,
