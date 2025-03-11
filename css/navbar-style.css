@@ -121,11 +121,25 @@ section {
     font-size: 18px;
     color: #007bff;
 }
+/* 🎨 Assigning Different Colors to Each Icon */
+.nav-links li:nth-child(1) a i { color: #007bff; }  /* Blue */
+.nav-links li:nth-child(2) a i { color: #28a745; }  /* Green */
+.nav-links li:nth-child(3) a i { color: #ff5722; }  /* Orange */
+.nav-links li:nth-child(4) a i { color: #ffb400; }  /* Yellow */
+.nav-links li:nth-child(5) a i { color: #9c27b0; }  /* Purple */
+.nav-links li:nth-child(6) a i { color: #17a2b8; }  /* Teal */
 
-/* 🎯 Hover Effect */
-.nav-links a:hover {
-    color: #007bff;
-    transform: translateY(-2px);
+/* 🎯 Hover Effect (Slight Lightening of Colors) */
+.nav-links li:nth-child(1) a:hover i { color: #3399ff; } /* Light Blue */
+.nav-links li:nth-child(2) a:hover i { color: #4caf50; } /* Light Green */
+.nav-links li:nth-child(3) a:hover i { color: #ff7043; } /* Light Orange */
+.nav-links li:nth-child(4) a:hover i { color: #ffd54f; } /* Light Yellow */
+.nav-links li:nth-child(5) a:hover i { color: #ba68c8; } /* Light Purple */
+.nav-links li:nth-child(6) a:hover i { color: #20c7dd; } /* Light Teal */
+
+/* ✅ Ensure Active Icons are White */
+.nav-links a.active i {
+    color: white !important;
 }
 
 /* 🟡 Highlight Active Section */
