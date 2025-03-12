@@ -273,6 +273,17 @@
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
+.why-box:nth-child(1) i {
+    color: #ff4d4d; /* Red - Cutting-Edge Technology */
+}
+
+.why-box:nth-child(2) i {
+    color: #4da6ff; /* Blue - 24/7 Customer Support */
+}
+
+.why-box:nth-child(3) i {
+    color: #32cd32; /* Green - Experienced Professionals */
+}
 
 /* 📱 Responsive Design */
 @media (max-width: 768px) {
