@@ -151,9 +151,7 @@
     display: inline-block;
     font-size: 14px;
 }
-.btn-custom:hover {
-    background: linear-gradient(45deg, #ff9900, #ff4d4d);
-}
+
 .swipe-hand {
     position: absolute;
     top: 50%;

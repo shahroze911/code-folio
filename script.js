@@ -327,3 +327,26 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Typewriter element not found!");
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.innerWidth <= 768) { // Only for mobile screens
+        gsap.registerPlugin(MotionPathPlugin);
+
+        gsap.to(".swipe-hand", {
+            motionPath: {
+                path: [
+                    { x: -30, y: 0 },  
+                    { x: 50, y: -10 },  
+                    { x: 120, y: 0 }    
+                ],
+                curviness: 1.5,
+                autoRotate: false
+            },
+            duration: 2, // Slower animation
+            repeat: -1,
+            yoyo: true,
+            ease: "power2.inOut"
+        });
+
+    }
+});
