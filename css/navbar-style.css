@@ -172,67 +172,91 @@ section {
     transform: translateY(-50%);
     z-index: 1100; /* Ensure it's above other elements */
 }
-
-
 /* 🔽 Mobile Menu Adjustments */
 @media (max-width: 1024px) {
     .floating-navbar {
         padding: 12px 20px;
         position: fixed;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1100;
+        transition: background 0.3s ease-in-out;
     }
 
     .nav-links {
         position: fixed;
         top: 60px;
-        right: -100%;
-        width: 200px;
-        height: 100vh;
+        right: -80%;
+        width: 180px;
+        height: auto;
         background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(12px);
+        border-radius: 10px 0 0 10px;
         flex-direction: column;
         align-items: center;
-        padding: 10px 0;
-        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease-in-out;
-        z-index: 1050; /* Ensure it's above other content */
+        padding: 12px 0;
+        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.4s ease-in-out, opacity 0.3s ease-in-out, width 0.3s ease-in-out;
+        opacity: 0;
+        z-index: 1050;
     }
 
     .nav-links a {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         font-size: 1rem;
         padding: 10px 15px;
         width: 100%;
         gap: 8px;
-    }
-
-    .nav-links a span {
-        display: none; /* Hide text on small screens */
+        transition: background 0.3s ease-in-out, transform 0.2s ease;
+        border-radius: 6px;
     }
 
     .nav-links a i {
-        font-size: 24px;
+        font-size: 22px;
+        color: #6a67ce;
+        transition: transform 0.3s ease;
     }
 
     .nav-links a:hover {
-        /* background: #007bff; */
-        color: white;
+        background: rgba(106, 103, 206, 0.1);
+        color: #6a67ce;
+        transform: translateX(5px);
     }
 
-    /* ✅ Ensure Toggle Button is Visible */
+    /* ✅ Toggle Button */
     .nav-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: absolute;
-        right: 15px; /* Adjusted for better visibility */
+        right: 15px;
         top: 50%;
+        width: 42px;
+        height: 42px;
+        background: #6a67ce;
+        color: white;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
         transform: translateY(-50%);
-        z-index: 1100; /* Higher than menu */
+        transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+        z-index: 1100;
     }
 
-    /* Open menu */
+    .nav-toggle.active {
+        background: #ff4081;
+        transform: translateY(-50%) rotate(90deg);
+    }
+
+    /* Open menu with wider width */
     .nav-links.active {
-        right: 0;
+        right: 15px;
+        width: 220px;
+        opacity: 1;
     }
 }
 
@@ -242,3 +266,4 @@ section {
         display: none;
     }
 }
+

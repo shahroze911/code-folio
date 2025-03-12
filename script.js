@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
         autoplay: 1500,
         hoverpause: true,
         gap: 20,
-        peek: { before: 50, after: 50 },
+        peek: { before: 0, after: 0 },
         breakpoints: {
             1024: { perView: 3 }, // Three cards on tablets
             768: { perView: 1, autoplay: false, gap: 0 } // One card on mobile, no sliding
@@ -299,3 +299,37 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }).mount();
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const navMenu = document.querySelector(".nav-links"); // Select the menu container
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("active"); // Close menu after clicking a link
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.innerWidth <= 768) { // Only on mobile
+        gsap.registerPlugin(MotionPathPlugin);
+
+        gsap.to(".swipe-hand", {
+            motionPath: {
+                path: [
+                    { x: -20, y: 0 },  // Start slightly back
+                    
+                    { x: 40, y: -10 }, // Downward curve
+                    { x: 100, y: 0 }   // Complete swipe
+                ],
+                curviness: 2,
+                autoRotate: false
+            },
+            duration: 1.8,  // Slower animation
+            repeat: -1,
+            opacity: 1,
+            ease: "power2.inOut",
+            yoyo: true
+        });
+    }
+});
+

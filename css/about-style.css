@@ -10,11 +10,13 @@
     padding: 60px 5%;
     overflow: hidden;
     position: relative;
+    
 }
 
 /* 🌟 Flex container */
 .about-content {
     display: flex;
+    margin-top: 40px;
     flex-wrap: wrap;
     max-width: 1200px;
     width: 100%;

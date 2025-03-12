@@ -55,6 +55,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
     <!-- Javascript -->
     <script defer src="./script.js"></script>
@@ -76,11 +77,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<!-- Include Flickity JS -->
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
 
-<!-- Flickity CSS -->
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
 <!-- Google Analytics (For Tracking Website Traffic) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-483ZSHM6L3"></script>
@@ -134,8 +134,9 @@
                 <li><a href="#about" class="nav-item"><i class="fas fa-user"></i> <span>About</span></a></li>
                 <li><a href="#services" class="nav-item"><i class="fas fa-briefcase"></i> <span>Services</span></a></li>
                 <!-- <li><a href="#portfolio" class="nav-item"><i class="fas fa-image"></i> <span>Portfolio</span></a></li> -->
+                 <li><a href="#our-team" class="nav-item"><i class="fas fa-users-cog"></i> <span>Team</span></a></li>
                 <li><a href="#clients-testimonials" class="nav-item"><i class="fas fa-users"></i> <span>Clients</span></a></li>
-                <li><a href="#our-team" class="nav-item"><i class="fas fa-users-cog"></i> <span>Team</span></a></li>
+                
                 <li><a href="#contact" class="nav-item"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
             </ul>
         </nav>
@@ -248,7 +249,7 @@
         </div>
     </div>
 </section>
-<!-- Services Section -->
+
 <!-- Services Section -->
 <section id="services" class="services-section py-5 mt-1">
     <div class="container">
@@ -377,12 +378,14 @@
                             <a href="javascript:void(0);" class="btn-custom">Request a Demo</a>
                         </div>
                     </li>
-                </ul>
-                
+                </ul>                
+            </div> 
+            <div class="swipe-hand">
+                <i class="fas fa-hand-point-right"></i>
+                <span class="swipe-arrow"></span>
             </div>
-
-         
-        </div>
+                                     
+        </div>      
     </div>
 
     <!-- Why Choose Us Section -->
@@ -402,63 +405,6 @@
                 <h4>Experienced Professionals</h4>
             </div>
         </div>
-    </div>
-</section>
-
-
-
-<section id="clients-testimonials">
-    <div class="clients-testimonials-container">
-        <h2>Our Trusted Clients</h2>
-        <div class="glide glide-testimonials">
-                        <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                    <li class="glide__slide">
-                        <div class="client-card">
-                            <img src="./assets/client_2.jpg" alt="Client 1" class="img-fluid rounded-circle mx-auto d-block mb-3" style="max-width: 100px;">
-                            <h3 class="client-name">John Doe</h3>
-                            <h4 class="client-designation text-muted">CEO of TechCorp</h4>
-                            <p class="text-muted">"Code Folio transformed our website and boosted our sales. A true game-changer!"</p>
-                            <span class="industry tech d-block mb-2"><i class="fas fa-laptop-code"></i> Technology</span>
-                            <div class="rating text-warning">⭐⭐⭐⭐⭐</div>
-                        </div>
-                    </li>
-                    <li class="glide__slide">
-                        <div class="client-card">
-                            <img src="./assets/client_1.png" alt="Client 2" class="img-fluid rounded-circle mx-auto d-block mb-3" style="max-width: 100px;">
-                            <h3 class="client-name">Sarah Smith</h3>
-                            <h4 class="client-designation text-muted">Founder of Startup X</h4>
-                            <p class="text-muted">"The best development team we've worked with. High quality and on-time delivery!"</p>
-                            <span class="industry health d-block mb-2"><i class="fas fa-hospital"></i> Health</span>
-                            <div class="rating text-warning">⭐⭐⭐⭐</div>
-                        </div>
-                    </li>
-                    <li class="glide__slide">
-                        <div class="client-card">
-                            <img src="./assets/client_3.png" alt="Client 3" class="img-fluid rounded-circle mx-auto d-block mb-3" style="max-width: 100px;">
-                        <h3 class="client-name">Michael Lee</h3>
-                        <h4 class="client-designation text-muted">Marketing Director</h4>
-                        <p class="text-muted">"Outstanding service! The UX design was beyond our expectations."</p>
-                        <span class="industry marketing d-block mb-2"><i class="fas fa-envelope"></i> Marketing</span>
-                        <div class="rating text-warning">⭐⭐⭐⭐⭐</div>
-                        </div>
-                    </li>
-                    <li class="glide__slide">
-                        <div class="client-card">
-                            <img src="./assets/client_4.jpeg" alt="Client 4" class="img-fluid rounded-circle mx-auto d-block mb-3" style="max-width: 100px;">
-                            <h3 class="client-name">Anna Johnson</h3>
-                            <h4 class="client-designation text-muted">COO of WebSolvers</h4>
-                            <p class="text-muted">"Our experience was amazing, and the results exceeded expectations."</p>
-                            <span class="industry web d-block mb-2"><i class="fas fa-laptop"></i> Web</span>
-                            <div class="rating text-warning">⭐⭐⭐⭐⭐</div>
-                        </div>
-                    </li>
-                   
-                   
-                </ul>
-            </div>
-        </div>
-        
     </div>
 </section>
 
@@ -538,9 +484,9 @@
             <div class="col-lg-4 col-md-6 d-flex">
                 <div class="team-card p-3 shadow-sm rounded bg-white text-center w-100">
                     <div class="team-image">
-                        <img src="./assets/sheeraz.png" alt="Sheeraz Ahmed" class="img-fluid rounded-circle">
+                        <img src="./assets/sheeraz.png" alt="Sheraz Ahmad" class="img-fluid rounded-circle">
                     </div>
-                    <h3 class="fw-bold mt-3">Sheeraz Ahmed</h3>
+                    <h3 class="fw-bold mt-3">Sheraz Ahmad</h3>
                     <span class="role text-primary">iOS Developer</span>
                     <p class="description mt-2 flex-grow-1" style="text-align: center;">
                         Building high-performance mobile experiences, ensuring quality and user engagement.</p>
@@ -596,6 +542,63 @@
         
     </div>
 </section>
+
+<section id="clients-testimonials">
+    <div class="clients-testimonials-container">
+        <h2>Our Trusted Clients</h2>
+        <div class="glide glide-testimonials">
+                        <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <div class="client-card">
+                            <img src="./assets/client_2.jpg" alt="Client 1" class="img-fluid rounded-circle mx-auto d-block mb-3" style="max-width: 100px;">
+                            <h3 class="client-name">John Doe</h3>
+                            <h4 class="client-designation text-muted">CEO of TechCorp</h4>
+                            <p class="text-muted">"Code Folio transformed our website and boosted our sales."</p>
+                            <span class="industry tech d-block mb-2"><i class="fas fa-laptop-code"></i> Technology</span>
+                            <div class="rating text-warning">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="client-card">
+                            <img src="./assets/client_1.png" alt="Client 2" class="img-fluid rounded-circle mx-auto d-block mb-3" style="max-width: 100px;">
+                            <h3 class="client-name">Sarah Smith</h3>
+                            <h4 class="client-designation text-muted">Founder of Startup X</h4>
+                            <p class="text-muted">"The best development team we've worked with."</p>
+                            <span class="industry health d-block mb-2"><i class="fas fa-hospital"></i> Health</span>
+                            <div class="rating text-warning">⭐⭐⭐⭐</div>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="client-card">
+                            <img src="./assets/client_3.png" alt="Client 3" class="img-fluid rounded-circle mx-auto d-block mb-3" style="max-width: 100px;">
+                        <h3 class="client-name">Michael Lee</h3>
+                        <h4 class="client-designation text-muted">Marketing Director</h4>
+                        <p class="text-muted">"Outstanding service! The UX design was beyond our expectations."</p>
+                        <span class="industry marketing d-block mb-2"><i class="fas fa-envelope"></i> Marketing</span>
+                        <div class="rating text-warning">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="client-card">
+                            <img src="./assets/client_4.jpeg" alt="Client 4" class="img-fluid rounded-circle mx-auto d-block mb-3" style="max-width: 100px;">
+                            <h3 class="client-name">Anna Johnson</h3>
+                            <h4 class="client-designation text-muted">COO of WebSolvers</h4>
+                            <p class="text-muted">"Our experience was amazing, and the results exceeded expectations."</p>
+                            <span class="industry web d-block mb-2"><i class="fas fa-laptop"></i> Web</span>
+                            <div class="rating text-warning">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </li>
+                   
+                   
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
 
 <!-- Contact Section -->
 <section id="contact">
