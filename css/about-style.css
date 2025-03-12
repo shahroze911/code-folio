@@ -16,7 +16,7 @@
 /* 🌟 Flex container */
 .about-content {
     display: flex;
-    margin-top: 40px;
+    margin-top: 30px;
     flex-wrap: wrap;
     max-width: 1200px;
     width: 100%;
