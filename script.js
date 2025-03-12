@@ -215,7 +215,7 @@ emailjs.send('service_mkyverp', 'template_mm2iu85', formData)
 }
 document.addEventListener("DOMContentLoaded", function () {
     // Scroll to top on page load
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
 
     // // Get all sections
     // const sections = document.querySelectorAll("section");
@@ -309,27 +309,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-document.addEventListener("DOMContentLoaded", function () {
-    if (window.innerWidth <= 768) { // Only on mobile
-        gsap.registerPlugin(MotionPathPlugin);
 
-        gsap.to(".swipe-hand", {
-            motionPath: {
-                path: [
-                    { x: -20, y: 0 },  // Start slightly back
-                    
-                    { x: 40, y: -10 }, // Downward curve
-                    { x: 100, y: 0 }   // Complete swipe
-                ],
-                curviness: 2,
-                autoRotate: false
-            },
-            duration: 1.8,  // Slower animation
-            repeat: -1,
-            opacity: 1,
-            ease: "power2.inOut",
-            yoyo: true
+document.addEventListener("DOMContentLoaded", function () {
+    let typeElement = document.getElementById("typewriter");
+
+    if (typeElement) {
+        var typewriter = new Typewriter(typeElement, {
+            loop: false,
+            delay: 70,
+            cursor: "" // Removes the blinking cursor
         });
+
+        typewriter
+            .typeString("Transforming Ideas into <span class='highlight'>Digital Success</span>")
+            .start();
+    } else {
+        console.error("Typewriter element not found!");
     }
 });
-
