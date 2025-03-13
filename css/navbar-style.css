@@ -40,11 +40,13 @@ section {
 /* 📝 Services Section - Dark Theme */
 #services {
     padding: 120px 40px; /* Adjusted to account for fixed navbar */
+    
 }
 
 /* 💼 Portfolio Section - Grid with Overlay */
 #portfolio {    
     padding: 120px 40px; /* Adjusted to account for fixed navbar */
+
 }
 
 /* 🙌 Testimonials Section - Soft Gradient */

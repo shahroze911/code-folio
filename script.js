@@ -215,7 +215,7 @@ emailjs.send('service_mkyverp', 'template_mm2iu85', formData)
 }
 document.addEventListener("DOMContentLoaded", function () {
     // Scroll to top on page load
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
 
     // // Get all sections
     // const sections = document.querySelectorAll("section");
