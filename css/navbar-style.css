@@ -20,8 +20,36 @@ body {
 /* 🎯 Section Padding Fix (Avoids Navbar Overlap) */
 section {
     padding: 120px 40px; /* Adjusted to account for fixed navbar */
-    min-height: 100vh;
+    min-height: fit-content;
     position: relative;
+}
+
+
+/* 🏠 Home Section - Hero Style */
+#home {    
+    min-height: 100vh;
+    padding: 120px 40px; /* Adjusted to account for fixed navbar */
+
+}
+
+/* 📞 Contact Section - Light Theme */
+#contact {    
+    padding: 120px 40px; /* Adjusted to account for fixed navbar */
+}
+
+/* 📝 Services Section - Dark Theme */
+#services {
+    padding: 120px 40px; /* Adjusted to account for fixed navbar */
+}
+
+/* 💼 Portfolio Section - Grid with Overlay */
+#portfolio {    
+    padding: 120px 40px; /* Adjusted to account for fixed navbar */
+}
+
+/* 🙌 Testimonials Section - Soft Gradient */
+#testimonials {
+    padding: 120px 40px; /* Adjusted to account for fixed navbar */
 }
 
 /* 🔽 Scroll Down & 🔼 Scroll Up Arrows */

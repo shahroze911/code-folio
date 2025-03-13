@@ -1,14 +1,25 @@
-
-
-/* Contact Section - Takes Available Space */
+/* Ensure Contact and Footer are Directly Adjacent */
 #contact {
-    flex: 1;  /* Takes up all available space */
+    flex: 1;  
     display: flex;
     align-items: center;
     justify-content: center;
     background: #f9f9f9;
-    padding: 4vh 0; /* Adjust padding dynamically */
+    padding: 4vh 0; 
+    margin-bottom: 0; /* Ensure no gap at the bottom */
 }
+
+/* Footer - Directly Sticks to Contact Section */
+footer {
+    padding: 20px;
+    background: #ffffff;
+    font-size: 14px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+    text-align: center;
+    margin: 0;  /* Ensure no gap at the top */
+}
+
 /* Contact Section Header */
 .contact-header {
     text-align: center;
@@ -89,12 +100,3 @@
     background: #0056b3;
 }
 
-/* Footer - Stays at Bottom */
-footer {
-    padding: 20px;
-    background: #ffffff;
-    font-size: 14px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s;
-    text-align: center;
-}

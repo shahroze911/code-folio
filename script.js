@@ -215,7 +215,7 @@ emailjs.send('service_mkyverp', 'template_mm2iu85', formData)
 }
 document.addEventListener("DOMContentLoaded", function () {
     // Scroll to top on page load
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 
     // // Get all sections
     // const sections = document.querySelectorAll("section");
@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
         startAt: 0,
         perView: 3,
         focusAt: 'center',
-        autoplay: 1500,
+        autoplay: 3000,
         hoverpause: true,
         gap: 20,
         peek: { before: 10, after: 10 },

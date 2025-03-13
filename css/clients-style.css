@@ -43,112 +43,114 @@
 .glide__slide {
     flex: 0 0 auto;
     width: auto;
-}
-
-/* Client Card Styles */
-.client-card {
-    background: #fff;
+}.client-card {
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     text-align: center;
-    min-height: 340px; /* Flexible height to prevent content cut-off */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 2px solid #e0e0e0;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-}
+    min-height: 400px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 2px solid #55aaff;
 
-/* Increased Image Size */
-.client-card img {
+}
+.client-img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    object-fit: cover; /* Ensures proper display */
-    border: 3px solid #0073e6;
+    border: 2px solid #0073e6;
+    margin-bottom: 10px;
 }
-
-/* Larger Client Name */
 .client-name {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #0073e6;
+}
+.client-designation, .client-company {
     margin-bottom: 5px;
-}
-
-/* Subtle Designation Styling */
-.client-designation {
     font-size: 14px;
-    font-weight: 500;
-    color: #777;
-    margin-bottom: 10px;
+    color: #555;
 }
-/* Interactive Quote Style */
-.client-card p {
-    position: relative;
-    padding: 16px;
-    font-size: 14px;
+.flag-icon {
+    width: 24px;
+    height: 16px;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-right: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.client-feedback {
     font-style: italic;
     color: #333;
-    background: #f5f5f5;
+    background: #fef8e0;
+    padding: 12px;
     border-radius: 10px;
-    line-height: 1.5;
-    display: inline-block;
+    min-height: 100px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
 }
-
-/* Fix quote marks inside the card */
-.client-card p::before, 
-.client-card p::after {
-    font-size: 24px; /* Adjust size */
-    color: #0073e6;
-    font-family: Georgia, serif;
-    position: absolute;
-    line-height: 1;
-}
-
-.client-card p::before {
-    content: "“";
-    left: 8px;  /* Shift slightly inside */
-    top: 8px;
-}
-
-.client-card p::after {
-    content: "”";
-    right: 8px;  /* Shift slightly inside */
-    bottom: 8px;
-}
-
-
-/* Colorful Industry Tags */
 .industry {
-    font-size: 12px;
-    font-weight: 600;
-    color: #fff;
-    padding: 5px 12px;
-    border-radius: 20px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    text-align: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: #fff;
+    margin: 5px 0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
-
-/* Colorful Industry Backgrounds */
-.industry.tech { background-color: #0073e6; }
-.industry.health { background-color: #28a745; }
-.industry.marketing { background-color: #ff5722; }
-.industry.web { background-color: #673ab7; }
-
-/* Rating */
+.industry i {
+    margin-right: 7px;
+    
+}
+.industry.health { background: linear-gradient(135deg, #28a745, #48c774); }
+.industry.transport { background: linear-gradient(135deg, #0073e6, #00aaff); }
+.industry.marketing { background: linear-gradient(135deg, #ff7b00, #ffbb33); }
 .rating {
-    font-size: 18px;
+    font-size: 20px;
     color: gold;
-    margin-top: 8px;
 }
 
-/* Hover Effect */
-.client-card:hover {
-    transform: scale(1.05);
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+     .glide__slides {
+        gap: 10px; /* Ensure spacing between cards */
+        justify-content: center;
+    }
+    .client-card {
+        min-height: 380px;
+        padding: 18px;
+        border: 2px solid #55aaff;
+
+    }
+    
+    .client-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .client-name {
+        font-size: 16px;
+    }
+
+    .client-designation, .client-company, .client-feedback {
+        font-size: 13px;
+    }
+    
+    .industry {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+
+    .rating {
+        font-size: 18px;
+    }
 }
 
 /* Mobile Adjustments */
@@ -169,24 +171,26 @@
         width: 100%; /* Ensure the card takes full width */
         min-height: auto; /* Allow flexibility */
         padding: 15px;
+        border: 2px solid #55aaff;
+        
     }
 
     .client-card img {
-        width: 80px;
-        height: 80px;
+        width: 75px;
+        height: 75px;
     }
 
     .client-name {
         font-size: 16px;
     }
 
-    .client-designation, .client-card p {
+    .client-designation, .client-company, .client-feedback {
         font-size: 12px;
     }
 
     .industry {
-        font-size: 12px;
-        padding: 5px 10px;
+        font-size: 11px;
+        padding: 4px 10px;
     }
 
     .rating {

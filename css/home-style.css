@@ -5,6 +5,7 @@
     font-weight: bold;
     color: white; /* Adjust color */
     text-decoration: none;
+    
 }
 
 .brand-logo .logo {
@@ -12,6 +13,7 @@
     width: auto;
     margin-right: 10px; /* Spacing between logo and text */
     margin-left: 50px;
+    
 }
 
 /* Responsive Styles */
@@ -37,11 +39,11 @@
     }
 }
 
-/* 🎯 Section Styling */
+/* 🎯 Section Styling
 section {
     padding: 60px 0;    
     text-align: left;
-}
+} */
 /* 🌟 Subheading - Stylish & Left-Aligned */
 .subheading {
     font-size: 1.4rem;
