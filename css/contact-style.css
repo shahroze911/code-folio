@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f9f9f9;
+    background: var(--contact-bg);
     padding: 4vh 0; 
     margin-bottom: 0; /* Ensure no gap at the bottom */
 }
@@ -12,10 +12,11 @@
 /* Footer - Directly Sticks to Contact Section */
 footer {
     padding: 20px;
-    background: #ffffff;
+    background: var(--footer-bg);
+    color: var(--footer-text);
     font-size: 14px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s;
+    box-shadow: 0 -4px 10px var(--shadow-color);
+    transition: background 0.3s, color 0.3s;
     text-align: center;
     margin: 0;  /* Ensure no gap at the top */
 }
@@ -30,7 +31,7 @@ footer {
 .contact-title {
     font-size: 42px;
     font-weight: bold;
-    color: #2b2d42;
+    color: var(--text-primary);
     position: relative;
     display: inline-block;
 }
@@ -48,7 +49,7 @@ footer {
 
 .contact-description {
     font-size: 18px;
-    color: #555;
+    color: var(--text-secondary);
     max-width: 600px;
     margin: 10px auto;
 }
@@ -59,9 +60,9 @@ footer {
     display: flex;
     max-width: 1200px;
     width: 100%;
-    background: white;
+    background: var(--bg-card);
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px var(--shadow-color);
     overflow: hidden;
 }
 
@@ -84,10 +85,12 @@ footer {
 
 /* Input Field Styling */
 .form-control {
-    border: 1px solid #ddd;
+    border: 1px solid var(--input-border);
     border-radius: 5px;
     font-size: 1rem;
     transition: all 0.3s ease-in-out;
+    background: var(--input-bg);
+    color: var(--text-primary);
 }
 
 .form-control:focus {

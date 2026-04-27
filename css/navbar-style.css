@@ -10,13 +10,6 @@ html {
     scroll-behavior: smooth; /* Smooth Scrolling */
 }
 
-body {
-    background-color: #f4f6f9;
-    color: #222;
-    text-align: center;
-    transition: background 0.3s ease-in-out;
-}
-
 /* 🎯 Section Padding Fix (Avoids Navbar Overlap) */
 section {
     padding: 120px 40px; /* Adjusted to account for fixed navbar */
@@ -80,7 +73,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--navbar-bg);
     backdrop-filter: blur(10px);
     padding: 10px 20px; /* Reduced padding */
     display: flex;
@@ -88,13 +81,13 @@ section {
     justify-content: space-between;
     z-index: 1000;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px var(--shadow-color);
 }
 
 /* 📌 Navbar on Scroll */
 .floating-navbar.scrolled {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background: var(--navbar-bg);
+    box-shadow: 0 8px 20px var(--shadow-color);
 }
 
 /* 🚀 Navbar Container */
@@ -109,7 +102,7 @@ section {
 .brand-logo {
     font-size: 22px;
     font-weight: bold;
-    color: #222;
+    color: var(--text-primary);
     text-decoration: none;
     transition: transform 0.3s ease-in-out;
 }
@@ -137,7 +130,7 @@ section {
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
-    color: #222;
+    color: var(--nav-link-color);
     padding: 8px 15px;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
@@ -191,7 +184,7 @@ section {
     display: block; /* Ensure it's visible */
     font-size: 24px; /* Adjust size */
     cursor: pointer;
-    color: #222;
+    color: var(--text-primary);
     background: none;
     border: none;
     padding: 8px 10px; /* Reduced padding */
@@ -208,9 +201,9 @@ section {
         padding: 12px 20px;
         position: fixed;
         width: 100%;
-        background: rgba(255, 255, 255, 0.9);
+        background: var(--navbar-bg);
         backdrop-filter: blur(10px);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 10px var(--shadow-color);
         z-index: 1100;
         transition: background 0.3s ease-in-out;
     }
@@ -221,13 +214,13 @@ section {
         right: -80%;
         width: 180px;
         height: auto;
-        background: rgba(255, 255, 255, 0.95);
+        background: var(--bg-secondary);
         backdrop-filter: blur(12px);
         border-radius: 10px 0 0 10px;
         flex-direction: column;
         align-items: center;
         padding: 12px 0;
-        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: -5px 5px 15px var(--shadow-color);
         transition: right 0.4s ease-in-out, opacity 0.3s ease-in-out, width 0.3s ease-in-out;
         opacity: 0;
         z-index: 1050;

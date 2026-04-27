@@ -8,6 +8,31 @@
     text-align: center;
     backdrop-filter: blur(8px);
     padding: 30px 3%;
+    background: var(--section-services-bg);
+}
+
+/* 🔹 Service Header */
+.service-header {
+    text-align: center;
+}
+
+/* 🔹 Section Title */
+#services h2 {
+    font-size: 38px;
+    font-weight: bold;
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+/* 🔹 Section Description */
+.section-description {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 8px auto 15px;
+    text-align: center;
 }
 
 /* 🔹 Service Header */
@@ -46,11 +71,11 @@
 
 /* 🎨 Service Cards */
 .service-card {
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--service-card-bg);
     backdrop-filter: blur(12px);
     border-radius: 12px;
     padding: 16px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px var(--shadow-color);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -58,7 +83,7 @@
     min-height: 320px;
     position: relative;
     transition: all 0.3s ease-in-out;
-    border: 2px solid transparent;
+    border: 2px solid var(--service-card-border);
 }
 
 .service-card::before {
@@ -108,14 +133,14 @@
 .service-card h3 {
     font-size: 20px;
     font-weight: bold;
-    color: #222;
+    color: var(--text-primary);
     margin-bottom: 6px;
 }
 
 /* 🔹 Service Description */
 .service-card p {
     font-size: 15px;
-    color: #444;
+    color: var(--text-secondary);
     margin-bottom: 8px;
 }
 
@@ -128,7 +153,7 @@
 }
 .service-details li {
     font-size: 14px;
-    color: #333;
+    color: var(--text-primary);
     margin-bottom: 5px;
     display: flex;
     align-items: center;
